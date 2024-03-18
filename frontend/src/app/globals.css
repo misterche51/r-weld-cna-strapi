@@ -18,7 +18,9 @@
   --fsz-xs: 20px;
   --fsz-sm: 24px;
   --fsz-lg: 36px;
-  --fsz-xxl: 40px;
+  --fsz-xl: 40px;
+
+  --fsz-xxl: 48px;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -4,3 +4,4 @@ export * from "./about";
 export * from "./contactForm";
 export * from "./branches";
 export * from "./production";
+export * from "./firstScreen";
