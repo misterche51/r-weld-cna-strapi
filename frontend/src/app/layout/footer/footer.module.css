@@ -1,7 +1,7 @@
 .wrapper {
   /* height: 137px; */
   padding: 52px 0;
-  background-color: var(--backgound-color-light-blue);
+  background-color: var(--background-color-light-blue);
   display: flex;
   flex-direction: row;
   align-items: center;

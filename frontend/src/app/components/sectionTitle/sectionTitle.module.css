@@ -1,0 +1,12 @@
+.title {
+  font-size: var(--fsz-xxl);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.title--black {
+  color: #040404;
+}
+.title--white {
+  color: #e8eaff;
+}
