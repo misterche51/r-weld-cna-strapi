@@ -1,6 +1,6 @@
 :root {
   /* --max-width: 1100px; */
-  --border-radius: 12px;
+  --border-radius-default: 8px;
 
   /* BACKGROUND */
   --background-main-home-page: #f2f2f2;
