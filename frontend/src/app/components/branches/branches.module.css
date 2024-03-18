@@ -1,2 +1,123 @@
 .wrapper {
+  padding: 20px 0;
+}
+
+.inner {
+  font-size: var(--fsz-sm);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.image_box,
+.text_box {
+  width: calc(50% - 10px);
+}
+
+.image_box {
+  height: 594px;
+  position: relative;
+}
+
+.list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.item {
+  position: relative;
+  padding-left: 37px;
+}
+
+.item::before {
+  position: absolute;
+  width: 37px;
+  height: 36px;
+  left: 0;
+  top: 0;
+  content: "";
+  background-image: url("../../../../public/ic-location.svg");
+}
+.item + .item {
+  margin-top: 8px;
+}
+
+@media (max-width: 1060px) {
+  .image_box {
+    height: 514px;
+  }
+}
+
+@media (max-width: 960px) {
+  .image_box {
+    height: 460px;
+  }
+}
+
+@media (max-width: 860px) {
+  .inner {
+    margin: 20px 0;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .image_box {
+    height: 300px;
+    width: 352px;
+    margin-right: calc(50% + 10px);
+  }
+
+  .text_box {
+    width: 100%;
+  }
+  .list {
+    position: absolute;
+    left: calc(50% + 10px);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    font-size: var(--fsz-xs);
+    position: relative;
+  }
+  .image_box {
+    height: 240px;
+    width: 200px;
+  }
+  .list {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding-bottom: 200px;
+  }
+  .image_box {
+    height: 240px;
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list {
+    width: 100%;
+    left: 0;
+    top: 330px;
+    /* margin-right: auto; */
+  }
+}
+
+@media (max-width: 360px) {
+  .image_box {
+    height: 240px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
