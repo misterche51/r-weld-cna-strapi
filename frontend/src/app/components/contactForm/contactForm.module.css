@@ -1,8 +1,15 @@
 .wrapper {
-  background: linear-gradient(90deg, #25577a 0%, #212121 100%);
+  background: linear-gradient(
+    90deg,
+    var(--background-color-dark-blue) 0%,
+    var(--background-color-dark-extra) 100%
+  );
   width: 100%;
   padding: 50px 40px;
   border-radius: var(--border-radius-default);
+}
+.wrapper--light {
+  background: var(--background-color-extra-light-blue);
 }
 
 .inner {
@@ -17,6 +24,10 @@
   width: 50%;
   max-width: 562px;
   min-width: 380px;
+}
+
+.cta--light {
+  color: var(--color-text-blue);
 }
 .components {
   display: flex;
@@ -41,7 +52,9 @@
   max-width: 271px;
   padding-bottom: 4px;
 }
-.input::placeholder {
+
+.input--light {
+  border-bottom-color: var(--background-color-dark-blue);
 }
 
 .button {
@@ -53,11 +66,30 @@
   box-shadow: none;
   width: 50%;
   max-width: 271px;
-  background-color: var(--background-color-extra-light-blue);
+  background: var(--background-color-extra-light-blue);
   color: #212121;
   font-size: var(--fsz-xs);
   padding: 20px;
   border-radius: var(--border-radius-default);
+  transition: all 0.3s linear;
+}
+.button--light {
+  background: linear-gradient(
+    90deg,
+    var(--background-color-dark-blue) 0%,
+    var(--background-color-dark-extra) 100%
+  );
+  color: var(--color-white);
+}
+
+.button:hover {
+  background: var(--background-color-dark-extra);
+  color: var(--color-white);
+}
+
+.button:active {
+  background: var(--background-color-light-blue);
+  color: var(--color-white);
 }
 
 /* and (max-width: 1120px) {

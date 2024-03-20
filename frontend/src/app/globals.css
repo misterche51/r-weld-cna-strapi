@@ -3,14 +3,17 @@
   --border-radius-default: 8px;
 
   /* BACKGROUND */
+  --background-white: #ffffff;
   --background-main-home-page: #f2f2f2;
   --background-color-extra-light-blue: #f3f9ff;
   --background-color-light-blue: #4e7997;
   --background-color-dark-blue: #25577a;
+  --background-color-dark-extra: #212121;
 
   /* TEXT-COLOR */
   --color-white: #ffffff;
   --color-text-light: #e8eaff;
+  --color-text-blue: #25577a;
   --color-text-dark: #040404;
 
   /* FONT-SIZES */

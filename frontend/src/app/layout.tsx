@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./layout/header/header";
 import Footer from "./layout/footer/footer";
 
 const myFont = localFont({
@@ -19,8 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={myFont.className}>
-      <body>{children}</body>
-      <Footer />
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

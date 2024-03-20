@@ -1,0 +1,70 @@
+.wrapper {
+  padding: 20px 0;
+}
+.inner {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.nav_box {
+  flex-grow: 2;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.item {
+  color: var(--color-text-dark);
+}
+
+.intaractions_box {
+  margin-left: auto;
+  min-width: 196px;
+  text-align: right;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-end;
+}
+
+.phone {
+  position: relative;
+  color: var(--color-text-blue);
+  margin-bottom: 10px;
+}
+
+.phone:before {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  content: "";
+  background-image: url("../../../../public/ic-phone.svg");
+  left: 36px;
+  top: -6px;
+}
+/* todo: отдельный компонент кнопки и отдельный компонент searchbar?  компонент выпадашки */
+.button_to_form {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: linear-gradient(
+    90deg,
+    var(--background-color-dark-blue) 0%,
+    var(--background-color-dark-extra) 100%
+  );
+  color: var(--color-white);
+  font-size: var(--fsz-xs);
+  padding: 20px;
+  border-radius: var(--border-radius-default);
+}

@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+}
+
+.wrapper::before {
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 32px;
+  background-image: url("../../../../../public/ic-search.svg");
+  left: 10px;
+  top: 8px;
+  z-index: 2;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: var(--background-white);
+  box-shadow: none;
+  border-radius: var(--border-radius-default);
+  height: 50px;
+  font-size: var(--fsz-xs);
+  padding-left: 50px;
+}
