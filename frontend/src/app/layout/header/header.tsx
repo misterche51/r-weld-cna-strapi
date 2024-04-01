@@ -6,7 +6,25 @@ import { PropsWithChildren } from "react";
 import Container from "../container/container";
 import SearchBar from "./searchBar/searchBar";
 
-const NAV_DATA = ["Продукция", "Документация", "Блог", "Контакты"];
+const NAV_DATA = [
+  {
+    label: "Продукция",
+    target: "production",
+  },
+  {
+    label: "Документация",
+    target: "documentation",
+  },
+
+  {
+    label: "Блог",
+    target: "blog",
+  },
+  {
+    label: "Контакты",
+    target: "Contacts",
+  },
+];
 
 // const CONTACTS_DATA = ["8 800 900-10-10", "info@r-weld.ru"];
 
@@ -29,9 +47,9 @@ export default function Header({ children }: PropsWithChildren) {
           </div>
           <div className={styles.nav_box}>
             <ul className={styles.navigation}>
-              {NAV_DATA.map((label, i) => (
+              {NAV_DATA.map(({ label, target }, i) => (
                 <li className={styles.item} key={i}>
-                  {label}
+                  <Link href={`/${target}`}>{label}</Link>
                 </li>
               ))}
             </ul>

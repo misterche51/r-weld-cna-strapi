@@ -1,0 +1,7 @@
+.wrapper {
+  width: calc(50% - 10px);
+}
+.image_box {
+  position: relative;
+  height: 420px;
+}
