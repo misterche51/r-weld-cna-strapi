@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Layout from "./layout/layout";
 import Advantages from "./components/advantages/advantages";
 import About from "./components/about/about";
 import Branches from "./components/branches/branches";
@@ -7,12 +8,14 @@ import FirstScreen from "./components/firstScreen/firstScreen";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <FirstScreen />
-      <Production />
-      <About />
-      <Advantages />
-      <Branches />
-    </main>
+    <Layout>
+      <main className={styles.main}>
+        <FirstScreen />
+        <Production />
+        <About />
+        <Advantages />
+        <Branches />
+      </main>
+    </Layout>
   );
 }

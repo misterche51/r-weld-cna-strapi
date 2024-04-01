@@ -15,15 +15,23 @@
   --color-text-light: #e8eaff;
   --color-text-blue: #25577a;
   --color-text-dark: #040404;
+  --color-text-extra-dark: #212121;
 
   /* FONT-SIZES */
   --fsz-xxs: 18px;
   --fsz-xs: 20px;
   --fsz-sm: 24px;
+  --fsz-md: 28px;
   --fsz-lg: 36px;
   --fsz-xl: 40px;
 
   --fsz-xxl: 48px;
+
+  --gradient-dark: linear-gradient(
+    90deg,
+    var(--background-color-dark-blue) 0%,
+    var(--background-color-dark-extra) 100%
+  );
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

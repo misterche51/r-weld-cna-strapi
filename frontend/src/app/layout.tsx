@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./layout/header/header";
-import Footer from "./layout/footer/footer";
 
 const myFont = localFont({
   src: "../../public/font/NT_Somic-VF.ttf",
@@ -20,11 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={myFont.className}>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

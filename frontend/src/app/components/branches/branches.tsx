@@ -23,7 +23,7 @@ export default function Branches({ children }: PropsWithChildren) {
           <div className={styles.image_box}>
             <Image
               className={styles.image}
-              src="/box.png"
+              src="/box.jpg"
               alt="Брендированные коробки"
               fill
               style={{ objectFit: "cover" }}

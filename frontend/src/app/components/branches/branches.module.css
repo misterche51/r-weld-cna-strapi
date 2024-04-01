@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 20px 0;
+  padding: 20px 0 60px 0;
 }
 
 .inner {
@@ -8,6 +8,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 47px 0 67px 0;
 }
 .image_box,
 .text_box {
@@ -15,8 +16,10 @@
 }
 
 .image_box {
-  height: 594px;
+  height: 460px;
   position: relative;
+  border-radius: var(--border-radius-default);
+  overflow: hidden;
 }
 
 .list {
