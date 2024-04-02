@@ -1,0 +1,22 @@
+.wrapper {
+}
+
+.heading {
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: calc(50% - 10px);
+  min-height: 658px;
+  /* margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative; */
+}
