@@ -16,6 +16,10 @@
   --color-text-blue: #25577a;
   --color-text-dark: #040404;
   --color-text-extra-dark: #212121;
+  --color-text-light-grey: #98999b;
+
+  --decorative-color-white: #ffffff;
+  --decorative-color-blue: #25577a;
 
   /* FONT-SIZES */
   --fsz-xxs: 18px;
