@@ -1,5 +1,6 @@
 .wrapper {
   padding: 20px 0;
+  background-color: var(--background-color-extra-light-blue);
 }
 .inner {
   display: flex;

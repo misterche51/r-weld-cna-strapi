@@ -2,10 +2,10 @@ import React from "react";
 import Layout from "../layout/layout";
 import styles from "./blog.module.css";
 
-import { GetStaticPaths, GetStaticProps } from "next";
+// import { GetStaticPaths, GetStaticProps } from "next";
 import ContactForm from "../components/contactForm/contactForm";
 import Container from "../layout/container/container";
-import PostMini from "./components/postMini/postMini";
+import PostPreview from "./components/postPreview/postPreview";
 import Link from "next/link";
 import DB from "../../api/db";
 
@@ -17,18 +17,26 @@ const PaginatePosts = () => (
   // props: IBlogGalleryProps
   <Layout>
     <Container>
-      <h2 className={styles.title}>Новости компании</h2>
-      <ul className={styles.list}>
-        {DB.posts.map((data) => (
-          <li key={data!.id} className={styles.item}>
-            <Link href={`/blog/${data!.id}`}>
-              <PostMini {...data!} />
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <ContactForm />
+      <div className={styles.wrapper}>
+        <h2 className={styles.title}>Новости компании</h2>
+        <ul className={styles.list}>
+          {DB.posts.map(
+            ({ id, previewTitle, shortDescription, image, date }) => (
+              <li key={id} className={styles.item}>
+                <Link href={`/blog/${id}`}>
+                  <PostPreview
+                    title={previewTitle}
+                    description={shortDescription}
+                    date={date}
+                    image={image}
+                  />
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+        <ContactForm />
+      </div>
     </Container>
   </Layout>
 

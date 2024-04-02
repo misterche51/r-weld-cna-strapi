@@ -1,5 +1,5 @@
 // import myImageLoader from "../../../../../myImageLoader";
-import styles from "./postMini.module.css";
+import styles from "./postPreview.module.css";
 import Image from "next/image";
 
 export type TPostDataProps = {
@@ -9,7 +9,7 @@ export type TPostDataProps = {
   image: string;
 };
 
-export default function PostMini({
+export default function PostPreview({
   title,
   description,
   date,
