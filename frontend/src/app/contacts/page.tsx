@@ -5,15 +5,14 @@ import DB from "@/api/db";
 import ContactForm from "@/app/shared/contactForm/contactForm";
 import styles from "./page.module.css";
 import Heading from "../shared/heading/heading";
-import Controls from "./components/map/components/controls/controls";
-import Content from "./components/map/components/content/content";
-import Map from "./components/map/map";
+import Map from "./sections/map/map";
+import Dealers from "./sections/dealers/dealers";
 
 export default function ContactsPage() {
   return (
     <Layout>
       <Container>
-        <section className={styles.seciton}>
+        <section className={`${styles.section} ${styles["section--contacts"]}`}>
           <Heading text="Контакты" />
           <p className={styles.description}>
             Наличие филиалов и собственных складов в Москве, Санкт-Петербурге,
@@ -22,10 +21,12 @@ export default function ContactsPage() {
             для каждого клиента.
           </p>
           <Map />
-          <ContactForm />
         </section>
-
-        <Heading text="Дилеры" />
+        <ContactForm />
+        <section className={`${styles.section} ${styles["section--dealers"]}`}>
+          <Heading text="Дилеры" />
+          <Dealers />
+        </section>
       </Container>
     </Layout>
   );

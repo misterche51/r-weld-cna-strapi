@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  background-color: var(--background-color-extra-light-blue);
+  font-size: var(--fsz-sm);
+  line-height: 1.3;
+  padding: 20px;
+}
+.name {
+  text-transform: uppercase;
+  color: var(--color-text-blue);
+  width: 400px;
+}
+.info {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 20px;
+}
+
+.el {
+  width: calc(50% - 10px);
+  padding-left: 56px;
+}
+
+.site {
+}
+
+.email,
+.site {
+  margin-top: 20px;
+}
