@@ -3,9 +3,10 @@ import Layout from "../layout/layout";
 import styles from "./blog.module.css";
 
 // import { GetStaticPaths, GetStaticProps } from "next";
-import ContactForm from "../components/contactForm/contactForm";
+import ContactForm from "../shared/contactForm/contactForm";
 import Container from "../layout/container/container";
 import PostPreview from "./components/postPreview/postPreview";
+import Heading from "../shared/heading/heading";
 import Link from "next/link";
 import DB from "../../api/db";
 
@@ -18,7 +19,7 @@ const PaginatePosts = () => (
   <Layout>
     <Container>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Новости компании</h2>
+        <Heading rank={2} text="Новости компании" />
         <ul className={styles.list}>
           {DB.posts.map(
             ({ id, previewTitle, shortDescription, image, date }) => (

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../../layout/layout";
 import Container from "@/app/layout/container/container";
 import DB from "@/api/db";
-import ContactForm from "@/app/components/contactForm/contactForm";
+import ContactForm from "@/app/shared/contactForm/contactForm";
 import GalleryPosts from "./components/gallery/gallery";
 import Article from "./components/article/article";
 import styles from "./page.module.css";

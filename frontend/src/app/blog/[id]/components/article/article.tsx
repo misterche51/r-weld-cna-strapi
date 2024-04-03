@@ -1,6 +1,7 @@
 // import myImageLoader from "../../../../../myImageLoader";
 import styles from "./article.module.css";
 import Image from "next/image";
+import Heading from "@/app/shared/heading/heading";
 
 export type TPostDataProps = {
   title: string;
@@ -21,7 +22,7 @@ export default function Article({
 }: TPostDataProps) {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>{title}</h2>
+      <Heading rank={2} text={title} />
       <div className={styles.inner}>
         <p className={styles.date}>{date}</p>
         <div className={styles.image_box}>

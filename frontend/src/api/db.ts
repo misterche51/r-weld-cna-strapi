@@ -7,8 +7,25 @@ type TPostItem = {
   date: string;
   image: string;
 };
+
+type TPhoneLinkData = {
+  label: string;
+  href: string;
+};
+
+type TContactsItem = {
+  id: number;
+  city: string;
+  address: string;
+  phone: TPhoneLinkData;
+  email: string;
+  delivery: string;
+  promo?: string;
+};
+
 type TDataBase = {
   posts: TPostItem[];
+  contacts: TContactsItem[];
 };
 
 const DB: TDataBase = {
@@ -40,6 +57,66 @@ const DB: TDataBase = {
       image: "blog_0.jpg",
       date: "5 марта 1992",
       id: 2,
+    },
+  ],
+  contacts: [
+    {
+      id: 0,
+      city: "Рязань",
+      address: "Рязанская обл., с. Поляны, ул. Новая, строение 15",
+      phone: {
+        label: "8 800 900-10-10",
+        href: "+78009001010",
+      },
+      email: "info@r-weld.ru",
+      delivery: "Доставка до терминала Деловые Линии за наш счёт",
+      promo: "Дополнительная скидка 2%",
+    },
+    {
+      id: 1,
+      city: "Москва",
+      address: "Московская обл., г. Москва, ул. Старая, строение 666",
+      phone: {
+        label: "8 800 300-06-00",
+        href: "+78009001010",
+      },
+      email: "info@r-weld.ru",
+      delivery: "Доставка до терминала Деловые Линии за наш счёт",
+      promo: "Дополнительная скидка 200%",
+    },
+    {
+      id: 2,
+      city: "Санкт-Петербург",
+      address:
+        "Ленинградская обл., г. Санкт-Петебург, ул. Стародеревенская,  д 1",
+      phone: {
+        label: "8 800 300-06-00",
+        href: "+78009001010",
+      },
+      email: "info@r-weld.ru",
+      delivery: "Доставка до терминала Деловые Линии за наш счёт",
+    },
+    {
+      id: 3,
+      city: "Екатеринбург",
+      address: "г. Екатеринбург, ул. Новодеревенская,  д 2",
+      phone: {
+        label: "8 800 300-06-00",
+        href: "+78009001010",
+      },
+      email: "info@r-weld.ru",
+      delivery: "Доставка до терминала Деловые Линии за наш счёт",
+    },
+    {
+      id: 4,
+      city: "Красноярск",
+      address: "г. Красноярск, ул. Няшная,  д 20",
+      phone: {
+        label: "8 800 300-06-00",
+        href: "+78009001010",
+      },
+      email: "info@r-weld.ru",
+      delivery: "Доставка до терминала Деловые Линии за наш счёт",
     },
   ],
 };

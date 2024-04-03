@@ -22,7 +22,7 @@ const NAV_DATA = [
   },
   {
     label: "Контакты",
-    target: "Contacts",
+    target: "contacts",
   },
 ];
 

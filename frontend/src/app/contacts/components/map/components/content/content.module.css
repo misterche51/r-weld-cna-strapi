@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.info {
+  background-color: var(--decorative-color-blue);
+  color: var(--color-white);
+  font-size: var(--fsz-sm);
+  line-height: 1.3;
+  border-bottom-left-radius: var(--border-radius-default);
+  width: 520px;
+  height: 480px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.promo {
+  background-color: var(--background-color-extra-light-blue);
+  color: var(--color-text-extra-dark);
+  font-size: var(--fsz-xs);
+  padding: 8px 33px;
+  border-radius: var(--border-radius-default);
+  margin-top: auto;
+  align-self: center;
+}

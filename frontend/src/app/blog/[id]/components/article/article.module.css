@@ -8,7 +8,6 @@
 
 .inner {
   padding: 20px 0;
-  border-top: 2px solid;
   border-bottom: 2px solid;
   border-color: var(--decorative-color-blue);
 }

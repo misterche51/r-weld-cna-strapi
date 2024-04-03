@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./branches.module.css";
 import Container from "@/app/layout/container/container";
 import SectionTitle from "../sectionTitle/sectionTitle";
-import ContactForm from "../contactForm/contactForm";
+import ContactForm from "../../shared/contactForm/contactForm";
 
 const BRANCHES_DATA = [
   "Рязань",
