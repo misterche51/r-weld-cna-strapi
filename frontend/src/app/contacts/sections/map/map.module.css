@@ -9,8 +9,8 @@
 .info {
   width: 520px;
   min-height: 480px;
-  overflow: hidden;
   border-bottom-left-radius: var(--border-radius-default);
+  overflow: hidden;
 }
 .map {
   flex-grow: 1;
@@ -46,12 +46,17 @@
   .info {
     width: calc(100% - 171px);
     flex-grow: 2;
-    height: 415px;
+    /* height: 480px; */
     border-top-right-radius: var(--border-radius-default);
   }
   .map {
     flex-grow: 2;
     border-top-right-radius: initial;
     border-bottom-left-radius: var(--border-radius-default);
+  }
+}
+
+@media (max-width: 480px) {
+  .info {
   }
 }

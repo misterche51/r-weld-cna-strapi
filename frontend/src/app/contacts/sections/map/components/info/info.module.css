@@ -8,7 +8,6 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 50px 30px 50px 40px;
-
   height: 100%;
 
   color: var(--color-white);
@@ -26,6 +25,41 @@
   width: fit-content;
 }
 
+.el {
+  padding-left: 56px;
+  position: relative;
+  min-height: 36px;
+  color: var(--color-white);
+}
+.el + .el {
+  margin-top: 20px;
+}
+.el::before {
+  width: 36px;
+  height: 36px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+}
+
+.phone::before {
+  background-image: url("../../../../../../../public/ic-phone-white.svg");
+}
+
+.email::before {
+  background-image: url("../../../../../../../public/ic-email-white.svg");
+}
+
+.delivery::before {
+  background-image: url("../../../../../../../public/ic-delivery.svg");
+}
+
+.address::before {
+  background-image: url("../../../../../../../public/ic-location-white.svg");
+}
+
 @media (max-width: 1060px) {
 }
 
@@ -41,23 +75,37 @@
 @media (max-width: 768px) {
   .inner {
     width: 100%;
+    padding: 25px;
   }
-  /* .map_wrapper {
-    height: 50%;
-    width: 100%;
-    border-top-right-radius: initial;
-    border-bottom-left-radius: var(--border-radius-default);
-  } */
+}
+
+@media (max-width: 568px) {
+  .inner {
+    padding: 25px 15px 15px;
+    font-size: var(--fsz-xxs);
+  }
+  .el + .el {
+    margin-top: 10px;
+  }
+  .el {
+    padding-left: 46px;
+  }
+  .promo {
+    padding: 8px;
+  }
 }
 
 @media (max-width: 480px) {
   .wrapper {
     /* width: calc(100% - 171px); */
-    min-height: 415px;
+    /* min-height: 415px; */
   }
-  /* .map_wrapper {
-    height: 340px;
-  } */
+  .inner {
+  }
+
+  .promo {
+    width: 100%;
+  }
 }
 
 @media (max-width: 360px) {

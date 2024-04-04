@@ -12,14 +12,17 @@ export default function Info({ id }: PropsWithChildren<TContentMapProps>) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
-        <p className={styles.address}>{address}</p>
-        <a href={`tel:${phone.href}`} className={styles.phone}>
+        <p className={`${styles.address} ${styles.el}`}>{address}</p>
+        <a
+          href={`tel:${phone.href}`}
+          className={`${styles.phone} ${styles.el}`}
+        >
           {phone.label}
         </a>
-        <a href={`mailto:${email}`} className={styles.email}>
+        <a href={`mailto:${email}`} className={`${styles.email} ${styles.el}`}>
           {email}
         </a>
-        <p className={styles.delivery}>{delivery}</p>
+        <p className={`${styles.delivery} ${styles.el}`}>{delivery}</p>
         {promo && <p className={styles.promo}>{promo}</p>}
       </div>
     </div>
