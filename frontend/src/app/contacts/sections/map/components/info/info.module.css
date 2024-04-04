@@ -52,7 +52,7 @@
 
 @media (max-width: 480px) {
   .wrapper {
-    width: calc(100% - 171px);
+    /* width: calc(100% - 171px); */
     min-height: 415px;
   }
   /* .map_wrapper {

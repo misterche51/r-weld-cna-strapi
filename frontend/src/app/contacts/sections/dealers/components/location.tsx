@@ -1,7 +1,7 @@
-import styles from "./item.module.css";
+import styles from "./location.module.css";
 import { TDealerItem } from "@/api/db";
 
-export default function Item({
+export default function Location({
   name,
   phone = "-",
   address = "-",
