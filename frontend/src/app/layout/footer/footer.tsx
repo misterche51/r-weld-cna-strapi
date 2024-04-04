@@ -6,12 +6,28 @@ import { PropsWithChildren } from "react";
 import Container from "../container/container";
 
 const SITE_MAP_DATA = [
-  "Продукция",
-  "Документация",
-  "Блог",
-  "Филиалы и склады",
-  "Дилеры",
-  "Контакты",
+  {
+    label: "Продукция",
+    target: "production",
+  },
+  {
+    label: "Документация",
+    target: "documentation",
+  },
+  {
+    label: "Блог",
+    target: "blog",
+  },
+  {
+    label: "Филиалы и склады",
+  },
+  {
+    label: "Дилеры",
+  },
+  {
+    label: "Контакты",
+    target: "contacts",
+  },
 ];
 
 const CONTACTS_DATA = ["8 800 900-10-10", "info@r-weld.ru"];
@@ -50,9 +66,9 @@ export default function Footer({ children }: PropsWithChildren) {
             <div className={styles.site_map}>
               <p className={styles.site_map__heading}>Разделы</p>
               <ul className={styles.site_map__list}>
-                {SITE_MAP_DATA.map((label, i) => (
+                {SITE_MAP_DATA.map(({ label, target }, i) => (
                   <li className={styles.site_map__item} key={i}>
-                    {label}
+                    <Link href={`/${target}`}>{label}</Link>
                   </li>
                 ))}
               </ul>

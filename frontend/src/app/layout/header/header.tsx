@@ -15,7 +15,6 @@ const NAV_DATA = [
     label: "Документация",
     target: "documentation",
   },
-
   {
     label: "Блог",
     target: "blog",

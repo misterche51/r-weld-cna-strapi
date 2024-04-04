@@ -1,7 +1,7 @@
 .title {
   font-size: var(--fsz-xl);
   line-height: 1.3;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   margin-bottom: 20px;
   position: relative;
 }
@@ -13,11 +13,16 @@
   color: var(--color-text-light-blue);
 }
 
+.title---underlined {
+  padding-bottom: 20px;
+}
+
 .title--underlined::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
+
   top: 72px;
   left: 0;
 }

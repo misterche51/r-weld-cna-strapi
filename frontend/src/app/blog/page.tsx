@@ -19,7 +19,7 @@ const PaginatePosts = () => (
   <Layout>
     <Container>
       <div className={styles.wrapper}>
-        <Heading rank={2} text="Новости компании" />
+        <Heading rank={2} text="Новости компании" withUnderline={false} />
         <ul className={styles.list}>
           {DB.posts.map(
             ({ id, previewTitle, shortDescription, image, date }) => (
