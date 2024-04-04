@@ -1,2 +1,2 @@
 export * from "./controls";
-export * from "./content";
+export * from "./info";

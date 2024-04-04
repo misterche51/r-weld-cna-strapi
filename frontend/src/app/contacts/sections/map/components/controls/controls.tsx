@@ -7,28 +7,6 @@ type TControlItemData = {
 };
 type TControlItemProps = TControlItemData & { onChange: (id: number) => void };
 
-const CONTROLS_DATA: TControlItemData[] = [
-  {
-    id: 0,
-    label: "Рязань",
-  },
-  {
-    id: 1,
-    label: "Москва",
-  },
-  {
-    id: 2,
-    label: "Санкт-Петербург",
-  },
-  {
-    id: 3,
-    label: "Екатеринбург",
-  },
-  {
-    id: 4,
-    label: "Красноярск",
-  },
-];
 const ControlItem = ({
   id,
   label,
@@ -37,16 +15,16 @@ const ControlItem = ({
 }: TControlItemProps & { isActive: boolean }) => {
   const onChangeHandler = () => onChange(id);
   return (
-    <label className={styles.wrapper}>
+    <label className={styles.button}>
       <input
-        className={styles.radio}
+        className={styles.button__radio}
         type="radio"
         name="map"
         checked={isActive}
         value={id}
         onChange={onChangeHandler}
       />
-      <span className={styles.label}>{label}</span>
+      <span className={styles.button__label}>{label}</span>
     </label>
   );
 };
@@ -64,7 +42,7 @@ export default function Controls({
   return (
     <ul className={styles.list}>
       {options.map(({ id, label }) => (
-        <li key={id} className={styles.item}>
+        <li key={id} className={styles.list__item}>
           <ControlItem
             id={id}
             isActive={activeId === id}

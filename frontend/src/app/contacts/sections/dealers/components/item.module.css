@@ -8,8 +8,10 @@
 .name {
   text-transform: uppercase;
   color: var(--color-text-blue);
-  width: 400px;
+  min-width: 394px;
+  max-width: 394px;
 }
+
 .info {
   display: flex;
   flex-flow: row wrap;
@@ -19,12 +21,40 @@
 .el {
   width: calc(50% - 10px);
   padding-left: 56px;
+  position: relative;
 }
 
 .site {
 }
+.address {
+}
 
-.email,
+.address,
 .site {
   margin-top: 20px;
+}
+
+.el::before {
+  width: 36px;
+  height: 36px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.phone::before {
+  background-image: url("../../../../../../public/ic-phone.svg");
+}
+
+.email::before {
+  background-image: url("../../../../../../public/ic-email.svg");
+}
+
+.site::before {
+  background-image: url("../../../../../../public/ic-site.svg");
+}
+
+.address::before {
+  background-image: url("../../../../../../public/ic-location.svg");
 }
