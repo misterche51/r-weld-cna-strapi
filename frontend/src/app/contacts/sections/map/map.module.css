@@ -5,6 +5,7 @@
 }
 .controls {
   flex-grow: 1;
+  min-width: 100%;
 }
 .info {
   width: 520px;
@@ -26,6 +27,9 @@
 }
 
 @media (max-width: 960px) {
+  .controls {
+    min-width: initial;
+  }
   .info {
     width: 100%;
     height: 480px;

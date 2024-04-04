@@ -21,22 +21,27 @@
 .cta {
   color: var(--color-white);
   font-size: var(--fsz-sm);
-  width: 50%;
-  max-width: 562px;
-  min-width: 380px;
+  /* width: 50%; */
+  /* ;
+  min-width: 380px; */
+  flex-basis: 562px;
+  flex-grow: 2;
+  flex-shrink: 1;
 }
 
 .cta--light {
   color: var(--color-text-blue);
 }
+
 .components {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-end;
-  width: 50%;
-  max-width: 562px;
-  min-width: 562px;
+  margin-left: 72px;
+  flex-basis: 562px;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .input {
@@ -51,6 +56,9 @@
   width: 50%;
   max-width: 271px;
   padding-bottom: 4px;
+}
+
+.input--dark {
 }
 
 .input--light {
@@ -71,7 +79,7 @@
   font-size: var(--fsz-xs);
   padding: 20px;
   border-radius: var(--border-radius-default);
-  transition: all 0.3s linear;
+  transition: background 0.3s linear, color 0.3s linear;
 }
 .button--light {
   background: linear-gradient(
@@ -100,11 +108,9 @@
 
 @media (max-width: 1189px) {
   .cta {
-    max-width: 380px;
   }
   .components {
     flex-direction: column;
-    min-width: 420px;
   }
 
   .input {
@@ -121,21 +127,21 @@
 @media (max-width: 960px) {
   .components {
     flex-direction: column;
-    max-width: 228px;
-    min-width: 228px;
+    margin-left: 20px;
   }
 
   .cta {
-    max-width: 380px;
-    font-size: var(--fsz-xxs);
+    flex-basis: 380px;
+    flex-shrink: 0;
+    /* font-size: var(--fsz-xxs); */
   }
 
   .input {
-    font-size: var(--fsz-xxs);
+    font-size: var(--fsz-xs);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .wrapper {
     padding: 20px;
   }
@@ -144,20 +150,25 @@
   }
   .components {
     flex-direction: column;
-    max-width: none;
-    min-width: none;
+    flex-basis: initial;
     width: 100%;
     margin-top: 20px;
+    margin-left: 0;
+    flex-grow: 1;
   }
 
   .cta {
-    min-width: none;
-    max-width: none;
+    flex-grow: 1;
+    flex-basis: initial;
     width: 100%;
+    font-size: var(--fsz-xxs);
   }
 
   .input {
     width: 100%;
+  }
+  .input::placeholder {
+    font-size: 15px;
   }
   .button {
     width: 100%;
