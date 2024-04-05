@@ -1,8 +1,8 @@
-// "use client";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import Container from "../container/container";
 import SearchBar from "@/app/shared/searchBar/searchBar";
 
@@ -28,6 +28,11 @@ const NAV_DATA = [
 // const CONTACTS_DATA = ["8 800 900-10-10", "info@r-weld.ru"];
 
 export default function Header({ children }: PropsWithChildren) {
+  const [isOpened, setIsOpened] = useState(false);
+  const onMenuButtonClickHandler = () => {
+    setIsOpened((val) => !val);
+  };
+
   return (
     <header className={styles.wrapper}>
       <Container>
@@ -45,7 +50,21 @@ export default function Header({ children }: PropsWithChildren) {
             </Link>
           </div>
           <div className={styles.nav_box}>
-            <ul className={styles.navigation}>
+            <button
+              className={`${styles.nav_button} ${
+                isOpened && styles["nav_button--opened"]
+              }`}
+              onClick={onMenuButtonClickHandler}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul
+              className={`${styles.navigation} ${
+                isOpened && styles["navigation--opened"]
+              }`}
+            >
               {NAV_DATA.map(({ label, target }, i) => (
                 <li className={styles.item} key={i}>
                   <Link href={`/${target}`}>{label}</Link>
