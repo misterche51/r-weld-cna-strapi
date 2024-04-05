@@ -1,6 +1,7 @@
 import styles from "./dealers.module.css";
 import DB from "@/api/db";
 import Location from "./components/location";
+import SearchBar from "@/app/shared/searchBar/searchBar";
 
 const Region = ({ region, list }) => {
   return (
@@ -20,7 +21,9 @@ const Region = ({ region, list }) => {
 export default function Dealers() {
   return (
     <div className={styles.wrapper}>
-      {/* поиск */}
+      <div className={styles.search}>
+        <SearchBar placeholder="Введите название города" icon="location" />
+      </div>
       <ul className={styles.list}>
         {DB.dealers.map(({ region, list }) => (
           <li className={`${styles.list__item}`}>

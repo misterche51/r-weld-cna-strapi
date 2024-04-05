@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./header.module.css";
 import { PropsWithChildren } from "react";
 import Container from "../container/container";
-import SearchBar from "./searchBar/searchBar";
+import SearchBar from "@/app/shared/searchBar/searchBar";
 
 const NAV_DATA = [
   {
@@ -52,7 +52,9 @@ export default function Header({ children }: PropsWithChildren) {
                 </li>
               ))}
             </ul>
-            <SearchBar />
+            <div className={styles.search}>
+              <SearchBar placeholder="Найти..." />
+            </div>
           </div>
           <div className={styles.intaractions_box}>
             <a className={styles.phone} href="tel:88009001010">
