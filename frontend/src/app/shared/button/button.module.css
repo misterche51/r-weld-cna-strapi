@@ -1,0 +1,31 @@
+.comp {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: var(--gradient-dark);
+  color: var(--color-white);
+  font-size: var(--fsz-xs);
+  padding: 20px;
+  border-radius: var(--border-radius-default);
+  transition: background 0.3s linear, color 0.3s linear;
+  /* width: fit-content; */
+}
+
+.comp--light {
+  background: var(--background-color-extra-light-blue);
+  color: var(--color-text-extra-dark);
+}
+.comp--dark {
+  background: var(--gradient-dark);
+  color: var(--color-white);
+}
+
+.comp--dark:hover {
+  background: var(--background-color-dark-extra);
+  color: var(--color-white);
+}
+
+.comp--dalk:active {
+  background: var(--background-color-light-blue);
+  color: var(--color-white);
+}

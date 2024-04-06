@@ -20,6 +20,28 @@
 .item a {
   display: block;
 }
+.request_btn,
+.phone_wrapper {
+  display: none;
+}
+
+.phone {
+  position: relative;
+  color: var(--color-text-blue);
+  display: block;
+  padding-left: 36px;
+  font-size: var(--fsz-xs);
+}
+
+.phone:before {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  content: "";
+  background-image: url("../../../../../../public/ic-phone.svg");
+  left: 0px;
+  top: -3px;
+}
 
 @media (max-width: 680px) {
   .list {
@@ -32,5 +54,15 @@
   }
   .item {
     padding: 12px 10px;
+  }
+  .request_btn {
+    display: block;
+    margin-top: 24px;
+  }
+  .phone_wrapper {
+    height: 90px;
+    background-color: var(--background-white);
+    display: flex;
+    align-items: center;
   }
 }
