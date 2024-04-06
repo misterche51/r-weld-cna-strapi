@@ -5,74 +5,48 @@ import styles from "./header.module.css";
 import { PropsWithChildren, useState } from "react";
 import Container from "../container/container";
 import SearchBar from "@/app/shared/searchBar/searchBar";
+import Menu from "./components/menu/menu";
+import MenuButton from "./components/menu/components/menuButton/menuButton";
 
-const NAV_DATA = [
-  {
-    label: "Продукция",
-    target: "production",
-  },
-  {
-    label: "Документация",
-    target: "documentation",
-  },
-  {
-    label: "Блог",
-    target: "blog",
-  },
-  {
-    label: "Контакты",
-    target: "contacts",
-  },
-];
-
-// const CONTACTS_DATA = ["8 800 900-10-10", "info@r-weld.ru"];
+const Logo = () => (
+  <Link href={"/"}>
+    <Image
+      className={styles.logo_img}
+      src="/logo.svg"
+      alt="Логотип R-WELD"
+      width={195}
+      height={104}
+      priority
+    />
+  </Link>
+);
 
 export default function Header({ children }: PropsWithChildren) {
   const [isOpened, setIsOpened] = useState(false);
   const onMenuButtonClickHandler = () => {
     setIsOpened((val) => !val);
   };
-
   return (
     <header className={styles.wrapper}>
       <Container>
         <div className={styles.inner}>
           <div className={styles.logo}>
-            <Link href={"/"}>
-              <Image
-                className={styles.logo}
-                src="/logo.svg"
-                alt="Логотип R-WELD"
-                width={195}
-                height={104}
-                priority
-              />
-            </Link>
+            <Logo />
           </div>
-          <div className={styles.nav_box}>
-            <button
-              className={`${styles.nav_button} ${
-                isOpened && styles["nav_button--opened"]
-              }`}
-              onClick={onMenuButtonClickHandler}
+          <div className={styles.navigation}>
+            <div
+              className={`${styles.menu} ${isOpened && styles["menu--opened"]}`}
             >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <ul
-              className={`${styles.navigation} ${
-                isOpened && styles["navigation--opened"]
-              }`}
-            >
-              {NAV_DATA.map(({ label, target }, i) => (
-                <li className={styles.item} key={i}>
-                  <Link href={`/${target}`}>{label}</Link>
-                </li>
-              ))}
-            </ul>
+              <Menu isOpened={isOpened} />
+            </div>
             <div className={styles.search}>
               <SearchBar placeholder="Найти..." />
+            </div>
+            <div className={styles.menu_btn}>
+              <MenuButton
+                isOpened={isOpened}
+                onClickHandler={onMenuButtonClickHandler}
+              />
             </div>
           </div>
           <div className={styles.intaractions_box}>

@@ -1,0 +1,36 @@
+.phone {
+  display: none;
+}
+.btn {
+  position: absolute;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  font-size: var(--fsz-xs);
+}
+
+.item {
+  color: var(--color-text-dark);
+}
+
+.item a {
+  display: block;
+}
+
+@media (max-width: 680px) {
+  .list {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--background-color-extra-light-blue);
+  }
+  .list {
+    justify-content: flex-start;
+  }
+  .item {
+    padding: 12px 10px;
+  }
+}
