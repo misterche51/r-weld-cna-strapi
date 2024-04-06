@@ -22,8 +22,7 @@ const NAV_DATA = [
   },
 ];
 
-type TMenuProps = { isOpened: boolean };
-export default function Menu({ isOpened }: TMenuProps) {
+export default function Menu() {
   return (
     <>
       <div className={styles.phone_wrapper}>
@@ -31,7 +30,7 @@ export default function Menu({ isOpened }: TMenuProps) {
           8 800 900-10-10
         </a>
       </div>
-      <ul className={`${styles.list} ${isOpened && styles["list--opened"]}`}>
+      <ul className={styles.list}>
         {NAV_DATA.map(({ label, target }, i) => (
           <li className={styles.item} key={i}>
             <Link href={`/${target}`}>{label}</Link>

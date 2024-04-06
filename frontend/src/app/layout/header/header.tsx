@@ -7,6 +7,7 @@ import Container from "../container/container";
 import SearchBar from "@/app/shared/searchBar/searchBar";
 import Menu from "./components/menu/menu";
 import MenuButton from "./components/menu/components/menuButton/menuButton";
+import Button from "@/app/shared/button/button";
 
 const Logo = () => (
   <Link href={"/"}>
@@ -37,7 +38,7 @@ export default function Header({ children }: PropsWithChildren) {
             <div
               className={`${styles.menu} ${isOpened && styles["menu--opened"]}`}
             >
-              <Menu isOpened={isOpened} />
+              <Menu />
             </div>
             <div className={styles.search}>
               <SearchBar placeholder="Найти..." />
@@ -53,7 +54,9 @@ export default function Header({ children }: PropsWithChildren) {
             <a className={styles.phone} href="tel:88009001010">
               8 800 900-10-10
             </a>
-            <button className={styles.button_to_form}>Оставить заявку</button>
+            <div className={styles.request_btn}>
+              <Button text="Оставить заявку" />
+            </div>
           </div>
         </div>
       </Container>
