@@ -8,7 +8,8 @@
   padding: 20px;
   border-radius: var(--border-radius-default);
   transition: background 0.3s linear, color 0.3s linear;
-  /* width: fit-content; */
+  width: 100%;
+  cursor: pointer;
 }
 
 .comp--light {

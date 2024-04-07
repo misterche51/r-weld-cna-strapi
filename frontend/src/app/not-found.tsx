@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 import Image from "next/image";
 import styles from "./not-found.module.css";
 import Container from "@/app/layout/container/container";
+import Button from "./shared/button/button";
 
 export default function PageNotFound() {
   return (
@@ -18,7 +19,9 @@ export default function PageNotFound() {
         <a href="tel:+79001001010" className={styles.phone}>
           {"8 (900)-100-10-10"}
         </a>
-        <button className={styles.button}>Оставить заявку</button>
+        <div className={styles.button}>
+          <Button text="Оставить заявку" />
+        </div>
       </div>
     </div>
   );

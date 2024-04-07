@@ -11,6 +11,8 @@
 .wrapper--light {
   background: var(--background-color-extra-light-blue);
 }
+.wrapper--dark {
+}
 
 .inner {
   display: flex;
@@ -31,6 +33,9 @@
 
 .cta--light {
   color: var(--color-text-blue);
+}
+
+.cta--dark {
 }
 
 .components {
@@ -66,45 +71,10 @@
 }
 
 .button {
-  color: var(--color-white);
-  outline: none;
-  border: none;
-  background-image: none;
-  background-color: transparent;
-  box-shadow: none;
   width: 50%;
   max-width: 271px;
-  background: var(--background-color-extra-light-blue);
-  color: #212121;
-  font-size: var(--fsz-xs);
-  padding: 20px;
-  border-radius: var(--border-radius-default);
-  transition: background 0.3s linear, color 0.3s linear;
+  margin-left: 20px;
 }
-.button--light {
-  background: linear-gradient(
-    90deg,
-    var(--background-color-dark-blue) 0%,
-    var(--background-color-dark-extra) 100%
-  );
-  color: var(--color-white);
-}
-
-.button:hover {
-  background: var(--background-color-dark-extra);
-  color: var(--color-white);
-}
-
-.button:active {
-  background: var(--background-color-light-blue);
-  color: var(--color-white);
-}
-
-/* and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-} */
 
 @media (max-width: 1189px) {
   .cta {
