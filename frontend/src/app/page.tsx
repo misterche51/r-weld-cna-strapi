@@ -5,6 +5,8 @@ import About from "./components/about/about";
 import Branches from "./components/branches/branches";
 import Production from "./components/production/production";
 import FirstScreen from "./components/firstScreen/firstScreen";
+import ContactForm from "./shared/contactForm/contactForm";
+import Container from "./layout/container/container";
 
 export default function Home() {
   return (
@@ -15,6 +17,9 @@ export default function Home() {
         <About />
         <Advantages />
         <Branches />
+        <Container>
+          <ContactForm />
+        </Container>
       </main>
     </Layout>
   );

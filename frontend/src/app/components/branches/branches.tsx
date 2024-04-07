@@ -30,21 +30,18 @@ export default function Branches({ children }: PropsWithChildren) {
               priority
             />
           </div>
-          <div className={styles.text_box}>
-            <p className={styles.description}>
-              У нас обширная дилерская сеть во всех уголках России. Мы всегда
-              готовы предложить различные методы расчёта и варианты доставки.
-            </p>
-            <ul className={styles.list}>
-              {BRANCHES_DATA.map((city, idx) => (
-                <li key={idx} className={styles.item}>
-                  {city}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className={styles.description}>
+            У нас обширная дилерская сеть во всех уголках России. Мы всегда
+            готовы предложить различные методы расчёта и варианты доставки.
+          </p>
+          <ul className={styles.list}>
+            {BRANCHES_DATA.map((city, idx) => (
+              <li key={idx} className={styles.item}>
+                {city}
+              </li>
+            ))}
+          </ul>
         </div>
-        <ContactForm />
       </Container>
     </div>
   );

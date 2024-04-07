@@ -24,4 +24,11 @@
   .item {
     width: 100%;
   }
+  .content {
+    font-size: var(--fsz-xs);
+  }
+
+  .footer {
+    font-size: var(--fsz-sm);
+  }
 }

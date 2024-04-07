@@ -10,3 +10,9 @@
 .title--white {
   color: var(--color-text-light);
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--fsz-md);
+  }
+}
