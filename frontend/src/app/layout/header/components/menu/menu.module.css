@@ -1,3 +1,5 @@
+.wrapper {
+}
 .phone {
   display: none;
 }
@@ -44,6 +46,9 @@
 }
 
 @media (max-width: 680px) {
+  .wrapper {
+    padding: 0 10px;
+  }
   .list {
     display: flex;
     flex-flow: column nowrap;

@@ -24,7 +24,7 @@ const NAV_DATA = [
 
 export default function Menu() {
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.phone_wrapper}>
         <a className={styles.phone} href="tel:88009001010">
           8 800 900-10-10
@@ -40,6 +40,6 @@ export default function Menu() {
       <div className={styles.request_btn}>
         <Button text="Оставить заявку" />
       </div>
-    </>
+    </div>
   );
 }
