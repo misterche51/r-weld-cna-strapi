@@ -17,6 +17,17 @@
 
 .item {
   color: var(--color-text-dark);
+  flex-grow: 2;
+  padding: 10px;
+  text-align: center;
+  transition: color 0.1s ease-in-out;
+}
+.item + .item {
+  margin-left: 5px;
+}
+
+.item:hover {
+  color: var(--color-text-blue);
 }
 
 .item a {
