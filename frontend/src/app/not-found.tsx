@@ -1,8 +1,7 @@
 // "use client";
 import { PropsWithChildren } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./not-found.module.css";
-import Container from "@/app/layout/container/container";
 import Button from "./shared/button/button";
 
 export default function PageNotFound() {
@@ -20,7 +19,9 @@ export default function PageNotFound() {
           {"8 (900)-100-10-10"}
         </a>
         <div className={styles.button}>
-          <Button text="Оставить заявку" />
+          <Link href="/">
+            <Button text="На главную" />
+          </Link>
         </div>
       </div>
     </div>
