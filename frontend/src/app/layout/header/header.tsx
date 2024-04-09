@@ -24,9 +24,11 @@ const Logo = () => (
 
 export default function Header({ children }: PropsWithChildren) {
   const [isOpened, setIsOpened] = useState(false);
+  const [isDroppped, setIsDropped] = useState(false);
   const onMenuButtonClickHandler = () => {
     setIsOpened((val) => !val);
   };
+
   return (
     <header className={styles.wrapper}>
       <Container>

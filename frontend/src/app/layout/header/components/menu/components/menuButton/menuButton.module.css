@@ -8,7 +8,7 @@
   border: 2px solid var(--decorative-color-light-blue);
   background-color: var(--background-color-extra-light-blue);
   order: 3;
-  z-index: 20;
+  z-index: 2;
   cursor: pointer;
 
   position: relative;
