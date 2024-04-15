@@ -1,0 +1,21 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.drops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 22px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0 26px;
+}
+
+.drops__item {
+  width: calc(50% - 10px);
+}

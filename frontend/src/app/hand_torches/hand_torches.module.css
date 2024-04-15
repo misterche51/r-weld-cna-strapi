@@ -1,0 +1,101 @@
+.wrapper {
+  margin: 20px 0 100px 0;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+  margin-top: 80px;
+  background: var(--background-main-home-page);
+}
+.header::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: -80px;
+  width: 100%;
+  height: 80px;
+  background: var(--background-main-home-page);
+}
+
+.header h2 {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.advantages {
+  justify-self: center;
+  display: flex;
+  height: 52px;
+  align-self: center;
+}
+
+.button {
+  width: 154px;
+}
+
+.button + .button {
+  margin-left: 20px;
+}
+
+.button__input {
+  opacity: 0;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+
+.button__description {
+  transform: translateY(-75px);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: transform 0.3s ease-in;
+  z-index: -1;
+}
+
+.button__label {
+  font-size: var(--fsz-xs);
+  cursor: pointer;
+  width: 154px;
+  text-align: center;
+  line-height: 52px;
+}
+.button__input:checked + .button__label {
+  color: var(--decorative-color-light-blue);
+}
+.button__input:checked + .button__label + .button__description {
+  /* display: block; */
+  transform: translateY(70px);
+  opacity: 1;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  transition: margin-top 0.3s ease-in;
+  padding-top: 30px;
+  border-top: 2px solid var(--decorative-color-blue);
+}
+
+.list--advantages {
+  margin-top: 100px;
+}
+.list--usage {
+  margin-top: 80px;
+}
+
+.item {
+  width: calc(50% - 10px);
+  height: 480px;
+}

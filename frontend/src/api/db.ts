@@ -189,6 +189,50 @@ const DB: TDataBase = {
       { label: "Дымовытяжные установки" },
       { label: "Прочее" },
     ],
+    torches: [
+      {
+        label: "Сварочные горелки MIG",
+        image: "mig",
+        drops: [
+          {
+            label: "Воздушное охлаждение",
+            menu: [
+              { label: "RF", target: "" },
+              { label: "MB", target: "" },
+              { label: "R-WELD", target: "" },
+            ],
+          },
+          {
+            label: "Жидкостное охлаждение",
+            menu: [
+              { label: "ABITIG", target: "" },
+              { label: "R-WELD", target: "" },
+            ],
+          },
+        ],
+      },
+      {
+        label: "Сварочные горелки TIG",
+        image: "tig",
+        drops: [
+          {
+            label: "Воздушное охлаждение",
+            menu: [
+              { label: "RF", target: "" },
+              { label: "MB", target: "" },
+              { label: "R-WELD", target: "" },
+            ],
+          },
+          {
+            label: "Жидкостное охлаждение",
+            menu: [
+              { label: "ABITIG", target: "" },
+              { label: "R-WELD", target: "" },
+            ],
+          },
+        ],
+      },
+    ],
   },
 };
 export default DB;

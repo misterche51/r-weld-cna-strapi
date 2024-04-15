@@ -23,6 +23,7 @@
   --decorative-color-white: #ffffff;
   --decorative-color-blue: #25577a;
   --decorative-color-light-blue: #4e7997;
+
   /* FONT-SIZES */
   --fsz-xxs: 18px;
   --fsz-xs: 20px;
@@ -37,10 +38,6 @@
     var(--background-color-dark-blue) 0%,
     var(--background-color-dark-extra) 100%
   );
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -120,13 +117,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--color-text-dark);
+  background: var(--background-main-home-page);
 }
 
 a {

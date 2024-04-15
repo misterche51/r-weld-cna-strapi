@@ -10,6 +10,7 @@ const PRODUCTION_LIST_DATA = [
   {
     label: "Ручные горелки",
     type: "hand",
+    target: "hand_torches",
   },
   {
     label: "Роботизация и автоматизация",
