@@ -29,7 +29,7 @@ const NAV_DATA: Array<TMenuItem> = [
       },
       {
         label: "Сварочная химия и аксессуары",
-        target: "chemistry_and_accessories",
+        target: "chemistry",
       },
       {
         label: "Оборудование и прочее",

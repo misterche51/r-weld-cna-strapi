@@ -40,6 +40,7 @@ type TDataBase = {
   posts: TPostItem[];
   contacts: TContactsItem[];
   dealers: TRegionItem[];
+  catalog: Record<string, any>;
 };
 
 const DB: TDataBase = {
@@ -172,5 +173,22 @@ const DB: TDataBase = {
       ],
     },
   ],
+  catalog: {
+    chemistry: [
+      { label: "Сварочная химия" },
+      { label: "Электродержатели" },
+      { label: "Угольные электроды" },
+      { label: "Строгачи" },
+      { label: "Вольфрамовые электроды" },
+      { label: "Байонетные разъемы" },
+      { label: "Быстросъемные соединения" },
+      { label: "Прочие аксессуары" },
+    ],
+    equipment: [
+      { label: "Сварочные источники" },
+      { label: "Дымовытяжные установки" },
+      { label: "Прочее" },
+    ],
+  },
 };
 export default DB;
