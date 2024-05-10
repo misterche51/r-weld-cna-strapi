@@ -4,12 +4,11 @@ import React, { useState } from "react";
 import styles from "./hand_torches.module.css";
 
 // import { GetStaticPaths, GetStaticProps } from "next";
-
+import { TTorchesCatalog } from "@/api/db";
 import ContactForm from "@/app/shared/contactForm/contactForm";
 import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
-import CatalogItem from "@/app/shared/catalogItem/catalogItem";
 import Link from "next/link";
 import DB from "@/api/db";
 import CategorySelect from "./components/categorySelect/categorySelect";
@@ -26,6 +25,9 @@ const HandTorchesMain = () => {
   const onUsageButtonClickHandler = () => {
     setVisibleTestBlock("usage");
   };
+
+  const PREPARED_DATA = Object.values(DB.catalog.torches as TTorchesCatalog);
+
   return (
     <Layout>
       <Container>
@@ -77,10 +79,14 @@ const HandTorchesMain = () => {
               visibleTextBlock ? styles[`list--${visibleTextBlock}`] : ""
             }`}
           >
-            {DB.catalog.torches.map(({ label, image, drops }, i) => (
+            {PREPARED_DATA.map(({ label, image, categories }, i) => (
               <li key={i} className={styles.item}>
                 <Link href={`/`}>
-                  <CategorySelect label={label} image={image} drops={drops} />
+                  <CategorySelect
+                    label={label}
+                    image={image}
+                    categories={categories}
+                  />
                 </Link>
               </li>
             ))}

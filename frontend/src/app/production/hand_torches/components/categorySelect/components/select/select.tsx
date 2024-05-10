@@ -1,9 +1,18 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./select.module.css";
-import { TMenuItem } from "../..";
+// import { TMenuItem } from "../..";
+import { TTorcheSubCategoryData } from "@/api/db";
 
-export default function Select({ label, menu }: TMenuItem) {
+type TSelectProps = {
+  label: string;
+  options: {
+    label: string;
+    target: string;
+  }[];
+};
+
+export default function Select({ label, options }: TSelectProps) {
   const [isDropped, setIsDropped] = useState(false);
   const onDropHover = () => setIsDropped(true);
   const onDropUnHover = () => setIsDropped(false);
@@ -20,9 +29,9 @@ export default function Select({ label, menu }: TMenuItem) {
         }`}
       >
         <ul className={styles.list}>
-          {menu.map(({ label, target }, i) => (
+          {options.map(({ label, target }, i) => (
             <li className={styles.item} key={i}>
-              <Link href={`/${target}`}>{label}</Link>
+              <Link href={`/production/hand_torches/${[target]}`}>{label}</Link>
             </li>
           ))}
         </ul>

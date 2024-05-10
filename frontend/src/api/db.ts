@@ -36,11 +36,40 @@ type TRegionItem = {
   list: TDealerItem[];
 };
 
+type TTorchesCategoryName = "mig" | "tig";
+export type TTorcheSubCategoryData = {
+  label: string;
+  target: string;
+};
+
+type TCoolingType = "Воздушное охлаждение" | "Жидкостное охлаждение";
+
+export type TTorchesItem = {
+  name: string;
+  image: string;
+  co2: string;
+  gas: string;
+  pv: string;
+  wire: string;
+};
+export type TTorchesCatalog = Record<
+  TTorchesCategoryName,
+  TTorchesCategoryData
+>;
+
+type TCatalogItem = "chemistry" | "equipment" | "torches" | "roborization";
+
 type TDataBase = {
   posts: TPostItem[];
   contacts: TContactsItem[];
   dealers: TRegionItem[];
-  catalog: Record<string, any>;
+  catalog: Record<TCatalogItem, TTorchesCatalog | any>;
+};
+
+export type TTorchesCategoryData = {
+  label: string;
+  image: string;
+  categories: Record<TCoolingType, TTorcheSubCategoryData[]>;
 };
 
 const DB: TDataBase = {
@@ -189,50 +218,186 @@ const DB: TDataBase = {
       { label: "Дымовытяжные установки" },
       { label: "Прочее" },
     ],
-    torches: [
-      {
+    torches: {
+      mig: {
         label: "Сварочные горелки MIG",
         image: "mig",
-        drops: [
-          {
-            label: "Воздушное охлаждение",
-            menu: [
-              { label: "RF", target: "" },
-              { label: "MB", target: "" },
-              { label: "R-WELD", target: "" },
-            ],
-          },
-          {
-            label: "Жидкостное охлаждение",
-            menu: [
-              { label: "ABITIG", target: "" },
-              { label: "R-WELD", target: "" },
-            ],
-          },
-        ],
+        categories: {
+          "Воздушное охлаждение": [
+            {
+              label: "RF",
+              target: "mig_rf_air",
+              list: [
+                {
+                  name: "RF GRIP 15",
+                  image: "",
+                  co2: "180 A",
+                  gas: "150 A",
+                  pv: "60%",
+                  wire: "0.6 - 1.0 мм",
+                },
+              ],
+            },
+            {
+              label: "MB",
+              target: "mig_mb_air",
+            },
+            {
+              label: "R-WELD",
+              target: "mig_r-weld_air",
+            },
+          ],
+          "Жидкостное охлаждение": [
+            {
+              label: "RF",
+              target: "mig_rf_liquid",
+            },
+            {
+              label: "MB",
+              target: "mig_mb_liquid",
+            },
+            {
+              label: "R-WELD",
+              target: "mig_r-weld_liquid",
+            },
+          ],
+        },
       },
-      {
+      tig: {
         label: "Сварочные горелки TIG",
         image: "tig",
-        drops: [
-          {
-            label: "Воздушное охлаждение",
-            menu: [
-              { label: "RF", target: "" },
-              { label: "MB", target: "" },
-              { label: "R-WELD", target: "" },
-            ],
-          },
-          {
-            label: "Жидкостное охлаждение",
-            menu: [
-              { label: "ABITIG", target: "" },
-              { label: "R-WELD", target: "" },
-            ],
-          },
-        ],
+        categories: {
+          "Воздушное охлаждение": [
+            {
+              label: "ABITIG",
+              target: "tig_abitig_air",
+            },
+            {
+              label: "R-WELD",
+              target: "tig_r-weld_air",
+            },
+          ],
+          "Жидкостное охлаждение": [
+            {
+              label: "ABITIG",
+              target: "tig_abitig_liquid",
+            },
+            {
+              label: "R-WELD",
+              target: "tig_r-weld_liquid",
+            },
+          ],
+        },
       },
-    ],
+    } as TTorchesCatalog,
+    roborization: "",
   },
 };
 export default DB;
+
+export type TTorchesType =
+  | "mig_rf_air"
+  | "mig_rf_liquid"
+  | "mig_mb_air"
+  | "mig_mb_liquid"
+  | "mig_r-weld_air"
+  | "mig_r-weld_liquid"
+  | "tig_abitig_air"
+  | "tig_abitig_liquid"
+  | "tig_r-weld_air"
+  | "tig_r-weld_liquid";
+
+export const TORCHES_DB: Record<
+  TTorchesType,
+  { label: string; list: TTorchesItem[] }
+> = {
+  mig_rf_air: {
+    label: "Ручные горелки RF GRIP",
+    list: [
+      {
+        name: "RF GRIP 15",
+        image: "",
+        co2: "180 A",
+        gas: "150 A",
+        pv: "60%",
+        wire: "0.6 - 1.0 мм",
+      },
+      {
+        name: "RF GRIP 25",
+        image: "",
+        co2: "180 A",
+        gas: "200 A",
+        pv: "60%",
+        wire: "0.6 - 1.0 мм",
+      },
+      {
+        name: "RF GRIP 26",
+        image: "",
+        co2: "180 A",
+        gas: "200 A",
+        pv: "60%",
+        wire: "0.6 - 1.0 мм",
+      },
+      {
+        name: "RF GRIP 36",
+        image: "",
+        co2: "180 A",
+        gas: "200 A",
+        pv: "60%",
+        wire: "0.6 - 1.0 мм",
+      },
+      {
+        name: "RF GRIP 36 LC",
+        image: "",
+        co2: "180 A",
+        gas: "200 A",
+        pv: "60%",
+        wire: "0.6 - 1.0 мм",
+      },
+      {
+        name: "RF GRIP 45",
+        image: "",
+        co2: "180 A",
+        gas: "200 A",
+        pv: "60%",
+        wire: "0.6 - 1.0 мм",
+      },
+    ],
+  },
+  mig_rf_liquid: {
+    label: "",
+    list: [],
+  },
+  mig_mb_air: {
+    label: "Ручные горелки MB EVO",
+    list: [],
+  },
+  mig_mb_liquid: {
+    label: "",
+    list: [],
+  },
+  "mig_r-weld_air": {
+    label: "",
+    list: [],
+  },
+  "mig_r-weld_liquid": {
+    label: "",
+    list: [],
+  },
+  tig_abitig_air: {
+    label: "",
+    list: [],
+  },
+  tig_abitig_liquid: {
+    label: "",
+    list: [],
+  },
+  "tig_r-weld_air": {
+    label: "",
+    list: [],
+  },
+  "tig_r-weld_liquid": {
+    label: "",
+    list: [],
+  },
+};
