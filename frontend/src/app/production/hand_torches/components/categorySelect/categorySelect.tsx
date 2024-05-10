@@ -16,7 +16,8 @@ export default function CategorySelect({
 }: TCatalogItemProps) {
   return (
     <div className={styles.wrapper}>
-      <CatalogItem label={label} image={image} />
+      <CatalogItem image={image} withDrop={true} />
+      <h3 className={styles.label}>{label}</h3>
       <ul className={styles.drops}>
         {drops.map(({ label, menu }, i) => (
           <li key={i} className={styles.drops__item}>

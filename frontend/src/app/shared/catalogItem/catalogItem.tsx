@@ -2,13 +2,22 @@ import styles from "./catalogItem.module.css";
 import Image from "next/image";
 
 type TCatalogItemProps = {
-  label: string;
+  label?: string;
   image?: string;
+  withDrop?: boolean;
 };
 
-export default function CatalogItem({ label, image }: TCatalogItemProps) {
+export default function CatalogItem({
+  label,
+  image,
+  withDrop = false,
+}: TCatalogItemProps) {
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={`${styles.wrapper} ${
+        withDrop ? "" : styles["wrapper--with-hover"]
+      }`}
+    >
       {image && (
         <Image
           className={styles.image}
@@ -20,7 +29,7 @@ export default function CatalogItem({ label, image }: TCatalogItemProps) {
         />
       )}
 
-      <p className={styles.label}>{label}</p>
+      {label && <p className={styles.label}>{label}</p>}
     </div>
   );
 }

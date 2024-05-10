@@ -14,7 +14,8 @@ const PRODUCTION_LIST_DATA = [
   },
   {
     label: "Роботизация и автоматизация",
-    type: "robots",
+    type: "robotization",
+    target: "robotization",
   },
   {
     label: "Сварочная химия и аксессуары",
@@ -28,30 +29,36 @@ const PRODUCTION_LIST_DATA = [
   },
 ];
 
+export const List = () => {
+  return (
+    <ul className={styles.list}>
+      {PRODUCTION_LIST_DATA.map(({ label, type, target }, i) => (
+        <li key={i} className={styles.item}>
+          <Link href={`/production/${target}`}>
+            <>
+              <Image
+                className={styles.image}
+                src={`/${type}.jpg`}
+                alt="label"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
+              <p className={styles.label}>{label}</p>
+            </>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export default function Production({ children }: PropsWithChildren) {
   return (
     <div className={styles.wrapper}>
       <Container>
         <SectionTitle variant="black" text="Продукция" />
-        <ul className={styles.list}>
-          {PRODUCTION_LIST_DATA.map(({ label, type, target }, i) => (
-            <li key={i} className={styles.item}>
-              <Link href={`/${target}`}>
-                <>
-                  <Image
-                    className={styles.image}
-                    src={`/${type}.jpg`}
-                    alt="label"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    priority
-                  />
-                  <p className={styles.label}>{label}</p>
-                </>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <List />
       </Container>
     </div>
   );

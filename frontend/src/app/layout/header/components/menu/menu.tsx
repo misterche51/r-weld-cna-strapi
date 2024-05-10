@@ -21,19 +21,19 @@ const NAV_DATA: Array<TMenuItem> = [
     menu: [
       {
         label: "Ручные горелки",
-        target: "hand_torches",
+        target: "production/hand_torches",
       },
       {
         label: "Роботизация и автоматизация",
-        target: "robotization_and_automation",
+        target: "production/robotization_and_automation",
       },
       {
         label: "Сварочная химия и аксессуары",
-        target: "chemistry",
+        target: "production/chemistry",
       },
       {
         label: "Оборудование и прочее",
-        target: "equipment",
+        target: "production/equipment",
       },
     ],
   },
