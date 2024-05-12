@@ -1,10 +1,10 @@
-import Image from "next/image";
 import styles from "./item.module.css";
 import { TTorchesItem } from "@/api/db";
+import Image from "next/image";
 
 const LABELS_DICT = {
   co2: "CO2",
-  gas: "Газовая смесь М21",
+  gas: "Газ.смесь М21",
   pv: "ПВ",
   wire: "Проволока",
 };
@@ -16,19 +16,30 @@ const Row = ({
   label: "co2" | "gas" | "pv" | "wire";
   value: string;
 }) => (
-  <div className={styles.info__row}>
-    <p>{LABELS_DICT[label]}</p>
-    <span></span>
-    <p>{value}</p>
+  <div className={styles.row}>
+    <p className={styles.row__label}>{LABELS_DICT[label]}</p>
+    <span className={styles.row__divider}></span>
+    <p className={styles.row__value}>{value}</p>
   </div>
 );
 
 const Item = ({ name, image, co2, gas, wire, pv }: TTorchesItem) => {
   const rows = ["co2", "gas", "pv", "wire"] as const;
   const params = [co2, gas, pv, wire];
+  const img = image === "" ? "mb_evo_15.png" : image;
   return (
-    <div>
-      <p>{name}</p>
+    <div className={styles.wrapper}>
+      <p className={styles.label}>{name}</p>
+      <div className={styles.image}>
+        <Image
+          className={styles.image__pic}
+          src={`/torches/${img}`}
+          alt={name}
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
+      </div>
       <div className={styles.info}>
         <p className={styles.info__title}>Нагрузка:</p>
         {rows.map((label, i) => (

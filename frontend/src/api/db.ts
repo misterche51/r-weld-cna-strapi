@@ -230,7 +230,7 @@ const DB: TDataBase = {
               list: [
                 {
                   name: "RF GRIP 15",
-                  image: "",
+                  image: "rf_grip_15",
                   co2: "180 A",
                   gas: "150 A",
                   pv: "60%",

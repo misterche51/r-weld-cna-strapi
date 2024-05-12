@@ -22,10 +22,10 @@ const Page = ({
       <div className={styles.wrapper}>
         <Container>
           <div className={styles.inner}>
-            <Heading rank={2} text={label} withUnderline={true} />
+            <Heading rank={2} text={label} withUnderline={false} />
             <ul className={styles.list}>
               {list.map((data, i) => (
-                <li key={i}>
+                <li key={i} className={styles.list__item}>
                   <Item {...data} />
                 </li>
               ))}
