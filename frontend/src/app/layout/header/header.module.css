@@ -64,7 +64,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .intaractions_box {
     position: absolute;
     right: 20px;
@@ -79,6 +79,11 @@
 
   .search {
     width: calc(100% - 190px);
+  }
+}
+@media (max-width: 720px) {
+  .navigation {
+    margin-left: 10px;
   }
 }
 

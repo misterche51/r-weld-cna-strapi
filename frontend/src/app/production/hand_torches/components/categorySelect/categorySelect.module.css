@@ -50,3 +50,37 @@
     width: calc(50% - 9px);
   }
 }
+
+@media (max-width: 768px) {
+  .drops {
+    justify-content: center;
+  }
+  .drops__item {
+    max-width: 200px;
+  }
+  .drops__item + .drops__item {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 710px) {
+  .drops {
+    /* text-align: center; */
+    z-index: 2;
+  }
+
+  .label {
+    font-size: var(--fsz-md);
+    top: 82px;
+    left: calc(50% + 20px);
+    width: calc(50% - 20px);
+  }
+
+  @media (max-width: 480px) {
+    .label {
+      top: 31px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

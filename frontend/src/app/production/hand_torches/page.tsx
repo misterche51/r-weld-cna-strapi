@@ -45,7 +45,9 @@ const HandTorchesMain = () => {
                   onChange={onAdvantagesButtonClickHandler}
                 />
                 <span className={styles.button__label}>Преимущества</span>
-                <span className={styles.button__description}>
+                <span
+                  className={`${styles.button__description} ${styles["button__description--advantages"]}`}
+                >
                   Срок службы выше аналогов за счёт производства
                   по международным стандартам и немецким технологиям. 
                   Эргономичный дизайн облегчает работу сварщика и уменьшает
@@ -66,7 +68,9 @@ const HandTorchesMain = () => {
                   onChange={onUsageButtonClickHandler}
                 />
                 <span className={styles.button__label}>Применение</span>
-                <span className={styles.button__description}>
+                <span
+                  className={`${styles.button__description} ${styles["button__description--usage"]}`}
+                >
                   Наши горелки используются во всех сферах промышленности:
                   от автомобилестроения и производства металлоконструкций,
                   до судостроения и инновационных технологий.
