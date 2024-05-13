@@ -24,9 +24,9 @@ const ChemistryMain = () => (
           withUnderline={false}
         />
         <ul className={styles.list}>
-          {DB.catalog.chemistry.map(({ label, image }, i) => (
+          {DB.catalog.chemistry.map(({ label, target, image }, i) => (
             <li key={i} className={styles.item}>
-              <Link href={`/`}>
+              <Link href={`/production/chemistry/${target}`}>
                 <CatalogItem label={label} image={image} />
               </Link>
             </li>
