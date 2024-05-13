@@ -21,7 +21,7 @@ const ChemistryMain = () => (
         <Heading
           rank={2}
           text="Сварочная химия и аксессуары"
-          withUnderline={true}
+          withUnderline={false}
         />
         <ul className={styles.list}>
           {DB.catalog.chemistry.map(({ label, image }, i) => (
