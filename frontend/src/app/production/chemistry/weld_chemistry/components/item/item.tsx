@@ -6,7 +6,10 @@ const Item = ({ name, image, info }) => {
   const img = image === "" ? "binzel.jpg" : image;
   return (
     <div className={styles.wrapper}>
-      <p className={styles.label}>{name}</p>
+      <div className={styles.label}>
+        <p className={styles.label__text}>{name}</p>
+      </div>
+
       <div className={styles.image}>
         <Image
           className={styles.image__pic}
