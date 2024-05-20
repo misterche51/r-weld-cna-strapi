@@ -205,7 +205,7 @@ const DB: TDataBase = {
   catalog: {
     chemistry: [
       { label: "Сварочная химия", target: "weld_chemistry", image: "" },
-      { label: "Электродержатели" },
+      { label: "Электродержатели", target: "electrical_holders", image: "" },
       { label: "Угольные электроды" },
       { label: "Строгачи" },
       { label: "Вольфрамовые электроды" },
@@ -402,7 +402,23 @@ export const TORCHES_DB: Record<
   },
 };
 
-export const CHEMISTRY_DB = {
+export type TChemistrySectionHeader = {
+  label: string;
+  description?: string;
+};
+export type TElectricalHoldersContent = {
+  images: Record<string, { src: string; alt: string; title?: string }>;
+};
+
+type TElectricalHoldersData = TChemistrySectionHeader &
+  TElectricalHoldersContent;
+
+type TChemistryDB = {
+  weld_chemistry: any;
+  electrical_holders: TElectricalHoldersData;
+};
+
+export const CHEMISTRY_DB: TChemistryDB = {
   weld_chemistry: {
     label: "Сварочная химия",
     description:
@@ -454,5 +470,25 @@ export const CHEMISTRY_DB = {
         info: "Позволяет избежать: истончения меди и электролитической коррозии.",
       },
     ],
+  },
+  electrical_holders: {
+    label: "Электродержатели DE2200 / DE2300 / DE2400 / DE2500",
+    description:
+      "В своём стремлении улучшить пользовательский опыт мы упускаем, что представители современных социальных резервов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут подвергнуты целой серии независимых исследований. А ещё элементы политического процесса смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.\n\nОднозначно, базовые сценарии поведения пользователей, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что интерактивные прототипы объективно рассмотрены соответствующими инстанциями.",
+    images: {
+      table: {
+        src: "holders_table.jpg",
+        alt: "Таблица каталога электродержателей",
+      },
+      scheme: {
+        src: "holders_scheme.jpg",
+        alt: "Устройство электродержателя схема",
+      },
+      parts: {
+        title: "Запчасти и расходники",
+        src: "holders_parts.jpg",
+        alt: "Запчасти и расходники",
+      },
+    },
   },
 };

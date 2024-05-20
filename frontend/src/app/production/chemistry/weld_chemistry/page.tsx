@@ -8,16 +8,18 @@ import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
 import { CHEMISTRY_DB } from "@/api/db";
 import Item from "./components/item/item";
+import Description from "@/app/shared/description/description";
 
 const Page = () => {
   const { label, description, list } = CHEMISTRY_DB.weld_chemistry;
+
   return (
     <Layout>
       <div className={styles.wrapper}>
         <Container>
           <div className={styles.inner}>
-            <Heading rank={2} text={label} withUnderline={false} />
-            <p className={styles.description}>{description}</p>
+            <Heading rank={2} text={label} withUnderline={true} />
+            {description && <Description description={description} />}
             <ul className={styles.list}>
               {list.map((data, i) => (
                 <li key={i} className={styles.list__item}>
