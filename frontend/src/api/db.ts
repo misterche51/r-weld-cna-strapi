@@ -210,7 +210,11 @@ const DB: TDataBase = {
       { label: "Строгачи", target: "planers", image: "" },
       { label: "Вольфрамовые электроды" },
       { label: "Байонетные разъемы" },
-      { label: "Быстросъемные соединения" },
+      {
+        label: "Быстросъемные соединения",
+        target: "quick_couplings",
+        image: "",
+      },
       { label: "Прочие аксессуары", target: "others", image: "" },
     ],
     equipment: [
@@ -406,18 +410,18 @@ export type TChemistrySectionHeader = {
   label: string;
   description?: string;
 };
-export type TElectricalHoldersContent = {
+export type TChemistrySectionContent = {
   images: Record<string, { src: string; alt: string; title?: string }>;
 };
 
-type TElectricalHoldersData = TChemistrySectionHeader &
-  TElectricalHoldersContent;
+type TChemistrySectionData = TChemistrySectionHeader & TChemistrySectionContent;
 
 type TChemistryDB = {
   weld_chemistry: any;
-  electrical_holders: TElectricalHoldersData;
-  carbon_electrodes: any;
-  planers: any;
+  electrical_holders: TChemistrySectionData;
+  carbon_electrodes: TChemistrySectionData;
+  planers: TChemistrySectionData;
+  quick_couplings: TChemistrySectionData;
   others: TChemistrySectionHeader;
 };
 
@@ -554,6 +558,21 @@ export const CHEMISTRY_DB: TChemistryDB = {
       assembled_img: {
         src: "assembled_img.jpg",
         alt: "Общий вид строгача в сборе",
+      },
+    },
+  },
+  quick_couplings: {
+    label: "Быстросъемные соединения",
+    description:
+      "В своём стремлении улучшить пользовательский опыт мы упускаем, что представители современных социальных резервов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут подвергнуты целой серии независимых исследований. А ещё элементы политического процесса смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.\n\nОднозначно, базовые сценарии поведения пользователей, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что интерактивные прототипы объективно рассмотрены соответствующими инстанциями.",
+    images: {
+      table_0: {
+        src: "table_0.jpg",
+        alt: "Сводная таблица с быстросъемными соединениями, часть 1",
+      },
+      table_1: {
+        src: "table_1.jpg",
+        alt: "Сводная таблица с быстросъемными соединениями, часть 2",
       },
     },
   },
