@@ -209,7 +209,7 @@ const DB: TDataBase = {
       { label: "Угольные электроды", target: "carbon_electrodes", image: "" },
       { label: "Строгачи", target: "planers", image: "" },
       { label: "Вольфрамовые электроды" },
-      { label: "Байонетные разъемы" },
+      { label: "Байонетные разъемы", target: "bayonet_connectors", image: "" },
       {
         label: "Быстросъемные соединения",
         target: "quick_couplings",
@@ -416,12 +416,46 @@ export type TChemistrySectionContent = {
 
 type TChemistrySectionData = TChemistrySectionHeader & TChemistrySectionContent;
 
+type TImageData = {
+  src: string;
+  alt: string;
+};
+
+type TBayonetConnectorsTechInfoSection = {
+  title: string;
+  image: TImageData;
+  table: {
+    heading: string;
+    rows: string[];
+  };
+};
+
+type TBayonetConnectorsSystemsTable = {
+  heading: string;
+  rows: { label: string; number: string }[];
+};
+type TBayonetConnectorsSystemsSection = {
+  title: string;
+  sections: {
+    image: TImageData;
+    tables: TBayonetConnectorsSystemsTable[];
+  }[];
+};
+
+type TBayonetConnectorsContent = {
+  data: {
+    technical_info: TBayonetConnectorsTechInfoSection;
+    systems: TBayonetConnectorsSystemsSection;
+  };
+};
+
 type TChemistryDB = {
   weld_chemistry: any;
   electrical_holders: TChemistrySectionData;
   carbon_electrodes: TChemistrySectionData;
   planers: TChemistrySectionData;
   quick_couplings: TChemistrySectionData;
+  bayonet_connectors: TChemistrySectionHeader & TBayonetConnectorsContent;
   others: TChemistrySectionHeader;
 };
 
@@ -573,6 +607,86 @@ export const CHEMISTRY_DB: TChemistryDB = {
       table_1: {
         src: "table_1.jpg",
         alt: "Сводная таблица с быстросъемными соединениями, часть 2",
+      },
+    },
+  },
+  bayonet_connectors: {
+    label: "Байонетные разъемы",
+    description:
+      "В своём стремлении улучшить пользовательский опыт мы упускаем, что представители современных социальных резервов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут подвергнуты целой серии независимых исследований. А ещё элементы политического процесса смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.\n\nОднозначно, базовые сценарии поведения пользователей, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что интерактивные прототипы объективно рассмотрены соответствующими инстанциями.",
+    data: {
+      technical_info: {
+        title: "Технические данные",
+        image: {
+          src: "technical_info.jpeg",
+          alt: "Таблица с техническими данными байонетных разъемов",
+        },
+        table: {
+          heading: "*ABI–CM / ABI–IF или АBI–CF / ABI–IM",
+          rows: [
+            "ABI–CM (Cable Male) = кабельный штекер",
+            "ABI–CF (Cable Female) = кабельное гнездо",
+            "ABI–IM (Insert мale) = панельный штекер",
+            "ABI–IF (Insert Female) = панельное гнездо",
+          ],
+        },
+      },
+      systems: {
+        title: "Система байонетных разъемов",
+        sections: [
+          {
+            image: {
+              src: "table_1-8.jpg",
+              alt: "Общий вид разъемов 1-8 из таблицы",
+            },
+            tables: [
+              {
+                heading: "Панельные гнезда",
+                rows: [
+                  { label: "1. ABI–IF 10–25", number: "Идент. No: 511.0304" },
+                  { label: "2. ABI–IF 35-50", number: "Идент. No: 511.0314" },
+                  { label: "3. ABI–IF 50–70", number: "Идент. No: 511.0330" },
+                  { label: "4. ABI-IF 70-95", number: "Идент. No: 511.0309" },
+                ],
+              },
+              {
+                heading: "Кабельные штекера",
+                rows: [
+                  { label: "5. ABI–CM 10–25", number: "Идент. No: 511.0305" },
+                  { label: "6. ABI–CM 35-50", number: "Идент. No: 511.0315" },
+                  { label: "7. ABI–CM 50–70", number: "Идент. No: 511.0331" },
+                  { label: "8. ABI-CM 70-95", number: "Идент. No: 511.0342" },
+                ],
+              },
+            ],
+          },
+          {
+            image: {
+              src: "table_9-16.jpg",
+              alt: "Общий вид разъемов 9-16 из таблицы",
+            },
+            tables: [
+              {
+                heading: "Панельные гнезда",
+                rows: [
+                  { label: "9. ABI–IM 10–25", number: "Идент. No: 511.0306" },
+                  { label: "10. ABI–IM 35-50", number: "Идент. No: 511.0316" },
+                  { label: "11. ABI–IM 50–70", number: "Идент. No: 511.0332" },
+                  { label: "12. ABI-IM 70-95", number: "Идент. No: 511.0320" },
+                ],
+              },
+              {
+                heading: "Кабельные штекера",
+                rows: [
+                  { label: "13. ABI–CF 10–25", number: "Идент. No: 511.0303" },
+                  { label: "14. ABI–CF 35-50", number: "Идент. No: 511.0313" },
+                  { label: "15. ABI–CF 50–70", number: "Идент. No: 511.0329" },
+                  { label: "16. ABI-CF 70-95", number: "Идент. No: 511.0340" },
+                ],
+              },
+            ],
+          },
+        ],
       },
     },
   },
