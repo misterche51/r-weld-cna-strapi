@@ -6,12 +6,12 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
-import { CHEMISTRY_DB } from "@/api/db";
+import { CATALOG_DB } from "@/api/db";
 import Item from "./components/item/item";
 import Description from "@/app/shared/description/description";
 
 const Page = () => {
-  const { label, description, list } = CHEMISTRY_DB.weld_chemistry;
+  const { label, description, list } = CATALOG_DB.chemistry.weld_chemistry;
 
   return (
     <Layout>

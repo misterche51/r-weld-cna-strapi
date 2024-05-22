@@ -6,12 +6,13 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
-import { CHEMISTRY_DB } from "@/api/db";
+import { CATALOG_DB } from "@/api/db";
 import ImageWrapper from "../components/imageWrapper/imageWrapper";
 import Description from "@/app/shared/description/description";
 
 const Page = () => {
-  const { label, description, image } = CHEMISTRY_DB.tungsten_electrodes;
+  const { label, description, image } =
+    CATALOG_DB.chemistry.tungsten_electrodes;
   // const sectionNames = Object.keys(images);
   return (
     <Layout>

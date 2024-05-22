@@ -6,12 +6,12 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
-import { CHEMISTRY_DB } from "@/api/db";
+import { CATALOG_DB } from "@/api/db";
 import ImageWrapper from "../components/imageWrapper/imageWrapper";
 import Description from "@/app/shared/description/description";
 
 const Page = () => {
-  const { label, description, data } = CHEMISTRY_DB.bayonet_connectors;
+  const { label, description, data } = CATALOG_DB.chemistry.bayonet_connectors;
   const { technical_info, systems } = data;
   return (
     <Layout>

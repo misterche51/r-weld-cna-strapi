@@ -6,11 +6,11 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
-import { CHEMISTRY_DB } from "@/api/db";
+import { CATALOG_DB } from "@/api/db";
 import Description from "@/app/shared/description/description";
 
 const Page = () => {
-  const { label, description, images } = CHEMISTRY_DB.quick_couplings;
+  const { label, description, images } = CATALOG_DB.chemistry.quick_couplings;
   const tables = Object.values(images);
   return (
     <Layout>

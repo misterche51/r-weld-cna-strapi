@@ -14,3 +14,28 @@
   height: 480px;
   margin-top: 40px;
 }
+
+@media (max-width: 640px) {
+  .item {
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .item:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--decorative-color-blue);
+    top: -20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .item {
+    height: 300px;
+  }
+}

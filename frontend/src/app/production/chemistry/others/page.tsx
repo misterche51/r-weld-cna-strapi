@@ -5,11 +5,11 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
-import { CHEMISTRY_DB } from "@/api/db";
+import { CATALOG_DB } from "@/api/db";
 import Description from "@/app/shared/description/description";
 
 const Page = () => {
-  const { label, description } = CHEMISTRY_DB.others;
+  const { label, description } = CATALOG_DB.chemistry.others;
   return (
     <Layout>
       <div className={styles.wrapper}>
