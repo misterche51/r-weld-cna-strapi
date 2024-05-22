@@ -3,30 +3,23 @@
 }
 
 .image {
-  width: 100%;
-  position: relative;
   margin-bottom: 100px;
 }
 
 .image--scheme {
-  padding-bottom: 75.6%;
 }
 
 .image--components {
-  padding-bottom: 70.1%;
 }
 
 .image--technical_info {
-  padding-bottom: 17.3%;
 }
 
 .image--assembled_table {
-  padding-bottom: 23.2%;
   margin-bottom: 50px;
 }
 
 .image--assembled_img {
-  padding-bottom: 46.3%;
 }
 
 .form {

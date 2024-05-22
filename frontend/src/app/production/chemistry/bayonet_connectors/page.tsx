@@ -31,8 +31,12 @@ const Page = () => {
                   <Image
                     src={`/bayonet_connectors/${technical_info.image.src}`}
                     alt={technical_info.image.alt}
-                    fill
-                    style={{ objectFit: "contain" }}
+                    width={628}
+                    height={360}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
                     priority
                   />
                 </div>
@@ -79,8 +83,12 @@ const Page = () => {
                       <Image
                         src={`/bayonet_connectors/${data.image.src}`}
                         alt={data.image.alt}
-                        fill
-                        style={{ objectFit: "contain" }}
+                        width={628}
+                        height={628}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
                         priority
                       />
                     </div>

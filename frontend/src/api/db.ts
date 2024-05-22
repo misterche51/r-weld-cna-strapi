@@ -208,7 +208,11 @@ const DB: TDataBase = {
       { label: "Электродержатели", target: "electrical_holders", image: "" },
       { label: "Угольные электроды", target: "carbon_electrodes", image: "" },
       { label: "Строгачи", target: "planers", image: "" },
-      { label: "Вольфрамовые электроды" },
+      {
+        label: "Вольфрамовые электроды",
+        target: "tungsten_electrodes",
+        image: "",
+      },
       { label: "Байонетные разъемы", target: "bayonet_connectors", image: "" },
       {
         label: "Быстросъемные соединения",
@@ -449,12 +453,17 @@ type TBayonetConnectorsContent = {
   };
 };
 
+type TTungstenElectrodesContent = {
+  image: TImageData & { description: string };
+};
+
 type TChemistryDB = {
   weld_chemistry: any;
   electrical_holders: TChemistrySectionData;
   carbon_electrodes: TChemistrySectionData;
   planers: TChemistrySectionData;
   quick_couplings: TChemistrySectionData;
+  tungsten_electrodes: TChemistrySectionHeader & TTungstenElectrodesContent;
   bayonet_connectors: TChemistrySectionHeader & TBayonetConnectorsContent;
   others: TChemistrySectionHeader;
 };
@@ -608,6 +617,15 @@ export const CHEMISTRY_DB: TChemistryDB = {
         src: "table_1.jpg",
         alt: "Сводная таблица с быстросъемными соединениями, часть 2",
       },
+    },
+  },
+  tungsten_electrodes: {
+    label: "Вольфрамовые электроды",
+    image: {
+      src: "",
+      alt: "Вольфрамовые электроды",
+      description:
+        "Электроды с добавкой оксида лантана универсальные и применяются почти во всех областях сварки DC и АС. Главное применение они находят при сварке не — и высоколегированных сталей как и сплавов алюминия, никеля, меди и магнезия. Дальше они используются при микроплазменной сварке. Благодаря хорошим свойствам поджига идеально подходят для автоматической сварки.\nЦветная маркировка:\nWL 10 = чёрный / WL 15 = золотой / WL 20 = синий.\n\nУниверсальные электроды практически для всех процессов сварки TIG, не радиоактивны. Благодаря добавке оксида церия (СеО2) электроды данного типа обладают рабочими свойствами, схожими с WТ электродами. Применяются для сварки нелегированных и высоколегированных сталей, алюминия, титана, никеля, меди и сплавов магния в режимах DC и AС.\nЦветная маркировка:\nWC 20 = серый.\n\nВольфрамовые электроды с добавкой циркония уменьшают опасность попадания вольфрама в сварной шов. Область применения данных электродов является сварка переменным током (АС). Цветная маркировка: WZ 08 = белый. Электроды без добавок состоящие из чистого вольфрама. Главной областью применения этих электродов является сварка переменным током (АС) сплавов алюминия при хорошей устойчивости дуги. Электроды WP не пригодны для сварки прямым током (DC).\nЦветная маркировка:\nWP = зелёный",
     },
   },
   bayonet_connectors: {

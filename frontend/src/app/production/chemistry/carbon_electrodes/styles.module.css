@@ -3,29 +3,21 @@
 }
 
 .image {
-  width: 100%;
-  position: relative;
   margin-bottom: 50px;
 }
 
 .image--abiarc_dc_single {
-  padding-bottom: 20%;
 }
 
 .image--abiarc_ac_single {
-  padding-bottom: 15%;
-  /* margin-bottom: 100px; */
 }
 .image--abiarc_dc_connectable {
-  padding-bottom: 15%;
 }
 
 .image--abiarc_dc_flat {
-  padding-bottom: 9%;
 }
 
 .image--abiarc_al_ac {
-  padding-bottom: 15%;
 }
 
 .form {

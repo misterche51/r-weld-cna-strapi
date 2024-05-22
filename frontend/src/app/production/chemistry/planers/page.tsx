@@ -34,8 +34,12 @@ const Page = () => {
                         className={styles.image__pic}
                         src={`/planers/${src}`}
                         alt={alt}
-                        fill
-                        style={{ objectFit: "contain" }}
+                        width={1276}
+                        height={300}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
                         priority
                       />
                     </div>

@@ -33,9 +33,13 @@ const Page = () => {
                         className={styles.image__pic}
                         src={`/carbon_electrodes/${src}`}
                         alt={alt}
-                        fill
-                        style={{ objectFit: "contain" }}
+                        width={1276}
+                        height={300}
                         priority
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
                       />
                     </div>
                   }

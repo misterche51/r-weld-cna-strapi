@@ -4,22 +4,18 @@
 
 .image {
   width: 100%;
-  position: relative;
 }
 
 .image--table {
-  padding-bottom: 27%;
 }
 
 .image--scheme {
-  padding-bottom: 67%;
   border-top: 2px solid var(--decorative-color-blue);
   margin-bottom: 100px;
 }
 
 .image--parts {
   border-top: 2px solid var(--decorative-color-blue);
-  padding-bottom: 44.5%;
 }
 
 .form {

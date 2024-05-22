@@ -10,10 +10,7 @@
   align-items: flex-start;
 }
 .technical_info__image {
-  position: relative;
-  max-width: 450px;
   width: 50%;
-  padding-bottom: 21%;
 }
 
 .technical_info__table {
@@ -66,15 +63,13 @@
 }
 
 .systems__image {
-  width: 628px;
-  height: 628px;
-  position: relative;
   margin-left: 22px;
 }
 
 .systems__data {
   display: flex;
   flex-direction: column;
+  min-width: 50%;
   flex-grow: 2;
 }
 
@@ -113,29 +108,34 @@
 
 @media (max-width: 960px) {
   .technical_info__image {
-    max-width: 450px;
-    padding-bottom: 28%;
+    min-width: 450px;
   }
   .technical_info__table {
     margin-left: 20px;
   }
 
   .systems__image {
-    width: 450px;
-    height: 450px;
     margin-left: 20px;
   }
 }
 
 @media (max-width: 768px) {
+  .technical_info__content {
+    flex-direction: column;
+  }
+
   .technical_info__image {
-    max-width: 354px;
-    padding-bottom: 26%;
+    width: 100%;
+    min-width: initial;
+  }
+
+  .technical_info__table {
+    width: 100%;
+    margin-left: initial;
+    margin-top: 20px;
   }
 
   .systems__image {
-    width: 354px;
-    height: 354px;
     margin-left: 20px;
   }
 }
@@ -145,17 +145,7 @@
     flex-direction: column;
   }
 
-  .technical_info__image {
-    width: 100%;
-    max-width: initial;
-    padding-bottom: 58%;
-  }
-
   .technical_info__table {
-    width: 100%;
-
-    margin-left: initial;
-    margin-top: 20px;
     font-size: var(--fsz-xxs);
   }
 
@@ -172,8 +162,6 @@
   }
 
   .systems__image {
-    width: 354px;
-    height: 354px;
     margin-left: 20px;
   }
 
@@ -186,9 +174,6 @@
   }
 
   .systems__image {
-    width: 100%;
-    height: auto;
-    padding-bottom: 100%;
     margin-left: initial;
     margin-top: 20px;
   }
