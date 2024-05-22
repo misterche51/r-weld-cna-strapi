@@ -78,16 +78,6 @@ const DB: TDataBase = {
             {
               label: "RF",
               target: "mig_rf_air",
-              list: [
-                {
-                  name: "RF GRIP 15",
-                  image: "rf_grip_15",
-                  co2: "180 A",
-                  gas: "150 A",
-                  pv: "60%",
-                  wire: "0.6 - 1.0 мм",
-                },
-              ],
             },
             {
               label: "MB",

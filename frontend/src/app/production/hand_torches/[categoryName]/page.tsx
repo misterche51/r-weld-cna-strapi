@@ -6,7 +6,8 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
 import ContactForm from "@/app/shared/contactForm/contactForm";
-import { TORCHES_DB, TTorchesType } from "@/api/db";
+import { CATALOG_DB } from "@/api/db";
+import { TTorchesType } from "@/api/catalog/torches/declarations";
 import Item from "./components/item/item";
 
 const Page = ({
@@ -16,7 +17,7 @@ const Page = ({
     categoryName: TTorchesType;
   };
 }) => {
-  const { label, list } = TORCHES_DB[params.categoryName];
+  const { label, list } = CATALOG_DB.torches[params.categoryName];
   return (
     <Layout>
       <div className={styles.wrapper}>

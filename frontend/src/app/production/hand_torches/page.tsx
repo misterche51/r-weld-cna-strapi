@@ -9,7 +9,6 @@ import ContactForm from "@/app/shared/contactForm/contactForm";
 import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Heading from "@/app/shared/heading/heading";
-import Link from "next/link";
 import DB from "@/api/db";
 import CategorySelect from "./components/categorySelect/categorySelect";
 
@@ -85,13 +84,11 @@ const HandTorchesMain = () => {
           >
             {PREPARED_DATA.map(({ label, image, categories }, i) => (
               <li key={i} className={styles.item}>
-                <Link href={`/`}>
-                  <CategorySelect
-                    label={label}
-                    image={image}
-                    categories={categories}
-                  />
-                </Link>
+                <CategorySelect
+                  label={label}
+                  image={image}
+                  categories={categories}
+                />
               </li>
             ))}
           </ul>
