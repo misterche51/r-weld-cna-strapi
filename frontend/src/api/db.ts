@@ -7,6 +7,7 @@ import { TContactsItem } from "./contacts/declarations";
 import { TRegionItem } from "./dealers/declarations";
 
 import { CHEMISTRY_DB, TORCHES_DB } from "./catalog";
+import { ROBOTIZATION_DB } from "./catalog/robotization";
 
 type TTorchesCategoryName = "mig" | "tig";
 export type TTorcheSubCategoryData = {
@@ -139,4 +140,5 @@ export default DB;
 export const CATALOG_DB = {
   torches: TORCHES_DB,
   chemistry: CHEMISTRY_DB,
+  robotization: ROBOTIZATION_DB,
 };
