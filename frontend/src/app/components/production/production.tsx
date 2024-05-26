@@ -6,35 +6,14 @@ import styles from "./production.module.css";
 import Container from "@/app/layout/container/container";
 import SectionTitle from "../sectionTitle/sectionTitle";
 
-const PRODUCTION_LIST_DATA = [
-  {
-    label: "Ручные горелки",
-    type: "hand",
-    target: "hand_torches",
-  },
-  {
-    label: "Роботизация и автоматизация",
-    type: "robotization",
-    target: "robotization",
-  },
-  {
-    label: "Сварочная химия и аксессуары",
-    type: "materials",
-    target: "chemistry",
-  },
-  {
-    label: "Оборудование и прочее",
-    type: "others",
-    target: "equipment",
-  },
-];
+import { CATALOG_CATEGORIES_DB } from "@/api/catalog/categories";
 
 export const List = () => {
   return (
     <ul className={styles.list}>
-      {PRODUCTION_LIST_DATA.map(({ label, type, target }, i) => (
+      {CATALOG_CATEGORIES_DB.map(({ label, type, target }, i) => (
         <li key={i} className={styles.item}>
-          <Link href={`/production/${target}`}>
+          <Link href={`${target}`}>
             <>
               <Image
                 className={styles.image}

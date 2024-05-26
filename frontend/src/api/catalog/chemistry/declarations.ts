@@ -53,5 +53,5 @@ export type TChemistryDB = {
   quick_couplings: TChemistrySectionData;
   tungsten_electrodes: TChemistrySectionHeader & TTungstenElectrodesContent;
   bayonet_connectors: TChemistrySectionHeader & TBayonetConnectorsContent;
-  others: TChemistrySectionHeader;
+  other_accessories: TChemistrySectionHeader;
 };

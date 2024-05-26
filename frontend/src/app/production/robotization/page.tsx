@@ -1,22 +1,29 @@
+"use client";
+
 import React from "react";
 
 import styles from "./robotization.module.css";
 
 import ContactForm from "@/app/shared/contactForm/contactForm";
+import Breadcrumbs from "@/app/shared/breadcrumbs/breadcrumbs";
 import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Image from "next/image";
 import Heading from "@/app/shared/heading/heading";
-
 import { CATALOG_DB } from "@/api/db";
+
+import useBreadcrumbs from "@/utils/useBreadcrumbs";
 
 const RobotizationMain = () => {
   const { label, content } = CATALOG_DB.robotization;
+  const breadcrumbs = useBreadcrumbs();
+  console.log({ breadcrumbs });
   return (
     <Layout>
       <div className={styles.wrapper}>
         <Container>
           <div className={styles.inner}>
+            <Breadcrumbs breadcrumbs={breadcrumbs} />
             <Heading
               rank={2}
               text={label}

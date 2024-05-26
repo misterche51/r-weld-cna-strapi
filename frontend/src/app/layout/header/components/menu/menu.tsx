@@ -4,6 +4,8 @@ import styles from "./menu.module.css";
 import Button from "@/app/shared/button/button";
 import Drop from "./components/drop/drop";
 
+import { CATALOG_CATEGORIES_DB } from "@/api/catalog/categories";
+
 type TLinkItem = {
   label: string;
   target: string;
@@ -18,24 +20,7 @@ export type TMenuItem = {
 const NAV_DATA: Array<TMenuItem> = [
   {
     label: "Продукция",
-    menu: [
-      {
-        label: "Ручные горелки",
-        target: "production/hand_torches",
-      },
-      {
-        label: "Роботизация и автоматизация",
-        target: "production/robotization_and_automation",
-      },
-      {
-        label: "Сварочная химия и аксессуары",
-        target: "production/chemistry",
-      },
-      {
-        label: "Оборудование и прочее",
-        target: "production/equipment",
-      },
-    ],
+    menu: CATALOG_CATEGORIES_DB,
   },
   {
     label: "Документация",

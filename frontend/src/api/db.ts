@@ -63,7 +63,7 @@ const DB: TDataBase = {
         target: "quick_couplings",
         image: "",
       },
-      { label: "Прочие аксессуары", target: "others", image: "" },
+      { label: "Прочие аксессуары", target: "other_accessories", image: "" },
     ],
     equipment: [
       { label: "Сварочные источники", target: "", image: "" },
