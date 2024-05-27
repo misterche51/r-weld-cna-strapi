@@ -1,4 +1,5 @@
-// import { getStaticProps } from "next/dist/build/templates/pages";
+"use client";
+
 import Layout from "../layout/layout";
 import Container from "@/app/layout/container/container";
 import DB from "@/api/db";
@@ -7,11 +8,15 @@ import styles from "./page.module.css";
 import Heading from "../shared/heading/heading";
 import Map from "./sections/map/map";
 import Dealers from "./sections/dealers/dealers";
+import useBreadcrumbs from "@/utils/useBreadcrumbs";
+import Breadcrumbs from "../shared/breadcrumbs/breadcrumbs";
 
 export default function ContactsPage() {
+  const breadcrumbs = useBreadcrumbs(true);
   return (
     <Layout>
       <Container>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
         <section className={`${styles.section} ${styles["section--contacts"]}`}>
           <Heading text="Контакты" />
           <p className={styles.description}>

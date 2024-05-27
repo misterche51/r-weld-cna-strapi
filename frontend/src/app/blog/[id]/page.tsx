@@ -1,4 +1,5 @@
-// import { getStaticProps } from "next/dist/build/templates/pages";
+"use client";
+
 import PostMini from "../components/postPreview/postPreview";
 import { useRouter } from "next/router";
 import Layout from "../../layout/layout";
@@ -8,6 +9,8 @@ import ContactForm from "@/app/shared/contactForm/contactForm";
 import GalleryPosts from "./components/gallery/gallery";
 import Article from "./components/article/article";
 import styles from "./page.module.css";
+import useBreadcrumbs from "@/utils/useBreadcrumbs";
+import Breadcrumbs from "@/app/shared/breadcrumbs/breadcrumbs";
 
 type TPostPageProps = {
   params: {
@@ -16,6 +19,7 @@ type TPostPageProps = {
 };
 
 export default function PostPage(props: TPostPageProps) {
+  const breadcrumbs = useBreadcrumbs();
   const { id } = props.params;
   const {
     previewTitle,
@@ -29,6 +33,7 @@ export default function PostPage(props: TPostPageProps) {
     <Layout>
       <Container>
         <div className={styles.wrapper}>
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
           <Article
             title={previewTitle}
             articleTitle={articleTitle}

@@ -12,11 +12,12 @@ type TBreadcrumbsProps = {
 
 export default function Breadcrumbs({ breadcrumbs }: TBreadcrumbsProps) {
   const lastIndex = breadcrumbs.length - 1;
+  const isSingleCrumb = breadcrumbs.length === 1;
   return (
     <ul className={styles.list}>
       {breadcrumbs.map((crumb, i) => (
         <li className={styles.item} key={i}>
-          {i === lastIndex ? (
+          {i === lastIndex && !isSingleCrumb ? (
             crumb.label
           ) : (
             <Link href={`/${crumb.target}`}>{crumb.label}</Link>

@@ -3,11 +3,19 @@ import { usePathname } from "next/navigation";
 import { BREADCRUMBS_DICTIONARY } from "@/api/catalog/categories";
 const getTranslatedBreadcrumbLabel = (label: string) =>
   BREADCRUMBS_DICTIONARY[label] ?? label;
-
-const useBreadcrumbs = () => {
+type TUseBreadcrumbsProps = boolean;
+const useBreadcrumbs = (fromMainPage: TUseBreadcrumbsProps = false) => {
   const path = usePathname();
   const pathes = path.split("/");
   const crumbs: TBreadcrumbItem[] = [];
+  if (fromMainPage) {
+    return [
+      {
+        label: getTranslatedBreadcrumbLabel("home"),
+        target: "/",
+      },
+    ];
+  }
 
   const rootBreadcrumb = {
     label: getTranslatedBreadcrumbLabel(pathes[1]),

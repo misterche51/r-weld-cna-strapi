@@ -2,6 +2,8 @@ import { TCatalogCategoriesDB } from "./declarations";
 
 export const BREADCRUMBS_DICTIONARY: Record<string, string> = {
   production: "Продукция",
+  home: "Главная",
+  blog: "Блог",
   robotization: "Роботизация и автоматизация",
   chemistry: "Сварочная химия и аксессуары",
   quick_couplings: "Быстросъемные соединения",
