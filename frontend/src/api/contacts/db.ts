@@ -47,8 +47,8 @@ export const CONTACTS_DB: TContactsItem[] = [
       "198152, г. Санкт-Петербург, ул. Краснопутиловская, д. 69, оф. 134В",
     phones: [
       {
-        label: "8 800 900-10-10",
-        href: "+78009001010",
+        label: "+7 (911) 934-55-44",
+        href: "+79119345544",
       },
     ],
     email: "office-spb@r-weld.ru",
