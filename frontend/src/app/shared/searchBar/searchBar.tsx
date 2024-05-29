@@ -1,25 +1,34 @@
-// "use client";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
 import styles from "./searchBar.module.css";
-import { PropsWithChildren, ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
-const NAV_DATA = ["Продукция", "Документация", "Блог", "Контакты"];
-
-// const CONTACTS_DATA = ["8 800 900-10-10", "info@r-weld.ru"];
 type TSearchBarProps = {
   placeholder: string;
   icon?: ReactNode;
+  onSearchStart: (val: string) => void;
+  // onChange: VoidFunction;
 };
-export default function SearchBar({ placeholder, icon }: TSearchBarProps) {
+export default function SearchBar({
+  placeholder,
+  icon,
+  onSearchStart,
+}: TSearchBarProps) {
+  const [value, setValue] = useState("");
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    onSearchStart(value);
+  };
   return (
-    <form className={styles.wrapper}>
+    <form className={styles.wrapper} onSubmit={onSubmitHandler}>
       {icon && (
         <div className={`${styles.icon} ${styles[`icon--${icon}`]}`}></div>
       )}
       <input
         className={`${styles.input} ${icon && styles["input--with_icon"]}`}
         placeholder={placeholder}
+        value={value}
+        onChange={(e) => setValue((val) => e.target.value)}
       ></input>
       <button type="submit" className={styles.button}></button>
     </form>

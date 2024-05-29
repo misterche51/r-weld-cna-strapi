@@ -4,6 +4,7 @@ type TDealerItem = {
   address?: string;
   email?: string;
   site?: string;
+  city: string;
 };
 
 export type TRegionItem = {

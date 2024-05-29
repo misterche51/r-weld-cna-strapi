@@ -44,7 +44,7 @@
   background-size: cover;
 }
 
-.phone::before {
+.phone:first-of-type:before {
   background-image: url("../../../../../../../public/ic-phone-white.svg");
 }
 
@@ -96,17 +96,28 @@
 }
 
 @media (max-width: 480px) {
-  .wrapper {
-    /* width: calc(100% - 171px); */
-    /* min-height: 415px; */
-  }
   .inner {
+    padding: 20px 8px;
+  }
+  .el {
+    padding-left: 36px;
+    padding-left: 0;
+  }
+  .el::before {
+    /* width: 30px;
+    height: 30px; */
+    display: none;
   }
 
   .promo {
     width: 100%;
   }
+  .address {
+  }
 }
 
 @media (max-width: 360px) {
+  .el {
+    font-size: 16px;
+  }
 }

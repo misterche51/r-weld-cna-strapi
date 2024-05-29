@@ -1,14 +1,16 @@
+import type { YMapLocationRequest } from "ymaps3";
 type TPhoneLinkData = {
   label: string;
-  href: string;
+  href?: string;
 };
 
 export type TContactsItem = {
   id: number;
+  location: YMapLocationRequest;
   city: string;
   address: string;
-  phone: TPhoneLinkData;
+  phones: TPhoneLinkData[];
   email: string;
-  delivery: string;
+  delivery?: string;
   promo?: string;
 };

@@ -15,9 +15,14 @@
 }
 .map {
   flex-grow: 1;
+  overflow: hidden;
+  display: none;
   border: 2px solid;
   border-color: var(--decorative-color-blue);
   border-bottom-right-radius: var(--border-radius-default);
+}
+.map--active {
+  display: block;
 }
 
 @media (max-width: 1060px) {
@@ -55,12 +60,26 @@
   }
   .map {
     flex-grow: 2;
+    width: 100%;
     border-top-right-radius: initial;
     border-bottom-left-radius: var(--border-radius-default);
   }
 }
 
 @media (max-width: 480px) {
+  .controls {
+    width: 121px;
+  }
+}
+
+@media (max-width: 400px) {
+  .controls {
+    width: 30%;
+    flex-grow: 0;
+    min-width: 120px;
+    flex-shrink: 1;
+  }
   .info {
+    flex-grow: 2;
   }
 }

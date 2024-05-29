@@ -1,62 +1,117 @@
+import { DEALERS_DB } from "../dealers";
 import { TContactsItem } from "./declarations";
 
 export const CONTACTS_DB: TContactsItem[] = [
   {
     id: 0,
-    city: "Рязань",
-    address: "Рязанская обл., с. Поляны, ул. Новая, строение 15",
-    phone: {
-      label: "8 800 900-10-10",
-      href: "+78009001010",
+    location: {
+      center: [39.82476, 54.72464],
+      zoom: 15,
     },
-    email: "info@r-weld.ru",
-    delivery: "Доставка до терминала Деловые Линии за наш счёт",
-    promo: "Дополнительная скидка 2%",
+    city: "Рязань",
+    address:
+      "390525, Рязанская обл., Рязанский р-н, с. Поляны, ул. Новая, строение 15, офис 1",
+    phones: [
+      {
+        label: "(4912) 293-493",
+        href: "+74912293493",
+      },
+    ],
+    email: "office-rzn@r-weld.ru",
   },
   {
     id: 1,
-    city: "Москва",
-    address: "Московская обл., г. Москва, ул. Старая, строение 666",
-    phone: {
-      label: "8 800 300-06-00",
-      href: "+78009001010",
+    location: {
+      center: [37.665165, 55.851606],
+      zoom: 12,
     },
-    email: "info@r-weld.ru",
-    delivery: "Доставка до терминала Деловые Линии за наш счёт",
-    promo: "Дополнительная скидка 200%",
+    city: "Москва",
+    address: "129343, г. Москва, ул. Уржумская, д. 4",
+    phones: [
+      {
+        label: "(495) 221-84-81",
+        href: "+74952218481",
+      },
+      {
+        label: "(495) 221-84-82",
+        href: "+74952218482",
+      },
+    ],
+    email: "office-msc@r-weld.ru",
   },
   {
     id: 2,
+    location: { center: [30.28793, 59.859876], zoom: 12 },
     city: "Санкт-Петербург",
     address:
-      "Ленинградская обл., г. Санкт-Петебург, ул. Стародеревенская,  д 1",
-    phone: {
-      label: "8 800 300-06-00",
-      href: "+78009001010",
-    },
-    email: "info@r-weld.ru",
-    delivery: "Доставка до терминала Деловые Линии за наш счёт",
+      "198152, г. Санкт-Петербург, ул. Краснопутиловская, д. 69, оф. 134В",
+    phones: [
+      {
+        label: "8 800 900-10-10",
+        href: "+78009001010",
+      },
+    ],
+    email: "office-spb@r-weld.ru",
   },
   {
     id: 3,
-    city: "Екатеринбург",
-    address: "г. Екатеринбург, ул. Новодеревенская,  д 2",
-    phone: {
-      label: "8 800 300-06-00",
-      href: "+78009001010",
+    location: {
+      center: [60.671972, 56.81841],
+      zoom: 12,
     },
-    email: "info@r-weld.ru",
-    delivery: "Доставка до терминала Деловые Линии за наш счёт",
+    city: "Екатеринбург",
+    address: "620030, г. Екатеринбург, ул. Карьерная, д. 2, оф. 501",
+    phones: [
+      {
+        label: "+7 (343) 270-21-17",
+        href: "+73432702117",
+      },
+    ],
+    email: "office-ekb@r-weld.ru",
   },
   {
     id: 4,
-    city: "Красноярск",
-    address: "г. Красноярск, ул. Няшная,  д 20",
-    phone: {
-      label: "8 800 300-06-00",
-      href: "+78009001010",
+    location: {
+      center: [92.826835, 56.046735],
+      zoom: 12,
     },
-    email: "info@r-weld.ru",
-    delivery: "Доставка до терминала Деловые Линии за наш счёт",
+    city: "Красноярск",
+    address: "660048, г. Красноярск, ул. Маерчака, д. 109м , оф. 208",
+    phones: [
+      {
+        label: "+7 (920) 630 50-13",
+        href: "+79206305013",
+      },
+      {
+        label: "+7 (930) 888-35-28",
+        href: "+79308883528",
+      },
+    ],
+    email: "office-krsk@r-weld.ru",
   },
 ];
+
+type TContactsPageDB = {
+  contacts: {
+    label: string;
+    description?: string;
+    data: typeof CONTACTS_DB;
+  };
+  dealers: {
+    label: string;
+    data: typeof DEALERS_DB;
+  };
+};
+
+export const CONTACTS_PAGE_DB: TContactsPageDB = {
+  contacts: {
+    label: "Контакты",
+    description:
+      "Наличие филиалов и собственных складов в Москве, Санкт-Петербурге, Екатеринбурге, Красноярске и Рязани, а так же обширная дилерская сеть позволяют создать индивидуальные условия доставки и оплаты для каждого клиента.",
+    data: CONTACTS_DB,
+  },
+  dealers: {
+    label: "Дилеры",
+    data: DEALERS_DB,
+  },
+};
