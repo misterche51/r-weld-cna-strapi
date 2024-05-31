@@ -1,0 +1,92 @@
+.wrapper {
+}
+.phone {
+  display: none;
+}
+.btn {
+  position: absolute;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  font-size: var(--fsz-xs);
+}
+
+.item {
+  color: var(--color-text-dark);
+  flex-grow: 2;
+  padding: 10px;
+  text-align: center;
+  transition: color 0.1s ease-in-out;
+}
+.item + .item {
+  margin-left: 5px;
+}
+
+.item:hover {
+  color: var(--color-text-blue);
+}
+
+.item a {
+  display: block;
+}
+.request_btn,
+.phone_wrapper {
+  display: none;
+}
+
+.phone {
+  position: relative;
+  color: var(--color-text-blue);
+  display: block;
+  padding-left: 36px;
+  font-size: var(--fsz-xs);
+}
+
+.phone:before {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  content: "";
+  background-image: url("../../../../../../public/ic-phone.svg");
+  left: 0px;
+  top: -3px;
+}
+
+@media (max-width: 680px) {
+  .wrapper {
+    padding: 0;
+  }
+  .list {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--background-color-extra-light-blue);
+  }
+  .list {
+    justify-content: flex-start;
+    align-items: start;
+  }
+  .item {
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+  }
+  .item + .item {
+    margin-left: 0;
+  }
+  .request_btn {
+    display: block;
+    margin-top: 24px;
+    padding: 0 20px;
+  }
+  .phone_wrapper {
+    height: 90px;
+    background-color: var(--background-white);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+}

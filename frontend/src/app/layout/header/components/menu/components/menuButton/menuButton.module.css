@@ -1,0 +1,64 @@
+.button {
+  display: flex;
+  outline: none;
+  box-shadow: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-default);
+  border: 2px solid var(--decorative-color-light-blue);
+  background-color: var(--background-color-extra-light-blue);
+  order: 3;
+  z-index: 99999;
+  cursor: pointer;
+
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+}
+.button--opened {
+  background-color: var(--background-white);
+}
+.button span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: var(--background-color-dark-extra);
+  border-radius: var(--border-radius-default);
+  opacity: 1;
+  left: 7px;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.button span:nth-child(1) {
+  top: 10px;
+  transform-origin: left center;
+}
+
+.button span:nth-child(2) {
+  top: 21px;
+  transform-origin: left center;
+}
+
+.button span:nth-child(3) {
+  top: 32px;
+  transform-origin: left center;
+}
+
+.button--opened span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+  left: 11px;
+}
+
+.button--opened span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.button--opened span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 31px;
+  left: 10px;
+}

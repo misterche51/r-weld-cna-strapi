@@ -1,0 +1,146 @@
+.wrapper {
+  background: linear-gradient(
+    90deg,
+    var(--background-color-dark-blue) 0%,
+    var(--background-color-dark-extra) 100%
+  );
+  width: 100%;
+  padding: 50px 40px;
+  border-radius: var(--border-radius-default);
+}
+.wrapper--light {
+  background: var(--background-color-extra-light-blue);
+}
+.wrapper--dark {
+}
+
+.inner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.cta {
+  color: var(--color-white);
+  font-size: var(--fsz-sm);
+  /* width: 50%; */
+  /* ;
+  min-width: 380px; */
+  flex-basis: 562px;
+  flex-grow: 2;
+  flex-shrink: 1;
+}
+
+.cta--light {
+  color: var(--color-text-blue);
+}
+
+.cta--dark {
+}
+
+.components {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 72px;
+  flex-basis: 562px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.input {
+  color: var(--color-white);
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 2px solid #f3f9ff;
+  font-size: var(--fsz-xs);
+  width: 50%;
+  max-width: 271px;
+  padding-bottom: 4px;
+}
+
+.input--dark {
+}
+
+.input--light {
+  border-bottom-color: var(--background-color-dark-blue);
+}
+
+.button {
+  width: 50%;
+  max-width: 271px;
+  margin-left: 20px;
+}
+
+@media (max-width: 1189px) {
+  .cta {
+  }
+  .components {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
+    max-width: none;
+  }
+  .button {
+    width: 100%;
+    max-width: none;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  .components {
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .cta {
+    flex-basis: 380px;
+    flex-shrink: 0;
+    /* font-size: var(--fsz-xxs); */
+  }
+
+  .input {
+    font-size: var(--fsz-xs);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px;
+  }
+  .inner {
+    flex-direction: column;
+  }
+  .components {
+    flex-direction: column;
+    flex-basis: initial;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+    flex-grow: 1;
+  }
+
+  .cta {
+    flex-grow: 1;
+    flex-basis: initial;
+    width: 100%;
+    font-size: var(--fsz-xxs);
+  }
+
+  .input {
+    width: 100%;
+  }
+  .input::placeholder {
+    font-size: 15px;
+  }
+  .button {
+    width: 100%;
+  }
+}

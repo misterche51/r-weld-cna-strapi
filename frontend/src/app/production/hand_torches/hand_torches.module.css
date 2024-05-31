@@ -1,0 +1,252 @@
+.wrapper {
+  margin: 20px 0 100px 0;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+  margin-top: 80px;
+  background: var(--background-main-home-page);
+}
+.header::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: -80px;
+  width: 100%;
+  height: 80px;
+  background: var(--background-main-home-page);
+}
+
+.header h2 {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.advantages {
+  justify-self: center;
+  display: flex;
+  height: 52px;
+  align-self: center;
+}
+
+.button {
+  width: 154px;
+}
+
+.button + .button {
+  margin-left: 20px;
+}
+
+.button__input {
+  opacity: 0;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+
+.button__description {
+  transform: translateY(-75px);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: transform 0.3s ease-in;
+  z-index: -1;
+}
+.button__description--advantages {
+}
+.button__description--usage {
+}
+
+.button__label {
+  font-size: var(--fsz-xs);
+  cursor: pointer;
+  width: 154px;
+  text-align: center;
+  line-height: 52px;
+}
+.button__input:checked + .button__label {
+  color: var(--decorative-color-light-blue);
+}
+.button__input:checked + .button__label + .button__description {
+  /* display: block; */
+  transform: translateY(70px);
+  opacity: 1;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  transition: margin-top 0.3s ease-in;
+  padding-top: 30px;
+  border-top: 2px solid var(--decorative-color-blue);
+}
+
+.list--advantages {
+  margin-top: 100px;
+}
+.list--usage {
+  margin-top: 80px;
+}
+
+.item {
+  width: calc(50% - 10px);
+  height: 480px;
+}
+
+@media (max-width: 1100px) {
+  .advantages {
+    margin-left: auto;
+  }
+
+  .list--advantages {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 960px) {
+  .list {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .list--advantages {
+    margin-top: 120px;
+  }
+  .list--usage {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 890px) {
+  .list--advantages {
+    margin-top: 140px;
+  }
+}
+@media (max-width: 768px) {
+  .button {
+    width: auto;
+  }
+
+  .button + .button {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 710px) {
+  .list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    transition: margin-top 0.3s ease-in;
+    padding-top: 30px;
+    border-top: 2px solid var(--decorative-color-blue);
+  }
+
+  .item {
+    width: 100%;
+    height: 337px;
+  }
+
+  .item + .item {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 660px) {
+  .header {
+    flex-flow: column nowrap;
+  }
+
+  .header h2 {
+    position: initial;
+  }
+  .advantages {
+    flex-direction: column;
+    height: auto;
+    position: initial;
+    margin-left: 0;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .button__label {
+    display: block;
+    text-align: left;
+    width: 100%;
+    border-bottom: 2px solid var(--decorative-color-blue);
+    position: relative;
+  }
+
+  .button__label::after {
+    display: block;
+    content: "";
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-image: url("../../../../public/arrow-left--dark.svg");
+    right: 20px;
+    top: 12px;
+    transition: transform 0.3s ease-in;
+    transform: rotate(180deg);
+  }
+
+  .button__input:checked + .button__label::after {
+    transform: rotate(270deg);
+    background-image: url("../../../../public/arrow-left--blue.svg");
+  }
+
+  .button__description {
+    display: block;
+    position: initial;
+    transform: initial;
+    height: 0;
+    overflow: hidden;
+    padding-top: 10px;
+    transition: padding-bottom 0.3s ease-in;
+    padding-bottom: 0;
+  }
+
+  .button__input:checked + .button__label + .button__description {
+    padding-top: 10px;
+    transform: initial;
+  }
+
+  .button__input:checked + .button__label + .button__description--advantages {
+    padding-bottom: 130px;
+  }
+  .button__input:checked + .button__label + .button__description--usage {
+    padding-bottom: 80px;
+  }
+
+  .button + .button {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .list,
+  .list--advantages,
+  .list--usage {
+    border: none;
+    margin-top: 20px;
+    padding-top: 0;
+    transition: initial;
+  }
+}

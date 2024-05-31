@@ -1,0 +1,29 @@
+.wrapper {
+  padding-bottom: 100px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+}
+.content__image {
+  width: calc(100% - 10px);
+  position: relative;
+}
+
+.content__text {
+  width: calc(100% - 10px);
+  margin-left: 20px;
+  white-space: pre-wrap;
+  font-size: var(--fsz-xs);
+  line-height: 1.3;
+}
+
+.form {
+  margin-top: 50px;
+}
+
+@media (max-width: 480px) {
+  .image--scheme {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,32 @@
+.wrapper {
+  padding-bottom: 100px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.image {
+  width: calc(50% - 10px);
+}
+
+.form {
+  margin-top: 50px;
+}
+
+@media (max-width: 480px) {
+  .content {
+    flex-direction: column;
+  }
+  .image {
+    width: 100%;
+  }
+  .image + .image {
+    margin-top: 20px;
+  }
+
+  .form {
+    margin-top: 20px;
+  }
+}

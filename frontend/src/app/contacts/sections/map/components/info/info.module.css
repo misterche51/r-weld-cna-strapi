@@ -1,0 +1,134 @@
+.wrapper {
+  height: 100%;
+  background-color: var(--decorative-color-blue);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50px 30px 50px 40px;
+  height: 100%;
+
+  color: var(--color-white);
+  font-size: var(--fsz-sm);
+  line-height: 1.3;
+}
+
+.promo {
+  background-color: var(--background-color-extra-light-blue);
+  color: var(--color-text-extra-dark);
+  font-size: var(--fsz-xs);
+  padding: 8px 33px;
+  border-radius: var(--border-radius-default);
+  margin-top: auto;
+  width: fit-content;
+}
+
+.el {
+  padding-left: 56px;
+  position: relative;
+  min-height: 36px;
+  color: var(--color-white);
+}
+.el + .el {
+  margin-top: 20px;
+}
+.el::before {
+  width: 36px;
+  height: 36px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+}
+
+.phone:first-of-type:before {
+  background-image: url("../../../../../../../public/ic-phone-white.svg");
+}
+
+.email::before {
+  background-image: url("../../../../../../../public/ic-email-white.svg");
+}
+
+.delivery::before {
+  background-image: url("../../../../../../../public/ic-delivery.svg");
+}
+
+.address::before {
+  background-image: url("../../../../../../../public/ic-location-white.svg");
+}
+
+@media (max-width: 1060px) {
+}
+
+@media (max-width: 960px) {
+  .inner {
+    width: 462px;
+  }
+}
+
+@media (max-width: 860px) {
+}
+
+@media (max-width: 768px) {
+  .inner {
+    width: 100%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 568px) {
+  .inner {
+    padding: 25px 15px 15px;
+    font-size: var(--fsz-xxs);
+  }
+  .el + .el {
+    margin-top: 10px;
+  }
+  .el {
+    padding-left: 46px;
+    padding-top: 8px;
+    min-height: 24px;
+  }
+
+  .el::before {
+    top: 3px;
+  }
+
+  .promo {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding: 20px 8px;
+  }
+  .el {
+    padding-left: 0;
+    padding-top: 0;
+  }
+  .el::before {
+    /* width: 30px;
+    height: 30px; */
+    display: none;
+  }
+  .el + .el {
+    margin-top: 20px;
+  }
+
+  .promo {
+    width: 100%;
+  }
+  .address {
+  }
+}
+
+@media (max-width: 360px) {
+  .el {
+    font-size: 16px;
+    min-height: 26px;
+  }
+}

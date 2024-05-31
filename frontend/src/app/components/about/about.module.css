@@ -1,0 +1,34 @@
+.wrapper {
+  background-color: var(--background-color-dark-blue);
+  padding: 40px 0;
+  color: var(--color-text-light);
+}
+
+.content {
+  margin-top: 18px;
+  font-size: var(--fsz-sm);
+}
+
+.footer {
+  font-size: var(--fsz-lg);
+  margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .list {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  .item {
+    width: 100%;
+  }
+  .content {
+    font-size: var(--fsz-xs);
+  }
+
+  .footer {
+    font-size: var(--fsz-sm);
+  }
+}

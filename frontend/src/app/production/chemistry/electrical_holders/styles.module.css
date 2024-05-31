@@ -1,0 +1,29 @@
+.wrapper {
+  padding-bottom: 100px;
+}
+
+.image {
+  width: 100%;
+}
+
+.image--table {
+}
+
+.image--scheme {
+  border-top: 2px solid var(--decorative-color-blue);
+  margin-bottom: 100px;
+}
+
+.image--parts {
+  border-top: 2px solid var(--decorative-color-blue);
+}
+
+.form {
+  margin-top: 50px;
+}
+
+@media (max-width: 480px) {
+  .image--scheme {
+    margin-bottom: 40px;
+  }
+}

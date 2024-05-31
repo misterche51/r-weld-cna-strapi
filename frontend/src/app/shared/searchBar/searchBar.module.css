@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  content: "";
+  width: 36px;
+  height: 36px;
+  left: 10px;
+  top: 8px;
+  z-index: 2;
+}
+.icon--location {
+  background-image: url("../../../../public/ic-location.svg");
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: var(--background-white);
+  box-shadow: none;
+  border-top-left-radius: var(--border-radius-default);
+  border-bottom-left-radius: var(--border-radius-default);
+
+  height: 50px;
+  font-size: var(--fsz-xs);
+}
+
+.input--with_icon {
+  padding-left: 56px;
+}
+
+.button {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: var(--border-radius-default);
+  border-bottom-right-radius: var(--border-radius-default);
+  background-color: var(--background-color-dark-blue);
+  background-image: url("../../../../public/ic-search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
