@@ -45,9 +45,19 @@ type TTungstenElectrodesContent = {
   image: TImageData & { description: string };
 };
 
+type TTagsList = { tags: string[] };
+type TWeildChemistyItem = {
+  name: string;
+  image: TImageData;
+  info?: string;
+} & TTagsList;
+
+type TWeldChemistrySectionData = TChemistrySectionHeader & {
+  list: TWeildChemistyItem[];
+};
 export type TChemistryDB = {
-  weld_chemistry: any;
-  electrical_holders: TChemistrySectionData;
+  weld_chemistry: TWeldChemistrySectionData;
+  electrical_holders: TChemistrySectionData & TTagsList;
   carbon_electrodes: TChemistrySectionData;
   planers: TChemistrySectionData;
   quick_couplings: TChemistrySectionData;

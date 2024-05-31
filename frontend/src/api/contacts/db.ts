@@ -1,4 +1,4 @@
-import { DEALERS_DB } from "../dealers";
+import { DEALERS_DB, DEALERS_TAGS } from "../dealers";
 import { TContactsItem } from "./declarations";
 
 export const CONTACTS_DB: TContactsItem[] = [
@@ -91,6 +91,8 @@ export const CONTACTS_DB: TContactsItem[] = [
   },
 ];
 
+const CONTACTS_TAGS = CONTACTS_DB.map(({ city }) => city.toLowerCase());
+
 type TContactsPageDB = {
   contacts: {
     label: string;
@@ -101,6 +103,7 @@ type TContactsPageDB = {
     label: string;
     data: typeof DEALERS_DB;
   };
+  tags: string[];
 };
 
 export const CONTACTS_PAGE_DB: TContactsPageDB = {
@@ -114,4 +117,5 @@ export const CONTACTS_PAGE_DB: TContactsPageDB = {
     label: "Дилеры",
     data: DEALERS_DB,
   },
+  tags: [...DEALERS_TAGS, ...CONTACTS_TAGS],
 };
