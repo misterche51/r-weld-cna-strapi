@@ -24,7 +24,9 @@ export default function Info({ id }: PropsWithChildren<TContentMapProps>) {
                 {label}
               </a>
             ) : (
-              <p className={`${styles.el}`}>{label}</p>
+              <p key={i} className={`${styles.el}`}>
+                {label}
+              </p>
             )
           )}
         </>

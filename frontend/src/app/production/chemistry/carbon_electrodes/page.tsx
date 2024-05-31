@@ -29,6 +29,7 @@ const Page = () => {
               return (
                 <ImageWrapper
                   title={title}
+                  key={alt}
                   image={
                     <div
                       className={`${styles.image} ${styles[`image--${name}`]}`}

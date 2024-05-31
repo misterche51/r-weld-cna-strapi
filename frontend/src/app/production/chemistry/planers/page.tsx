@@ -28,6 +28,7 @@ const Page = () => {
               const { title, alt, src } = images[name];
               return (
                 <ImageWrapper
+                  key={alt}
                   title={title}
                   image={
                     <div
