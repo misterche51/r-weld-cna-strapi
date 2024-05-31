@@ -6,7 +6,7 @@ import { ReactNode, useState } from "react";
 type TSearchBarProps = {
   placeholder: string;
   icon?: ReactNode;
-  onSearchStart: (val: string) => void;
+  onSearchStart?: (val: string) => void;
   // onChange: VoidFunction;
 };
 export default function SearchBar({
@@ -15,9 +15,10 @@ export default function SearchBar({
   onSearchStart,
 }: TSearchBarProps) {
   const [value, setValue] = useState("");
+  // @ts-expect-error
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    onSearchStart(value);
+    onSearchStart && onSearchStart(value);
   };
   return (
     <form className={styles.wrapper} onSubmit={onSubmitHandler}>

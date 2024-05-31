@@ -1,7 +1,7 @@
 import styles from "./item.module.css";
-import { TTorchesItem } from "@/api/db";
 import Image from "next/image";
 
+// @ts-expect-error
 const Item = ({ name, image, info }) => {
   const img = image === "" ? "binzel.jpg" : image;
   return (

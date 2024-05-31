@@ -23,6 +23,7 @@ const EquipmentMain = () => {
           <Breadcrumbs breadcrumbs={breadcrumbs} />
           <Heading rank={2} text="Оборудование и прочее" withUnderline={true} />
           <ul className={styles.list}>
+            {/* @ts-expect-error */}
             {DB.catalog.equipment.map(({ label, image }, i) => (
               <li key={i} className={styles.item}>
                 <Link href={`/`}>

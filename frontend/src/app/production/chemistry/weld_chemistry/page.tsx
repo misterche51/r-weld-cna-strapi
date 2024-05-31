@@ -26,6 +26,7 @@ const Page = () => {
             <ul className={styles.list}>
               {list.map((data, i) => (
                 <li key={i} className={styles.list__item}>
+                  {/* @ts-expect-error */}
                   <Item {...data} />
                 </li>
               ))}

@@ -1,5 +1,5 @@
 import styles from "./location.module.css";
-import { TDealerItem } from "@/api/db";
+import { TDealerItem } from "@/api/dealers/declarations";
 
 export default function Location({
   name,

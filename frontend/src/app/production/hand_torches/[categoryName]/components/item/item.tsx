@@ -1,5 +1,5 @@
 import styles from "./item.module.css";
-import { TTorchesItem } from "@/api/db";
+import { TTorchesItem } from "@/api/catalog/torches/declarations";
 import Image from "next/image";
 
 const LABELS_DICT = {

@@ -33,7 +33,10 @@ type TDataBase = {
   posts: TPostItem[];
   contacts: TContactsItem[];
   dealers: TRegionItem[];
-  catalog: Record<TCatalogItem, TTorchesCatalog | TCatalogCategoryLink[] | "">;
+  catalog: Record<
+    TCatalogItem,
+    TTorchesCatalog | TCatalogCategoryLink[] | ""
+  > & { chemistry: TCatalogCategoryLink[] };
 };
 
 export type TTorchesCategoryData = {

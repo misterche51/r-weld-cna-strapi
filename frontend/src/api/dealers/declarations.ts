@@ -1,4 +1,4 @@
-type TDealerItem = {
+export type TDealerItem = {
   name: string;
   phone?: string;
   address?: string;
