@@ -1,32 +1,58 @@
 .comp {
   outline: none;
-  border: none;
+  border: none; 
   box-shadow: none;
-  background: var(--gradient-dark);
-  color: var(--color-white);
+  font-weight: 600;
   font-size: var(--fsz-xs);
-  padding: 20px;
   border-radius: var(--border-radius-default);
-  transition: background 0.3s linear, color 0.3s linear;
   width: 100%;
   cursor: pointer;
+  position: relative;
+  padding: 20px;
 }
 
-.comp--light {
-  background: var(--background-color-extra-light-blue);
-  color: var(--color-text-extra-dark);
+.label {
+  left: 0;
+  top: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  color: inherit;
+  transition: color 0.3s linear;
+  position: relative;
+  z-index: 2;
+}
+
+.comp::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: opacity 0.3s linear;
+  border-radius: var(--border-radius-default);
+}
+
+
+.comp--dark::before {
+  background: var(--gradient-dark);
 }
 .comp--dark {
-  background: var(--gradient-dark);
-  color: var(--color-white);
-}
-
-.comp--dark:hover {
   background: var(--background-color-dark-extra);
   color: var(--color-white);
 }
 
-.comp--dalk:active {
-  background: var(--background-color-light-blue);
-  color: var(--color-white);
+.comp--light::before {
+  background: var(--background-color-extra-light-blue);
+}
+.comp--light {
+  background: var(--background-main-home-page);
+  color: var(--color-text-extra-dark);
+}
+
+.comp:hover::before {
+  opacity: 0;
 }
