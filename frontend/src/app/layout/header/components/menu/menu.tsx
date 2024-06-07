@@ -5,6 +5,7 @@ import Button from "@/app/shared/button/button";
 import Drop from "./components/drop/drop";
 
 import { CATALOG_CATEGORIES_DB } from "@/api/catalog/categories";
+import DB from "@/api/db";
 
 type TLinkItem = {
   label: string;
@@ -44,8 +45,8 @@ export default function Menu() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.phone_wrapper}>
-        <a className={styles.phone} href="tel:88009001010">
-          8 800 900-10-10
+        <a className={styles.phone} href={DB.info.phone.href}>
+          {DB.info.phone.label}
         </a>
       </div>
       <ul className={styles.list}>

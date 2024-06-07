@@ -8,6 +8,7 @@ import SearchBar from "@/app/shared/searchBar/searchBar";
 import Menu from "./components/menu/menu";
 import MenuButton from "./components/menu/components/menuButton/menuButton";
 import Button from "@/app/shared/button/button";
+import DB from "@/api/db";
 
 const Logo = () => (
   <Link href={"/"}>
@@ -23,6 +24,7 @@ const Logo = () => (
 );
 
 export default function Header({ children }: PropsWithChildren) {
+  const {phone} = DB.info;
   const [isOpened, setIsOpened] = useState(false);
   const [isDroppped, setIsDropped] = useState(false);
   const onMenuButtonClickHandler = () => {
@@ -53,8 +55,8 @@ export default function Header({ children }: PropsWithChildren) {
             </div>
           </div>
           <div className={styles.intaractions_box}>
-            <a className={styles.phone} href="tel:88009001010">
-              8 800 900-10-10
+            <a className={styles.phone} href={phone.href}>
+              {phone.label}
             </a>
             <div className={styles.request_btn}>
               <Button text="Оставить заявку" />

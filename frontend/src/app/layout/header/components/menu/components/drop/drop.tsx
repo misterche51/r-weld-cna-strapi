@@ -14,7 +14,7 @@ export default function Drop({ label, menu }: TMenuItem) {
       onMouseLeave={onDropUnHover}
     >
       <>{label}</>
-      <div
+      <div 
         className={`${styles.dropdown} ${
           isDropped ? styles["dropdown--dropped"] : ""
         }`}
@@ -22,7 +22,7 @@ export default function Drop({ label, menu }: TMenuItem) {
         <button className={styles.button_backward} onClick={onDropUnHover}>
           Назад
         </button>
-        <ul className={styles.list}>
+        <ul className={styles.list} >
           {menu!.map(({ label, target }, i) => (
             <li className={styles.item} key={i}>
               <Link href={`/${target}`}>{label}</Link>

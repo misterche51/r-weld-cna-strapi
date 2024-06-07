@@ -30,6 +30,7 @@ type TCatalogCategoryLink = {
 };
 
 type TDataBase = {
+  info: any;
   posts: TPostItem[];
   contacts: TContactsItem[];
   dealers: TRegionItem[];
@@ -45,7 +46,33 @@ export type TTorchesCategoryData = {
   categories: Record<TCoolingType, TTorcheSubCategoryData[]>;
 };
 
+type TInfoContactItem = {
+  href: string,
+  label: string,
+}
+
+type TInfoDB = {
+  phone: TInfoContactItem,
+  email: TInfoContactItem,
+  address: string,
+  description: string,
+
+}
+export const INFO_DB:TInfoDB =  {
+  phone: {
+    href: 'tel:88009001010',
+    label: '8 800 900-10-10'
+  },
+  email: {
+    href: 'mailto:info@r-weld.ru',
+    label: 'info@r-weld.ru'
+  },
+  address: 'ООО «Р-ВЕЛД» 390525 Рязанская обл., Рязанский муниципальный район, с. Поляны, ул. Новая, строение 15',
+  description: 'Российский производитель и поставщик горелок для MIG и TIG сварки',
+}
+
 const DB: TDataBase = {
+  info: INFO_DB,
   posts: BLOG_DB,
   contacts: CONTACTS_DB,
   dealers: DEALERS_DB,

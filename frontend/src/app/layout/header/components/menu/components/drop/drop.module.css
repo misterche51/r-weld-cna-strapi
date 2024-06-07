@@ -6,8 +6,8 @@
   opacity: 0;
   z-index: 5;
   position: absolute;
-  transform: translateY(-150%);
-  transition: opacity 0.1s ease-in, transform 0.3s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in;
   border-radius: var(--border-radius-default);
   background-color: var(--background-white);
   border: 2px solid var(--decorative-color-light-blue);
@@ -16,7 +16,7 @@
 .dropdown--dropped,
 .dropdown--dropped {
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
 }
 
 .list {
