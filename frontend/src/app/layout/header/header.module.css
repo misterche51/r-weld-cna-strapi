@@ -40,6 +40,7 @@
   position: relative;
   color: var(--color-text-blue);
   margin-bottom: 10px;
+  padding: 10px;
   font-size: var(--fsz-xs);
 }
 
@@ -49,8 +50,8 @@
   position: absolute;
   content: "";
   background-image: url("../../../../public/ic-phone.svg");
-  left: 0px;
-  top: -6px;
+  left: -6px;
+  top: 6px;
 }
 
 .request_btn {
