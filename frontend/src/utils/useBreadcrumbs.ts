@@ -1,6 +1,7 @@
 import { TBreadcrumbItem } from "@/app/shared";
 import { usePathname } from "next/navigation";
 import { BREADCRUMBS_DICTIONARY } from "@/api/catalog/categories";
+
 const getTranslatedBreadcrumbLabel = (label: string) =>
   BREADCRUMBS_DICTIONARY[label] ?? label;
 type TUseBreadcrumbsProps = boolean;
