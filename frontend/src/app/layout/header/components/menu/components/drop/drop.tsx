@@ -28,9 +28,9 @@ export default function Drop({ label, menu }: TMenuItem) {
             <li className={`${styles.item} ${isDownloadableMenuItems ? styles['item--downloadable'] : ''}`} key={i}>
               {isDownloadableMenuItems ? 
                 // @ts-expect-error
-                <Link href={`/${menuItem.target}`}>{menuItem.label}</Link> 
+                <Link href={`${menuItem.path}`} rel="noopener noreferrer" target="_blank">{menuItem.label}</Link>
                 // @ts-expect-error
-                : <Link href={`${menuItem.path}`} rel="noopener noreferrer" target="_blank">{menuItem.label}</Link>
+                :  <Link href={`/${menuItem.target}`}>{menuItem.label}</Link> 
                 }
             </li>
           ))}

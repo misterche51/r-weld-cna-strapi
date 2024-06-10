@@ -1,0 +1,52 @@
+.wrapper {
+  padding: 50px 0;
+}
+
+.wrapper form {
+  margin-top: 50px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  font-size: var(--fsz-sm);
+  line-height: 1.3;
+}
+
+.item + .item {
+  margin-top: 4px;
+}
+
+.link {
+  padding: 10px 10px 10px 40px;
+  transition: color 0.1s linear;
+}
+
+.link:hover {
+  color: var(--color-text-blue)
+}
+
+
+.link::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background-image: url('../../../public/ic-doc.svg');
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 568px) {
+}
+
+@media (max-width: 480px) {
+}
