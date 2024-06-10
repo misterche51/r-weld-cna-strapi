@@ -59,7 +59,8 @@ export default function Header({ children }: PropsWithChildren) {
               {phone.label}
             </a>
             <div className={styles.request_btn}>
-              <Button text="Оставить заявку" />
+              {/* ts-expect-error */}
+              <Button text="Оставить заявку" role='link'/>
             </div>
           </div>
         </div>

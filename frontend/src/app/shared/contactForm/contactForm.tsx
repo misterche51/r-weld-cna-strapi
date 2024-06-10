@@ -6,7 +6,7 @@ import Button from "../button/button";
 export default function ContactForm({ variant = "dark" }: TContactFormProps) {
   const buttonTheme = variant === "dark" ? "light" : "dark";
   return (
-    <form className={`${styles[`wrapper--${variant}`]} ${styles.wrapper}`}>
+    <form className={`${styles[`wrapper--${variant}`]} ${styles.wrapper}`} id='contact-form'>
       <div className={styles.inner}>
         <p className={`${styles[`cta--${variant}`]} ${styles.cta}`}>
           Оставьте номер телефона, мы ответим на все ваши вопросы и оформим

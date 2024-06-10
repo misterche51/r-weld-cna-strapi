@@ -9,6 +9,7 @@
   cursor: pointer;
   position: relative;
   padding: 20px;
+  display: block;
 }
 
 .label {
