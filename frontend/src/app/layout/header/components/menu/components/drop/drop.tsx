@@ -7,6 +7,7 @@ export default function Drop({ label, menu }: TMenuItem) {
   const [isDropped, setIsDropped] = useState(false);
   const onDropHover = () => setIsDropped(true);
   const onDropUnHover = () => setIsDropped(false);
+  const isDownloadableMenuItems = menu?.type==='download';
   return (
     <div
       className={styles.wrapper}
@@ -22,14 +23,20 @@ export default function Drop({ label, menu }: TMenuItem) {
         <button className={styles.button_backward} onClick={onDropUnHover}>
           Назад
         </button>
-        <ul className={styles.list} >
-          {menu!.map(({ label, target }, i) => (
-            <li className={styles.item} key={i}>
-              <Link href={`/${target}`}>{label}</Link>
+        {menu && <ul className={styles.list}>
+          {menu.list.map((menuItem, i) => (
+            <li className={`${styles.item} ${isDownloadableMenuItems ? styles['item--downloadable'] : ''}`} key={i}>
+              {isDownloadableMenuItems ? 
+                // @ts-expect-error
+                <Link href={`/${menuItem.target}`}>{menuItem.label}</Link> 
+                // @ts-expect-error
+                : <Link href={`${menuItem.path}`} rel="noopener noreferrer" target="_blank">{menuItem.label}</Link>
+                }
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
     </div>
   );
 }
+// `${menuItem.path}`

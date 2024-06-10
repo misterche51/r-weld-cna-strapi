@@ -8,6 +8,8 @@ import { TRegionItem } from "./dealers/declarations";
 
 import { CHEMISTRY_DB, TORCHES_DB } from "./catalog";
 import { ROBOTIZATION_DB } from "./catalog/robotization";
+import { DOWNLOADS_DB } from "./documentation";
+import { TDownloadsDB } from "./documentation/declarations";
 
 type TTorchesCategoryName = "mig" | "tig";
 export type TTorcheSubCategoryData = {
@@ -31,6 +33,7 @@ type TCatalogCategoryLink = {
 
 type TDataBase = {
   info: any;
+  downloads: TDownloadsDB;
   posts: TPostItem[];
   contacts: TContactsItem[];
   dealers: TRegionItem[];
@@ -73,6 +76,7 @@ export const INFO_DB:TInfoDB =  {
 
 const DB: TDataBase = {
   info: INFO_DB,
+  downloads: DOWNLOADS_DB,
   posts: BLOG_DB,
   contacts: CONTACTS_DB,
   dealers: DEALERS_DB,

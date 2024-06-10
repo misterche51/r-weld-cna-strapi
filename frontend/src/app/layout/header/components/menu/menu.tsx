@@ -5,6 +5,8 @@ import Button from "@/app/shared/button/button";
 import Drop from "./components/drop/drop";
 
 import { CATALOG_CATEGORIES_DB } from "@/api/catalog/categories";
+import { TDownloadsDB } from "@/api/documentation/declarations";
+
 import DB from "@/api/db";
 
 type TLinkItem = {
@@ -15,21 +17,25 @@ type TLinkItem = {
 export type TMenuItem = {
   label: string;
   target?: string;
-  menu?: TLinkItem[];
+  menu?: {
+    type: 'link'|'download';
+    list: TLinkItem[]|TDownloadsDB};
 };
 
 const NAV_DATA: Array<TMenuItem> = [
   {
     label: "Продукция",
-    menu: CATALOG_CATEGORIES_DB,
+    menu: {
+      type:'link',
+      list: CATALOG_CATEGORIES_DB
+    },
   },
   {
     label: "Документация",
-    menu: [
-      { label: "Скачать каталог 2023", target: "" },
-      { label: "Скачать инструкцию", target: "" },
-      { label: "Скачать руководство по эксплуатации", target: "" },
-    ],
+    menu: {
+      type: 'download',
+      list: DB.downloads
+    },
   },
   {
     label: "Блог",
@@ -54,7 +60,7 @@ export default function Menu() {
           return (
             <li className={styles.item} key={i}>
               {target && <Link href={`/${target}`}>{label}</Link>}
-              {menu && <Drop label={label} menu={menu} />}
+              {menu && <Drop label={label} menu={menu}  />}
             </li>
           );
         })}
