@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { CATALOG_DB } from "@/api/db";
-import { PageWrapper } from "../components/pageWrapper";
+import { PageWrapper } from "../../../layout/pageWrapper";
 
 const Page = () => {
   const { label, description, images } = CATALOG_DB.chemistry.quick_couplings;

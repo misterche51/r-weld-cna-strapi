@@ -1,7 +1,7 @@
 "use client";
 
 import { CATALOG_DB } from "@/api/db";
-import { PageWrapper } from "../components/pageWrapper";
+import { PageWrapper } from "../../../layout/pageWrapper";
 
 
 const Page = () => {

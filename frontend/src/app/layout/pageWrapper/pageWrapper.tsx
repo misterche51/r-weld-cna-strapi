@@ -13,10 +13,11 @@ import { ReactNode } from "react";
 
 type TPageWrapperProps = {
     title: string,
+    withUnderline?: boolean,
     description?: string,
     content?: ReactNode
 }
-export const PageWrapper = ({title, description, content}:TPageWrapperProps) => {
+export const PageWrapper = ({title, withUnderline, description, content}:TPageWrapperProps) => {
 
   const breadcrumbs = useBreadcrumbs();
 
@@ -26,7 +27,7 @@ export const PageWrapper = ({title, description, content}:TPageWrapperProps) => 
         <Container>
           <div className={styles.inner}>
             <Breadcrumbs breadcrumbs={breadcrumbs} />
-            <Heading rank={2} text={title} withUnderline={true} />
+            <Heading rank={2} text={title} withUnderline={withUnderline ?? !!description} />
             {description && <Description description={description} />}
             {content}
             <div className={styles.form}>

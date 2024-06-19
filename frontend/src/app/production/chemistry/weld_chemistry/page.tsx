@@ -5,7 +5,7 @@ import { CATALOG_DB } from "@/api/db";
 import Item from "./components/item/item";
 
 import { TWeldChemistryItem } from "@/api/catalog/chemistry/declarations";
-import {PageWrapper} from "../components/pageWrapper";
+import {PageWrapper} from "../../../layout/pageWrapper";
 
 const WeldChemistryCatalogList = ({list}: {list: TWeldChemistryItem[]}) => {
   return (

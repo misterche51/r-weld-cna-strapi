@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import Heading from "@/app/shared/heading/heading";
 import { CATALOG_DB } from "@/api/db";
-import { PageWrapper } from "../components/pageWrapper";
+import { PageWrapper } from "../../../layout/pageWrapper";
 
 const Page = () => {
   const { label, description, data } = CATALOG_DB.chemistry.bayonet_connectors;
