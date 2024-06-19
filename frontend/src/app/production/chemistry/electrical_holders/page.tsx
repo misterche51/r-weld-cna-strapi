@@ -2,64 +2,47 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import Layout from "@/app/layout/layout";
-import Container from "@/app/layout/container/container";
-import Heading from "@/app/shared/heading/heading";
-import ContactForm from "@/app/shared/contactForm/contactForm";
 import { CATALOG_DB } from "@/api/db";
 import ImageWrapper from "../components/imageWrapper/imageWrapper";
-import Description from "@/app/shared/description/description";
-import useBreadcrumbs from "@/utils/useBreadcrumbs";
-import Breadcrumbs from "@/app/shared/breadcrumbs/breadcrumbs";
+import { PageWrapper } from "../components/pageWrapper";
 
 const Page = () => {
   const { label, description, images } =
     CATALOG_DB.chemistry.electrical_holders;
   const sectionNames = Object.keys(images);
-  const breadcrumbs = useBreadcrumbs();
-  return (
-    <Layout>
-      <div className={styles.wrapper}>
-        <Container>
-          <div className={styles.inner}>
-            <Breadcrumbs breadcrumbs={breadcrumbs} />
-
-            <Heading rank={2} text={label} withUnderline={true} />
-            {description && <Description description={description} />}
-            {sectionNames.map((name) => {
-              const { title, alt, src } = images[name];
-              return (
-                <ImageWrapper
-                  key={alt}
-                  title={title}
-                  image={
-                    <div
-                      className={`${styles.image} ${styles[`image--${name}`]}`}
-                    >
-                      <Image
-                        className={styles.image__pic}
-                        src={`/electrical_holders/${src}`}
-                        alt={alt}
-                        width={1276}
-                        height={300}
-                        priority
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                        }}
-                      />
-                    </div>
-                  }
+  
+  const content = <>
+      {sectionNames.map((name) => {
+        const { title, alt, src } = images[name];
+        return (
+          <ImageWrapper
+            key={alt}
+            title={title}
+            image={
+              <div
+                className={`${styles.image} ${styles[`image--${name}`]}`}
+              >
+                <Image
+                  className={styles.image__pic}
+                  src={`/electrical_holders/${src}`}
+                  alt={alt}
+                  width={1276}
+                  height={300}
+                  priority
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
                 />
-              );
-            })}
-            <div className={styles.form}>
-              <ContactForm />
-            </div>
-          </div>
-        </Container>
-      </div>
-    </Layout>
-  );
+              </div>
+            }
+          />
+        );
+      })}
+  </>
+
+  return (
+    <PageWrapper title={label} description={description} content={content} />);
+
 };
 export default Page;

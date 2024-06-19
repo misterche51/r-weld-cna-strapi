@@ -1,0 +1,45 @@
+.overlay {
+    position: fixed;
+    background-color: rgba(33, 33, 33, 0.5);
+    z-index: 9999999999;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.overlay--active {
+    display: block;
+}
+
+.inner {
+    width: 453px;
+    padding: 77px 30px;
+    background-color: var(--background-white);
+    position: absolute;
+    top: calc(50vh);
+    left: calc(50vw);
+    transform: translate(-50%);
+    border-radius: var(--border-radius-default);
+}
+
+.text {
+    font-weight: 600;
+    font-size: var(--fsz-xs);
+    text-align: center;
+}
+
+.close_button {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--decorative-color-blue);
+    border-radius: var(--border-radius-default);
+    background-color: transparent;
+    background-image: url('../../../../../../public/ic-close.svg');
+    background-position: -1px -1px;
+}
+

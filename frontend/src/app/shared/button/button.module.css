@@ -12,6 +12,20 @@
   display: block;
 }
 
+.comp:disabled {
+  cursor: default;
+}
+
+.comp:disabled {
+  cursor: default;
+
+}
+.comp:disabled:before {
+  background: var(--background-white);
+}
+
+
+
 .label {
   left: 0;
   top: 0;
@@ -54,6 +68,6 @@
   color: var(--color-text-extra-dark);
 }
 
-.comp:hover::before {
+.comp:not(:disabled):hover::before {
   opacity: 0;
 }
