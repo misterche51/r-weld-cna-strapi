@@ -10,7 +10,7 @@ import useBreadcrumbs from "@/utils/useBreadcrumbs";
 import Breadcrumbs from "../shared/breadcrumbs/breadcrumbs";
 
 export default function ProductionPage() {
-  const breadcrumbs = useBreadcrumbs(true);
+  const breadcrumbs = useBreadcrumbs();
   return (
     <Layout>
       <Container>

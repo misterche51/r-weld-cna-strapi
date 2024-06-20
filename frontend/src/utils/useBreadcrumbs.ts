@@ -30,7 +30,10 @@ const useBreadcrumbs = (isFromMainPage: TUseBreadcrumbsProps = false) => {
       target: prevTarget,
     });
   }
-  const breadcrumbs: TBreadcrumbItem[] = [rootBreadcrumb, ...crumbs];
+  const breadcrumbs: TBreadcrumbItem[] = [{
+    label: getTranslatedBreadcrumbLabel("home"),
+    target: "/",
+  }, rootBreadcrumb, ...crumbs];
   return breadcrumbs;
 };
 

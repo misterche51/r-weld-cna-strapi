@@ -15,7 +15,7 @@ import { YMaps } from "@pbe/react-yandex-maps";
 
 export default function ContactsPage() {
   const { contacts, dealers } = CONTACTS_PAGE_DB;
-  const breadcrumbs = useBreadcrumbs(true);
+  const breadcrumbs = useBreadcrumbs();
   return (
     <Layout>
       <div className={styles.wrapper}>

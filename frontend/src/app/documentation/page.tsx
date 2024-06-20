@@ -1,34 +1,32 @@
 "use client";
 
-import Layout from "../layout/layout";
-import Container from "@/app/layout/container/container";
 import DB from "@/api/db";
-import ContactForm from "@/app/shared/contactForm/contactForm";
 import styles from "./page.module.css";
-import Heading from "../shared/heading/heading";
 import Link from "next/link";
+import { PageWrapper } from "../layout/pageWrapper";
+import { useState } from "react";
 
-import useBreadcrumbs from "@/utils/useBreadcrumbs";
-import Breadcrumbs from "../shared/breadcrumbs/breadcrumbs";
+
+const DocumentationList = () => {
+  const [с] = useState();
+  const onShowMoreBtnClickHandler = () => {
+
+  }
+  return (
+    <div className={styles.content}>
+      <ul className={styles.list}>
+        {DB.downloads.map(({label ,id, path}) => 
+          <li key={id} className={styles.item}>
+            <div className={styles.image}></div>
+            <p className={styles.label}>{label}</p>
+            <Link className={styles.link} href={`${path}`} rel="noopener noreferrer" target="_blank">Скачать</Link>
+          </li>
+      )}
+    </ul>
+    <button className={styles.showMoreBtn} onClick={onShowMoreBtnClickHandler}>Показать еще</button>
+  </div>)
+}
 
 export default function DocumentationPage() {
-  const breadcrumbs = useBreadcrumbs(true);
-  return (
-    <Layout>
-      <Container>
-        <section className={styles.wrapper}>
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
-          <Heading rank={2} text="Документация" withUnderline={false} />
-          <ul className={styles.list}>
-            {DB.downloads.map(({label ,id, path}) => 
-              <li key={id} className={styles.item}>
-                <Link className={styles.link} href={`${path}`} rel="noopener noreferrer" target="_blank">{label}</Link>
-              </li>
-          )}
-          </ul>
-          <ContactForm />
-        </section>
-      </Container>
-    </Layout>
-  );
-}
+  return <PageWrapper title='Документация' withUnderline content={<DocumentationList />} />
+} 

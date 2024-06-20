@@ -4,6 +4,8 @@ export const BREADCRUMBS_DICTIONARY: Record<string, string> = {
   production: "Продукция",
   home: "Главная",
   blog: "Блог",
+  documentation: 'Документация',
+  contacts: 'Контакты',
   robotization: "Роботизация и автоматизация",
   chemistry: "Сварочная химия и аксессуары",
   quick_couplings: "Быстросъемные соединения",

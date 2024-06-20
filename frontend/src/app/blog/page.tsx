@@ -14,7 +14,7 @@ import useBreadcrumbs from "@/utils/useBreadcrumbs";
 import Breadcrumbs from "../shared/breadcrumbs/breadcrumbs";
 
 const PaginatePosts = () => {
-  const breadcrumbs = useBreadcrumbs(true);
+  const breadcrumbs = useBreadcrumbs();
   return (
     <Layout>
       <Container>
