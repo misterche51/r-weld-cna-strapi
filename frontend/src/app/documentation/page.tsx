@@ -8,13 +8,15 @@ import { useState } from "react";
 
 
 const DocumentationList = () => {
-  const [с] = useState();
+  const [isListExpanded, setIsListExpanded] = useState(false);
   const onShowMoreBtnClickHandler = () => {
-
+    setIsListExpanded(val => !val)
   }
+
+
   return (
     <div className={styles.content}>
-      <ul className={styles.list}>
+      <ul className={`${styles.list} ${isListExpanded ? styles["list--opened"] : ''}`}>
         {DB.downloads.map(({label ,id, path}) => 
           <li key={id} className={styles.item}>
             <div className={styles.image}></div>
@@ -23,7 +25,7 @@ const DocumentationList = () => {
           </li>
       )}
     </ul>
-    <button className={styles.showMoreBtn} onClick={onShowMoreBtnClickHandler}>Показать еще</button>
+    <button className={styles.showMoreBtn} onClick={onShowMoreBtnClickHandler}>{isListExpanded ? 'Свернуть' : 'Показать еще'  }</button>
   </div>)
 }
 
