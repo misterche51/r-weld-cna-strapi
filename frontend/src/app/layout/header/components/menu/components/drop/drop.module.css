@@ -35,7 +35,7 @@
 }
 
 .item--downloadable {
-  
+  padding-right: 60px;
 }
 
 .item--downloadable a::after {

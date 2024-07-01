@@ -52,13 +52,4 @@ export const DOWNLOADS_DB:TDownloadsDB = [
         label: 'Паспорт безопасности ABIBLUE',
         path:'https://disk.yandex.ru/i/9ewVdRaptHiJCQ',
     },
-    {   id:12,
-        label: 'Буклет робо-пакетов',
-        path:'https://disk.yandex.ru/i/8UXoLoQ58VEd0A',
-    },
-    {   
-        id:13,
-        label: 'Паспорт безопасности ABIBLUE',
-        path:'https://disk.yandex.ru/i/9ewVdRaptHiJCQ',
-    },
 ]
