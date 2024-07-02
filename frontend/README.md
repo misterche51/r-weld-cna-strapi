@@ -147,3 +147,104 @@
 [Строгачи](/frontend/src/api/catalog/chemistry/subcategories/planers.ts): 
 
 *Структура оформления идентична разделу **Электродержатели***
+
+---
+
+[Байонетные разъемы](/frontend/src/api/catalog/chemistry/subcategories/bayonet_connectors.ts): 
+
+В разделе data хранятся данные, необходимые для отображения таблиц/изображений и их описаний.
+
+Страница состоит из двух больших разделов:
+
+- techincal_info
+- systems
+
+**techical_info** содержит поля:
+
+- title
+- image, которое включает в себя *src* - имя картинки из соответствующей папки и *alt* с коротким скрытым описанием изображения
+- table, поле с данными о таблице, которое состоит из поля *heading* с заголовком таблицы и из массива строк *rows* с данными самой таблицы
+
+
+```
+{
+   label: "Название раздела",
+    description:
+      "Описание раздела, для переноса со строки на строку использовать \n",
+    data: {
+      technical_info: {
+        title: "Технические данные",
+        image: {
+          src: "technical_info.jpeg",
+          alt: "Таблица с техническими данными байонетных разъемов",
+        },
+        table: {
+          heading: "*ABI–CM / ABI–IF или АBI–CF / ABI–IM",
+          rows: [
+            "ABI–CM (Cable Male) = кабельный штекер",
+            "ABI–CF (Cable Female) = кабельное гнездо",
+            "ABI–IM (Insert мale) = панельный штекер",
+            "ABI–IF (Insert Female) = панельное гнездо",
+          ],
+        },
+      },
+      systems: {
+        title: "Система байонетных разъемов",
+        sections: [
+          {
+            image: {
+              src: "table_1-8.jpg",
+              alt: "Общий вид разъемов 1-8 из таблицы",
+            },
+            tables: [
+              {
+                heading: "Панельные гнезда",
+                rows: [
+                  { label: "1. ABI–IF 10–25", number: "Идент. No: 511.0304" },
+                  { label: "2. ABI–IF 35-50", number: "Идент. No: 511.0314" },
+                  { label: "3. ABI–IF 50–70", number: "Идент. No: 511.0330" },
+                  { label: "4. ABI-IF 70-95", number: "Идент. No: 511.0309" },
+                ],
+              },
+              {
+                heading: "Кабельные штекера",
+                rows: [
+                  { label: "5. ABI–CM 10–25", number: "Идент. No: 511.0305" },
+                  { label: "6. ABI–CM 35-50", number: "Идент. No: 511.0315" },
+                  { label: "7. ABI–CM 50–70", number: "Идент. No: 511.0331" },
+                  { label: "8. ABI-CM 70-95", number: "Идент. No: 511.0342" },
+                ],
+              },
+            ],
+          },
+          {
+            image: {
+              src: "table_9-16.jpg",
+              alt: "Общий вид разъемов 9-16 из таблицы",
+            },
+            tables: [
+              {
+                heading: "Панельные гнезда",
+                rows: [
+                  { label: "9. ABI–IM 10–25", number: "Идент. No: 511.0306" },
+                  { label: "10. ABI–IM 35-50", number: "Идент. No: 511.0316" },
+                  { label: "11. ABI–IM 50–70", number: "Идент. No: 511.0332" },
+                  { label: "12. ABI-IM 70-95", number: "Идент. No: 511.0320" },
+                ],
+              },
+              {
+                heading: "Кабельные штекера",
+                rows: [
+                  { label: "13. ABI–CF 10–25", number: "Идент. No: 511.0303" },
+                  { label: "14. ABI–CF 35-50", number: "Идент. No: 511.0313" },
+                  { label: "15. ABI–CF 50–70", number: "Идент. No: 511.0329" },
+                  { label: "16. ABI-CF 70-95", number: "Идент. No: 511.0340" },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    },
+  }
+```
