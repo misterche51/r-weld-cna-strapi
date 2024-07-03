@@ -6,8 +6,8 @@
   opacity: 0;
   z-index: 5;
   position: absolute;
-  transform: translateY(-150%);
-  transition: opacity 0.1s ease-in, transform 0.3s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in;
   border-radius: var(--border-radius-default);
   background-color: var(--background-white);
   border: 2px solid var(--decorative-color-light-blue);
@@ -16,7 +16,7 @@
 .dropdown--dropped,
 .dropdown--dropped {
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
 }
 
 .list {
@@ -31,6 +31,21 @@
   text-align: left;
   color: var(--color-text-dark);
   transition: color 0.1s ease-in-out;
+  position: relative;
+}
+
+.item--downloadable {
+  padding-right: 60px;
+}
+
+.item--downloadable a::after {
+  position: absolute;
+  content: '';
+  width: 36px;
+  height: 36px;
+  right: 20px;
+  top: 10px;
+  background-image: url('../../../../../../../../public/ic-doc.svg');
 }
 
 .item:hover {
