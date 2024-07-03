@@ -18,6 +18,11 @@ export const BREADCRUMBS_DICTIONARY: Record<string, string> = {
   other_accessories: "Прочие аксессуары",
   hand_torches: "Ручные горелки",
   equipment_and_other: "Оборудование и прочее",
+  mig_rf_air: "Ручные горелки RF GRIP",
+  mig_mb_air: "Ручные горелки MB EVO",
+  "mig_r-weld_air": "Ручные горелки R-WELD",
+  mig_mb_liquid: "Ручные горелки MB EVO",
+  "mig_r-weld_liquid": "Ручные горелки R-WELD"
 };
 
 export const CATALOG_CATEGORIES_DB: TCatalogCategoriesDB = [

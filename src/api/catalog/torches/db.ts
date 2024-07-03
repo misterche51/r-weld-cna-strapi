@@ -54,10 +54,6 @@ export const TORCHES_DB: TTorchesDB = {
       },
     ],
   },
-  mig_rf_liquid: {
-    label: "",
-    list: [],
-  },
   mig_mb_air: {
     label: "Ручные горелки MB EVO",
     list: [],

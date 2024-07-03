@@ -9,7 +9,6 @@ export type TTorchesItem = {
 
 export type TTorchesType =
   | "mig_rf_air"
-  | "mig_rf_liquid"
   | "mig_mb_air"
   | "mig_mb_liquid"
   | "mig_r-weld_air"

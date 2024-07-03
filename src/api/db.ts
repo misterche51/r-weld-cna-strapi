@@ -125,10 +125,6 @@ const DB: TDataBase = {
           ],
           "Жидкостное охлаждение": [
             {
-              label: "RF",
-              target: "mig_rf_liquid",
-            },
-            {
               label: "MB",
               target: "mig_mb_liquid",
             },
@@ -145,19 +141,11 @@ const DB: TDataBase = {
         categories: {
           "Воздушное охлаждение": [
             {
-              label: "ABITIG",
-              target: "tig_abitig_air",
-            },
-            {
               label: "R-WELD",
               target: "tig_r-weld_air",
             },
           ],
           "Жидкостное охлаждение": [
-            {
-              label: "ABITIG",
-              target: "tig_abitig_liquid",
-            },
             {
               label: "R-WELD",
               target: "tig_r-weld_liquid",
