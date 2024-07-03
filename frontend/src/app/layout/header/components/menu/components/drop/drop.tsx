@@ -41,7 +41,7 @@ export default function Drop({ label, menu }: TMenuItem) {
             {isDocumentationMenu ? 
               documentationDrop : 
               // @ts-expect-error
-              menu.list.map((menuItem, i) =>  <li className={`${styles.item}`}><Link href={`/${menuItem.target}`}>{menuItem.label}</Link></li> )}
+              menu.list.map((menuItem, i) => <li key={i} className={`${styles.item}`}><Link href={`/${menuItem.target}`}>{menuItem.label}</Link></li> )}
           </ul>
         }
       </div>
