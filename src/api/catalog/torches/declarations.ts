@@ -18,7 +18,14 @@ export type TTorchesType =
   | "tig_r-weld_air"
   | "tig_r-weld_liquid";
 
-export type TTorchesDB = Record<
-  TTorchesType,
-  { label: string; list: TTorchesItem[] }
->;
+type TTorchesCategoryData =  { label: string; list: TTorchesItem[] }
+
+export type TTorchesDB = {
+  label: string,
+  type: string,
+  target: string,
+  data: Record<
+    TTorchesType,
+    TTorchesCategoryData
+  >
+};

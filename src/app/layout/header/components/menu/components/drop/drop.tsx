@@ -1,12 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./drop.module.css";
-import { TMenuItem } from "../..";
+import { TMenuItem } from "@/api/declarations";
 
 
-
-
-export default function Drop({ label, menu }: TMenuItem) {
+export default function Drop({ label, menu, target }: TMenuItem) {
   const [isDropped, setIsDropped] = useState(false);
   const onDropHover = () => setIsDropped(true);
   const onDropUnHover = () => setIsDropped(false);
@@ -20,14 +18,15 @@ export default function Drop({ label, menu }: TMenuItem) {
       <li className={`${styles.item}`}>
         <Link href='/documentation'>Документация</Link>
       </li>
-    </> 
+    </> ;
+    
   return (
     <div
       className={styles.wrapper}
       onMouseOver={onDropHover}
       onMouseLeave={onDropUnHover}
     >
-      <>{label}</>
+      {target ? <Link href={`/${target}`}>{label}</Link>:<>{label}</>}
       <div 
         className={`${styles.dropdown} ${
           isDropped ? styles["dropdown--dropped"] : ""

@@ -1,20 +1,20 @@
 "use client";
 
 import React from "react";
+import { PageWrapper } from "../../layout/pageWrapper";
 import styles from "./chemistry.module.css";
 import CatalogItem from "@/app/shared/catalogItem/catalogItem";
 import Link from "next/link";
 import DB from "@/api/db";
 
 
-import { PageWrapper } from "../../layout/pageWrapper";
-
 const ChemistryMain = () => {
+  const categoies = Object.values(DB.catalog.chemistry.data);
   const list = <ul className={styles.list}>
-    {DB.catalog.chemistry.map(({ label, target, image }, i) => (
+    {categoies.map(({ routing }, i) => (
       <li key={i} className={styles.item}>
-        <Link href={`/production/chemistry/${target}`}>
-          <CatalogItem label={label} image={image} />
+        <Link href={`/production/chemistry/${routing.target}`}>
+          <CatalogItem label={routing.label} image={routing.image} />
         </Link>
       </li>
     ))}

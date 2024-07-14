@@ -1,7 +1,50 @@
-export const BAYONET_CONNECTORS_CATALOG_DATA = {
-    label: "Байонетные разъемы",
-    description:
-      "Наши байонетные разъёмы гарантируют абсолютную безопасность установок для дуговой сварки, обеспечивая надёжное и быстрое соединение с защитой от пробоя.\nУниверсальная система подключения, доступная в различных конфигурациях, включая панельное гнездо/кабельный штекер и панельный штекер/кабельное гнездо. Данные разъёмы легко интегрируются с оборудованием большинства производителей.\nКвадратная геометрия профиля предотвращает прокручивание, обеспечивая оптимальное крепление и отличную токопередачу, а соответствие стандартам EN 60 974–12 гарантирует надёжность и высокие требования безопасности.",
+import { TImageData, IChemistryCategoryDB } from "../declarations";
+
+type TBayonetConnectorsTechInfoSection = {
+  title: string;
+  image: TImageData;
+  table: {
+    heading: string;
+    rows: string[];
+  };
+};
+
+type TBayonetConnectorsSystemsTable = {
+  heading: string;
+  rows: { label: string; number: string }[];
+};
+
+type TBayonetConnectorsSystemsSection = {
+  title: string;
+  sections: {
+    image: TImageData;
+    tables: TBayonetConnectorsSystemsTable[];
+  }[];
+};
+
+type TBayonetConnectorsContent = {
+  technical_info: TBayonetConnectorsTechInfoSection;
+  systems: TBayonetConnectorsSystemsSection;
+};
+
+export interface IBayonetConnectorsDB extends IChemistryCategoryDB {
+  data: TBayonetConnectorsContent;
+}
+
+
+
+export const BAYONET_CONNECTORS_CATALOG_DATA:IBayonetConnectorsDB = {
+  routing: { 
+    label: "Байонетные разъемы", 
+    target: "bayonet_connectors", 
+    image: "" 
+  },  
+  header: {
+      label: "Байонетные разъемы",
+      description:
+        "Наши байонетные разъёмы гарантируют абсолютную безопасность установок для дуговой сварки, обеспечивая надёжное и быстрое соединение с защитой от пробоя.\nУниверсальная система подключения, доступная в различных конфигурациях, включая панельное гнездо/кабельный штекер и панельный штекер/кабельное гнездо. Данные разъёмы легко интегрируются с оборудованием большинства производителей.\nКвадратная геометрия профиля предотвращает прокручивание, обеспечивая оптимальное крепление и отличную токопередачу, а соответствие стандартам EN 60 974–12 гарантирует надёжность и высокие требования безопасности.",
+  
+    },
     data: {
       technical_info: {
         title: "Технические данные",

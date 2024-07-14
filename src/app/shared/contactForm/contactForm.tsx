@@ -23,7 +23,7 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
       setIsSendButtonClickable(true)
     } 
   }
-  console.log({isOverlayActive})
+
   return (
     <form className={`${styles[`wrapper--${variant}`]} ${styles.wrapper}`} id='contact-form' onSubmit={(e) => {
         e.preventDefault();

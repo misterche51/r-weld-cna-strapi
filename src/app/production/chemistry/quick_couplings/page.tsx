@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { CATALOG_DB } from "@/api/db";
+import DB from "@/api/db";
 import { PageWrapper } from "../../../layout/pageWrapper";
 
 const Page = () => {
-  const { label, description, images } = CATALOG_DB.chemistry.quick_couplings;
+  const { data, header } = DB.catalog.chemistry.data.quick_couplings;
+  const {label, description} = header;
+  const {images} = data;
   const tables = Object.values(images);
   
   const content = <div className={styles.content}>

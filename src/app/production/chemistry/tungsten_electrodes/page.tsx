@@ -2,32 +2,29 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { CATALOG_DB } from "@/api/db";
+import DB from "@/api/db";
 
 import { PageWrapper } from "../../../layout/pageWrapper";
-import { TTungstenElectrodesContent } from "@/api/catalog/chemistry/declarations";
 
-const Content = ({image}: TTungstenElectrodesContent) => {
-  const {src, alt, description} = image;
-  return (
-    <div className={styles.content}>
-      <div className={styles.content__image}>
-        <Image
-          src={`/tungsten_electrodes/${src}`}
-          alt={alt}
-          fill
-          style={{ objectFit: "contain" }}
-          priority
-        />
-      </div>
-      <div className={styles.content__text}>{description}</div>
-    </div>
-  )
-}
 const Page = () => {
-  const { label, description, image } =
-  CATALOG_DB.chemistry.tungsten_electrodes;
+  const { data, header } = DB.catalog.chemistry.data.tungsten_electrodes;
+  const {label, description} = header;
+  const { image }= data
+
+  const content = <div className={styles.content}>
+  <div className={styles.content__image}>
+    <Image
+      src={`/tungsten_electrodes/${image.src}`}
+      alt={image.alt}
+      fill
+      style={{ objectFit: "contain" }}
+      priority
+    />
+  </div>
+  <div className={styles.content__text}>{image.description}</div>
+</div>
+
   return (
-    <PageWrapper title={label} description={description} content={<Content image={image}/>} />);
+    <PageWrapper title={label} description={description} content={content} />);
 };
 export default Page;

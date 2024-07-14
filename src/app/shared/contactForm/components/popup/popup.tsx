@@ -4,7 +4,6 @@ type TPopupProps = {
     onCloseButtonClickHandler: VoidFunction
 }
 const Popup = ({isVisible, onCloseButtonClickHandler}:TPopupProps) => {
-    console.log(isVisible)
     return (
     <div className={`${styles.overlay} ${isVisible ?  styles['overlay--active'] : '' }`}>
             <div className={styles.inner}>
@@ -13,7 +12,6 @@ const Popup = ({isVisible, onCloseButtonClickHandler}:TPopupProps) => {
                 Мы свяжемся с вами в течение 15 минут.
                 </p>
             <button className={styles.close_button} onClick={() => {
-                console.log('rarar');
                 onCloseButtonClickHandler();
             }}></button>
         </div>

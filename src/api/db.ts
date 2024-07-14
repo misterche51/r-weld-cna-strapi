@@ -1,66 +1,16 @@
 import { BLOG_DB } from "./blog";
 import { CONTACTS_DB } from "./contacts";
 import { DEALERS_DB } from "./dealers";
-
-import { TPostItem } from "./blog/declarations";
-import { TContactsItem } from "./contacts/declarations";
-import { TRegionItem } from "./dealers/declarations";
-
-import { CHEMISTRY_DB, TORCHES_DB } from "./catalog";
-import { ROBOTIZATION_DB } from "./catalog/robotization";
 import { DOWNLOADS_DB } from "./documentation";
-import { TDownloadsDB } from "./documentation/declarations";
+import CATALOG_DB from "./catalog/db";
 
-type TTorchesCategoryName = "mig" | "tig";
-export type TTorcheSubCategoryData = {
-  label: string;
-  target: string;
-};
+import { TCatalogCategoriesDB } from "./declarations";
 
-type TCoolingType = "Воздушное охлаждение" | "Жидкостное охлаждение";
 
-export type TTorchesCatalog = Record<
-  TTorchesCategoryName,
-  TTorchesCategoryData
->;
 
-type TCatalogItem = "chemistry" | "equipment" | "torches" | "roborization";
-type TCatalogCategoryLink = {
-  label: string;
-  target: string;
-  image: string;
-};
+import { TInfoDB, TDataBase, TTorchesCatalog,  TNavigationMenuDB } from "./declarations";
 
-type TDataBase = {
-  info: any;
-  downloads: TDownloadsDB;
-  posts: TPostItem[];
-  contacts: TContactsItem[];
-  dealers: TRegionItem[];
-  catalog: Record<
-    TCatalogItem,
-    TTorchesCatalog | TCatalogCategoryLink[] | ""
-  > & { chemistry: TCatalogCategoryLink[] };
-};
 
-export type TTorchesCategoryData = {
-  label: string;
-  image: string;
-  categories: Record<TCoolingType, TTorcheSubCategoryData[]>;
-};
-
-type TInfoContactItem = {
-  href: string,
-  label: string,
-}
-
-type TInfoDB = {
-  phone: TInfoContactItem,
-  email: TInfoContactItem,
-  address: string,
-  description: string,
-
-}
 export const INFO_DB:TInfoDB =  {
   phone: {
     href: 'tel:88009001010',
@@ -74,93 +24,108 @@ export const INFO_DB:TInfoDB =  {
   description: 'Российский производитель и поставщик горелок для MIG и TIG сварки',
 }
 
+
+const CATALOG_CATEGORIES:TCatalogCategoriesDB = Object.values(CATALOG_DB).map(({label, target, type})  => ({label, target, type}))
+
+const NAVIGATION_MENU_DB:TNavigationMenuDB  = [
+  {
+    label: "Продукция",
+    target: 'production',
+    menu: {
+      type:'link',
+      list: CATALOG_CATEGORIES,
+    },
+  },
+  {
+    label: "Документация",
+    target: 'documentation',
+    menu: {
+      type: 'download',
+      list: DOWNLOADS_DB
+    },
+  },
+  {
+    label: "Блог",
+    target: "blog",
+  },
+  {
+    label: "Контакты",
+    target: "contacts",
+  },
+];
+
+
 const DB: TDataBase = {
   info: INFO_DB,
+  menu: NAVIGATION_MENU_DB,
   downloads: DOWNLOADS_DB,
   posts: BLOG_DB,
   contacts: CONTACTS_DB,
   dealers: DEALERS_DB,
-  catalog: {
-    chemistry: [
-      { label: "Сварочная химия", target: "weld_chemistry", image: "" },
-      { label: "Электродержатели", target: "electrical_holders", image: "" },
-      { label: "Угольные электроды", target: "carbon_electrodes", image: "" },
-      { label: "Строгачи", target: "planers", image: "" },
-      {
-        label: "Вольфрамовые электроды",
-        target: "tungsten_electrodes",
-        image: "",
-      },
-      { label: "Байонетные разъемы", target: "bayonet_connectors", image: "" },
-      {
-        label: "Быстросъемные соединения",
-        target: "quick_couplings",
-        image: "",
-      },
-      { label: "Прочие аксессуары", target: "other_accessories", image: "" },
-    ],
-    equipment: [
-      { label: "Сварочные источники", target: "", image: "" },
-      { label: "Дымовытяжные установки", target: "", image: "" },
-      { label: "Прочее", target: "", image: "" },
-    ],
-    torches: {
-      mig: {
-        label: "Сварочные горелки MIG",
-        image: "mig",
-        categories: {
-          "Воздушное охлаждение": [
-            {
-              label: "RF",
-              target: "mig_rf_air",
-            },
-            {
-              label: "MB",
-              target: "mig_mb_air",
-            },
-            {
-              label: "R-WELD",
-              target: "mig_r-weld_air",
-            },
-          ],
-          "Жидкостное охлаждение": [
-            {
-              label: "MB",
-              target: "mig_mb_liquid",
-            },
-            {
-              label: "R-WELD",
-              target: "mig_r-weld_liquid",
-            },
-          ],
-        },
-      },
-      tig: {
-        label: "Сварочные горелки TIG",
-        image: "tig",
-        categories: {
-          "Воздушное охлаждение": [
-            {
-              label: "R-WELD",
-              target: "tig_r-weld_air",
-            },
-          ],
-          "Жидкостное охлаждение": [
-            {
-              label: "R-WELD",
-              target: "tig_r-weld_liquid",
-            },
-          ],
-        },
-      },
-    } as TTorchesCatalog,
-    roborization: "",
-  },
+  catalog: CATALOG_DB,
+  catalog_categories: CATALOG_CATEGORIES,
 };
 export default DB;
 
-export const CATALOG_DB = {
-  torches: TORCHES_DB,
-  chemistry: CHEMISTRY_DB,
-  robotization: ROBOTIZATION_DB,
-};
+  // catalog: {
+  //   equipment: EQUIPMENT_DB,
+    
+    
+    
+  //   // [
+  //   //   { label: "Сварочные источники", target: "welding_sources", image: "" },
+  //   //   { label: "Дымовытяжные установки", target: "smoke_exhaust_systems", image: "" },
+  //   //   { label: "Прочее", target: "", image: "" },
+  //   // ],
+  //   torches: {
+  //     mig: {
+  //       label: "Сварочные горелки MIG",
+  //       image: "mig",
+  //       categories: {
+  //         "Воздушное охлаждение": [
+  //           {
+  //             label: "RF",
+  //             target: "mig_rf_air",
+  //           },
+  //           {
+  //             label: "MB",
+  //             target: "mig_mb_air",
+  //           },
+  //           {
+  //             label: "R-WELD",
+  //             target: "mig_r-weld_air",
+  //           },
+  //         ],
+  //         "Жидкостное охлаждение": [
+  //           {
+  //             label: "MB",
+  //             target: "mig_mb_liquid",
+  //           },
+  //           {
+  //             label: "R-WELD",
+  //             target: "mig_r-weld_liquid",
+  //           },
+  //         ],
+  //       },
+  //     },
+  //     tig: {
+  //       label: "Сварочные горелки TIG",
+  //       image: "tig",
+  //       categories: {
+  //         "Воздушное охлаждение": [
+  //           {
+  //             label: "R-WELD",
+  //             target: "tig_r-weld_air",
+  //           },
+  //         ],
+  //         "Жидкостное охлаждение": [
+  //           {
+  //             label: "R-WELD",
+  //             target: "tig_r-weld_liquid",
+  //           },
+  //         ],
+  //       },
+  //     },
+  //   } as TTorchesCatalog,
+  //   roborization: "",
+  // },

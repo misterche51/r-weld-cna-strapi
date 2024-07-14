@@ -1,67 +1,57 @@
+import { ITungstenElectrodesDB } from "./subcategories/tungsten_electrodes";
+import { IBayonetConnectorsDB } from "./subcategories/bayonet_connectors";
+import { IWeldChemistryDB } from "./subcategories/weld_chemistry";
+import { IQuickCouplingsDB } from "./subcategories/quick_couplings";
+import { IPlanersDB } from "./subcategories/planers";
+import { ICarbonElectrodesDB } from "./subcategories/carbon_electrodes";
+import { IElectricalHoldersDB } from "./subcategories/electrical_holders";
+
+export type TRountingInfo = {
+  label: string;
+  target: string;
+  image?: string;
+}
+
 export type TChemistrySectionHeader = {
   label: string;
   description?: string;
 };
+
 export type TChemistrySectionContent = {
   images: Record<string, { src: string; alt: string; title?: string }>;
 };
 
-type TChemistrySectionData = TChemistrySectionHeader & TChemistrySectionContent;
-
-type TImageData = {
+export type TImageData = {
   src: string;
   alt: string;
 };
 
-type TBayonetConnectorsTechInfoSection = {
-  title: string;
-  image: TImageData;
-  table: {
-    heading: string;
-    rows: string[];
-  };
+
+
+
+export interface IChemistryCategoryDB {
+  routing: TRountingInfo;
+  header: TChemistrySectionHeader;
+}
+
+
+
+
+
+export type TChemistryCatalog = {
+  weld_chemistry: IWeldChemistryDB;
+  electrical_holders: IElectricalHoldersDB;
+  carbon_electrodes: ICarbonElectrodesDB;
+  planers: IPlanersDB;
+  quick_couplings: IQuickCouplingsDB;
+  tungsten_electrodes: ITungstenElectrodesDB ;
+  bayonet_connectors: IBayonetConnectorsDB;
+  other_accessories: IChemistryCategoryDB;
 };
 
-type TBayonetConnectorsSystemsTable = {
-  heading: string;
-  rows: { label: string; number: string }[];
-};
-type TBayonetConnectorsSystemsSection = {
-  title: string;
-  sections: {
-    image: TImageData;
-    tables: TBayonetConnectorsSystemsTable[];
-  }[];
-};
-
-type TBayonetConnectorsContent = {
-  data: {
-    technical_info: TBayonetConnectorsTechInfoSection;
-    systems: TBayonetConnectorsSystemsSection;
-  };
-};
-
-export type TTungstenElectrodesContent = {
-  image: TImageData & { description: string };
-};
-
-type TTagsList = { tags: string[] };
-export type TWeldChemistryItem = {
-  name: string;
-  image: TImageData;
-  info?: string;
-} & TTagsList;
-
-type TWeldChemistrySectionData = TChemistrySectionHeader & {
-  list: TWeldChemistryItem[];
-};
 export type TChemistryDB = {
-  weld_chemistry: TWeldChemistrySectionData;
-  electrical_holders: TChemistrySectionData & TTagsList;
-  carbon_electrodes: TChemistrySectionData;
-  planers: TChemistrySectionData;
-  quick_couplings: TChemistrySectionData;
-  tungsten_electrodes: TChemistrySectionHeader & TTungstenElectrodesContent;
-  bayonet_connectors: TChemistrySectionHeader & TBayonetConnectorsContent;
-  other_accessories: TChemistrySectionHeader;
-};
+  label: string,
+  type: string,
+  target: string,
+  data: TChemistryCatalog,
+}

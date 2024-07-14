@@ -1,4 +1,9 @@
 export type TRobotizationsDB = {
-  label: string;
-  content: string;
+  label: string,
+  type: string,
+  target: string,
+  data: { 
+    label: string;
+    content: string;
+  }
 };

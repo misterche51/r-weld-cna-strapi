@@ -10,14 +10,13 @@ import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
 import Image from "next/image";
 import Heading from "@/app/shared/heading/heading";
-import { CATALOG_DB } from "@/api/db";
+import DB from "@/api/db";
 
 import useBreadcrumbs from "@/utils/useBreadcrumbs";
 
 const RobotizationMain = () => {
-  const { label, content } = CATALOG_DB.robotization;
+  const { label, content } = DB.catalog.robotization.data;
   const breadcrumbs = useBreadcrumbs();
-  console.log({ breadcrumbs });
   return (
     <Layout>
       <div className={styles.wrapper}>

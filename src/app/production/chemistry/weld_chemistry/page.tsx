@@ -1,28 +1,24 @@
 "use client";
 
 import styles from "./styles.module.css";
-import { CATALOG_DB } from "@/api/db";
-import Item from "./components/item/item";
+import DB from "@/api/db";
+import { Item } from "@/app/shared";
 
-import { TWeldChemistryItem } from "@/api/catalog/chemistry/declarations";
-import {PageWrapper} from "../../../layout/pageWrapper";
-
-const WeldChemistryCatalogList = ({list}: {list: TWeldChemistryItem[]}) => {
-  return (
-    <ul className={styles.list}>
-      {list.map((data, i) => (
-        <li key={i} className={styles.list__item}>
-          {/* @ts-expect-error */}
-          <Item {...data} />
-        </li>
-      ))}
-    </ul>
-    )
-  }
+import { PageWrapper } from "../../../layout/pageWrapper";
 
 const Page = () => {
-  const { label, description, list } = CATALOG_DB.chemistry.weld_chemistry;
+  const { header, data } = DB.catalog.chemistry.data.weld_chemistry;
+  const {label, description} = header;
+
+  const content = <ul className={styles.list}>
+    {data.map(({name, image, info}, i) => (
+    <li key={i} className={styles.list__item}>
+      <Item name={name} image={`/weld_chemistry/${image.src}`} info={info} />
+    </li>
+  ))}
+  </ul>
+  
   return (
-    <PageWrapper title={label} description={description} content={<WeldChemistryCatalogList list={list}/>} />);
+    <PageWrapper title={label} description={description} content={content} />);
 };
 export default Page;

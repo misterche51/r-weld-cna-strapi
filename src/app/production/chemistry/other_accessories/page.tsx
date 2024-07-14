@@ -1,11 +1,12 @@
 "use client";
 
-import { CATALOG_DB } from "@/api/db";
 import { PageWrapper } from "../../../layout/pageWrapper";
+import DB from "@/api/db";
 
 
 const Page = () => {
-  const { label, description } = CATALOG_DB.chemistry.other_accessories;
+  const { header } = DB.catalog.chemistry.data.other_accessories;
+  const {label, description} = header
   
   return (
     <PageWrapper title={label} description={description}/>

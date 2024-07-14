@@ -6,12 +6,12 @@ import styles from "./production.module.css";
 import Container from "@/app/layout/container/container";
 import SectionTitle from "../sectionTitle/sectionTitle";
 
-import { CATALOG_CATEGORIES_DB } from "@/api/catalog/categories";
+import DB from "@/api/db";
 
 export const List = () => {
   return (
     <ul className={styles.list}>
-      {CATALOG_CATEGORIES_DB.map(({ label, type, target }, i) => (
+      {DB.catalog_categories.map(({ label, type, target }, i) => (
         <li key={i} className={styles.item}>
           <Link href={`${target}`}>
             <>

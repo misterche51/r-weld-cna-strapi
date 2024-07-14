@@ -2,13 +2,16 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { CATALOG_DB } from "@/api/db";
+import DB from "@/api/db";
 import ImageWrapper from "../components/imageWrapper/imageWrapper";
 
 import { PageWrapper } from "../../../layout/pageWrapper";
 
 const Page = () => {
-  const { label, description, images } = CATALOG_DB.chemistry.planers;
+  const { header, data } = DB.catalog.chemistry.data.planers;
+  const {label, description} = header;
+  const {images} = data;
+  
   const sectionNames = Object.keys(images);
 
   const content = <>
