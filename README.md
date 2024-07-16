@@ -1,6 +1,6 @@
 # Инструкция по наполеннию контентом:
 
-[Документация](/frontend/src/api/documentation/db.ts):
+[Документация](/src/api/documentation/db.ts):
 
 Файл имеет вид коллекции сущностей, каждая из которых имеет вид:
 
@@ -17,7 +17,7 @@
 
 ---
 
-[Контакты](/frontend/src/api/contacts/db.ts): 
+[Контакты](/src/api/contacts/db.ts): 
 
 Файл имеет вид коллекции сущностей, каждая из которых имеет вид:
 
@@ -45,7 +45,7 @@
 
   ---
 
-[Дилеры](/frontend/src/api/dealers/db.ts): 
+[Дилеры](/src/api/dealers/db.ts): 
 
 Файл имеет вид коллекции сущностей регионов, каждая из которых имеет вид:
 
@@ -68,7 +68,7 @@
 ```
 ---
 
-[Блог](/frontend/src/api/blog/db.ts): 
+[Блог](/src/api/blog/db.ts): 
 
 Файл имеет вид коллекции сущностей регионов, каждая из которых имеет вид:
 
@@ -87,7 +87,7 @@
     date*: "Дата публикации в формате : 2 марта 1992",
   }
 ```
-[Папка с изображениями для блога](/frontend/public/blog)
+[Папка с изображениями для блога](/public/blog)
 
 ---
 
@@ -95,7 +95,7 @@
 
 ### Сварочная химия
 ---
-[Быстросъемные соединения](/frontend/src/api/catalog/chemistry/subcategories/quick_couplings.ts): 
+[Быстросъемные соединения](/src/api/catalog/chemistry/subcategories/quick_couplings.ts): 
 
 *Здесь нет как такового каталога, поэтому файл состоит из заголовка, описания и объекта с изображениями **images**, каждое из которых имеет поле **src** и **alt***
 ```
@@ -117,7 +117,7 @@
 ```
 ---
 
-[Электродержатели](/frontend/src/api/catalog/chemistry/subcategories/electrical_holders.ts): 
+[Электродержатели](/src/api/catalog/chemistry/subcategories/electrical_holders.ts): 
 
 *Здесь нет как такового каталога, поэтому файл состоит из заголовка, описания и объекта с изображениями **images**, каждое из которых имеет обязательные поля **src** и **alt**, а также может иметь поле **title***
 ```
@@ -144,13 +144,13 @@
 ```
 ---
 
-[Строгачи](/frontend/src/api/catalog/chemistry/subcategories/planers.ts): 
+[Строгачи](/src/api/catalog/chemistry/subcategories/planers.ts): 
 
 *Структура оформления идентична разделу **Электродержатели***
 
 ---
 
-[Байонетные разъемы](/frontend/src/api/catalog/chemistry/subcategories/bayonet_connectors.ts): 
+[Байонетные разъемы](/src/api/catalog/chemistry/subcategories/bayonet_connectors.ts): 
 
 В разделе data хранятся данные, необходимые для отображения таблиц/изображений и их описаний.
 
