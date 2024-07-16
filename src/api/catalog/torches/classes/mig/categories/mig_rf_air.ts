@@ -7,7 +7,7 @@ export const MIG_RF_AIR = {
       co2: "180 A",
       gas: "150 A",
       pv: "60%",
-      wire: "0.6 - 1.0 мм",
+      wire: "фыафафафафафа",
     },
     {
       name: "RF GRIP 25",
