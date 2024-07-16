@@ -14,7 +14,7 @@ const Page = ({
     categoryName: TTorchesType;
   };
 }) => {
-  const [group,,cooling] = params.categoryName.split('_');
+  const [group,,cooling] = params.categoryName.split('_') as ['tig'|'mig', string, 'air'|'liquid'];
   const isAirCooling = cooling === 'air';
   const {label, list } = DB.catalog.torches.data.classes[group].categories[isAirCooling?'Воздушное охлаждение':'Жидкостное охлаждение'].filter(({target}) => target === params.categoryName)[0].data
   const content = <ul className={styles.list}>
