@@ -7,7 +7,7 @@ import { MIG_R_WELD_LIQUID } from "./categories/mig_r-weld_liquid";
 import { MIG_RF_AIR } from "./categories/mig_rf_air";
 
 export const TORCHES_MIG_DB:TTorchesClass = {
-    label: "Сварочные горелки MIG",
+    label: "Сварочныыыые горелки MIG",
     image: "mig",
     categories: {
       "Воздушное охлаждение": [
