@@ -32,7 +32,7 @@ export const List = () => {
   );
 };
 
-export default function Production({ children }: PropsWithChildren) {
+export default function Production() {
   return (
     <div className={styles.wrapper}>
       <Container>

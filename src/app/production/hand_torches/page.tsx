@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 import styles from "./hand_torches.module.css";
 
-import { TTorchesCatalog } from "@/api/db";
 import ContactForm from "@/app/shared/contactForm/contactForm";
 import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
@@ -26,7 +25,11 @@ const HandTorchesMain = () => {
     setVisibleTestBlock("usage");
   };
 
-  const PREPARED_DATA = Object.values(DB.catalog.torches as TTorchesCatalog);
+  const {label, description, data} = DB.catalog.torches;
+  const PREPARED_DATA = Object.values(data.classes)
+
+  const [advantagesLabel, usageLabel] = Object.keys(description)
+
   const breadcrumbs = useBreadcrumbs();
   return (
     <Layout>
@@ -34,7 +37,7 @@ const HandTorchesMain = () => {
         <div className={styles.wrapper}>
           <Breadcrumbs breadcrumbs={breadcrumbs} />
           <div className={styles.header}>
-            <Heading rank={2} text="Ручные горелки" withUnderline={false} />
+            <Heading rank={2} text={label} withUnderline={false} />
             <div className={styles.advantages}>
               <label className={styles.button}>
                 <input

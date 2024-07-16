@@ -1,94 +1,34 @@
 import { TTorchesDB } from "./declarations";
+import { TORCHES_MIG_DB } from "./classes/mig/db";
+import { TORCHES_TIG_DB } from "./classes/tig/db";
+
 
 export const TORCHES_DB: TTorchesDB = {
   label: "Ручные горелки",
   type: "hand_torches",
+  description: {
+    advantages: {
+      label: 'Преимущества',
+      text: `Срок службы выше аналогов за счёт производства
+            по международным стандартам и немецким технологиям. 
+            Эргономичный дизайн облегчает работу сварщика и уменьшает
+            усталость рук. Все ручные горелки R-Weld тщательно
+            тестируются, что сводит риск брака к минимуму. Износостойкость
+            и долговечность запасных частей обеспечивают экономию бюджета
+            предприятия и оптимизацию складских запасов.`
+    },
+    usage: {
+      label:'Применение',
+      text: `Наши горелки используются во всех сферах промышленности:
+        от автомобилестроения и производства металлоконструкций,
+        до судостроения и инновационных технологий.`
+    }
+  },
   target: "production/hand_torches",
   data: {
-    mig_rf_air: {
-      label: "Ручные горелки RF GRIP",
-      list: [
-        {
-          name: "RF GRIP 15",
-          image: "",
-          co2: "180 A",
-          gas: "150 A",
-          pv: "60%",
-          wire: "0.6 - 1.0 мм",
-        },
-        {
-          name: "RF GRIP 25",
-          image: "",
-          co2: "180 A",
-          gas: "200 A",
-          pv: "60%",
-          wire: "0.6 - 1.0 мм",
-        },
-        {
-          name: "RF GRIP 26",
-          image: "",
-          co2: "180 A",
-          gas: "200 A",
-          pv: "60%",
-          wire: "0.6 - 1.0 мм",
-        },
-        {
-          name: "RF GRIP 36",
-          image: "",
-          co2: "180 A",
-          gas: "200 A",
-          pv: "60%",
-          wire: "0.6 - 1.0 мм",
-        },
-        {
-          name: "RF GRIP 36 LC",
-          image: "",
-          co2: "180 A",
-          gas: "200 A",
-          pv: "60%",
-          wire: "0.6 - 1.0 мм",
-        },
-        {
-          name: "RF GRIP 45",
-          image: "",
-          co2: "180 A",
-          gas: "200 A",
-          pv: "60%",
-          wire: "0.6 - 1.0 мм",
-        },
-      ],
-    },
-    mig_mb_air: {
-      label: "Ручные горелки MB EVO",
-      list: [],
-    },
-    mig_mb_liquid: {
-      label: "",
-      list: [],
-    },
-    "mig_r-weld_air": {
-      label: "",
-      list: [],
-    },
-    "mig_r-weld_liquid": {
-      label: "",
-      list: [],
-    },
-    tig_abitig_air: {
-      label: "",
-      list: [],
-    },
-    tig_abitig_liquid: {
-      label: "",
-      list: [],
-    },
-    "tig_r-weld_air": {
-      label: "",
-      list: [],
-    },
-    "tig_r-weld_liquid": {
-      label: "",
-      list: [],
-    },
+    classes: {
+      mig: TORCHES_MIG_DB,
+      tig: TORCHES_TIG_DB, 
+    }
   }
 };

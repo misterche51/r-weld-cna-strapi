@@ -1,10 +1,10 @@
 import styles from "./categorySelect.module.css";
-import Image from "next/image";
 import CatalogItem from "@/app/shared/catalogItem/catalogItem";
 import Select from "./components/select/select";
-import { TTorchesCategoryData } from "@/api/db";
+import { TTorchesClass } from "@/api/catalog/torches/declarations";
 
-type TCatalogItemProps = TTorchesCategoryData;
+
+type TCatalogItemProps = TTorchesClass;
 
 export default function CategorySelect({
   label,
@@ -12,7 +12,7 @@ export default function CategorySelect({
   categories,
 }: TCatalogItemProps) {
   const preparedDrops = Object.values(categories);
-  const preparedLabels = Object.keys(categories);
+  const preparedLabels = Object.keys(categories) ;
   return (
     <div className={styles.wrapper}>
       <CatalogItem image={image} withDrop={true} />
@@ -20,6 +20,7 @@ export default function CategorySelect({
       <ul className={styles.drops}>
         {preparedLabels.map((label, i) => (
           <li key={i} className={styles.drops__item}>
+            {/* @ts-expect-error */}
             <Select label={label} options={preparedDrops[i]} />
           </li>
         ))}

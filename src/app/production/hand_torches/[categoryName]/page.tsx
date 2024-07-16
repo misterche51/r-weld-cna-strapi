@@ -1,14 +1,11 @@
 // "use client";
 
 import styles from "./styles.module.css";
-import Layout from "@/app/layout/layout";
-import Container from "@/app/layout/container/container";
-import Heading from "@/app/shared/heading/heading";
-import ContactForm from "@/app/shared/contactForm/contactForm";
-import { CATALOG_DB } from "@/api/db";
 import { TTorchesType } from "@/api/catalog/torches/declarations";
 import Item from "./components/item/item";
 import { PageWrapper } from "@/app/layout/pageWrapper";
+
+import DB from "@/api/db";
 
 const Page = ({
   params,
@@ -17,8 +14,9 @@ const Page = ({
     categoryName: TTorchesType;
   };
 }) => {
-  const { label, list } = CATALOG_DB.torches[params.categoryName];
-
+  const [group,,cooling] = params.categoryName.split('_');
+  const isAirCooling = cooling === 'air';
+  const {label, list } = DB.catalog.torches.data.classes[group].categories[isAirCooling?'Воздушное охлаждение':'Жидкостное охлаждение'].filter(({target}) => target === params.categoryName)[0].data
   const content = <ul className={styles.list}>
   {list.map((data, i) => (
     <li key={i} className={styles.list__item}>

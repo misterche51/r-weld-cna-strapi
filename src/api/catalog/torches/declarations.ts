@@ -20,12 +20,25 @@ export type TTorchesType =
 
 type TTorchesCategoryData =  { label: string; list: TTorchesItem[] }
 
+export type TTorchesGroupItem = {
+  label: string,
+  target: string,
+  data: TTorchesCategoryData
+}   
+
+
+export type TTorchesClass = {
+  label: string,
+  image: string,
+  categories: Record<string, TTorchesGroupItem[]>
+}
+
 export type TTorchesDB = {
   label: string,
+  description: Record<'advantages'|'usage', {label: string, text: string}>
   type: string,
   target: string,
-  data: Record<
-    TTorchesType,
-    TTorchesCategoryData
-  >
+  data: {
+    classes: Record<'tig'|'mig', TTorchesClass>
+  }
 };

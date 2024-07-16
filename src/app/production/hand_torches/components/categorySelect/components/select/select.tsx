@@ -1,16 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./select.module.css";
-// import { TMenuItem } from "../..";
-import { TTorcheSubCategoryData } from "@/api/db";
+import { TTorchesGroupItem } from "@/api/catalog/torches/declarations";
 
 type TSelectProps = {
-  label: string;
-  options: {
-    label: string;
-    target: string;
-  }[];
-};
+  label: string,
+  options: Pick<TTorchesGroupItem, 'label'| 'data'>
+}
 
 export default function Select({ label, options }: TSelectProps) {
   const [isDropped, setIsDropped] = useState(false);
@@ -29,6 +25,7 @@ export default function Select({ label, options }: TSelectProps) {
         }`}
       >
         <ul className={styles.list}>
+          {/* @ts-expect-error */}
           {options.map(({ label, target }, i) => (
             <li className={styles.item} key={i}>
               <Link href={`/production/hand_torches/${[target]}`}>{label}</Link>
