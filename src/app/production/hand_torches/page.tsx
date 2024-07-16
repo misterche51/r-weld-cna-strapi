@@ -28,7 +28,6 @@ const HandTorchesMain = () => {
   const {label, description, data} = DB.catalog.torches;
   const PREPARED_DATA = Object.values(data.classes)
 
-  const [advantagesLabel, usageLabel] = Object.keys(description)
 
   const breadcrumbs = useBreadcrumbs();
   return (
@@ -48,17 +47,11 @@ const HandTorchesMain = () => {
                   checked={visibleTextBlock === "advantages"}
                   onChange={onAdvantagesButtonClickHandler}
                 />
-                <span className={styles.button__label}>Преимущества</span>
+                <span className={styles.button__label}>{description['advantages'].label}</span>
                 <span
                   className={`${styles.button__description} ${styles["button__description--advantages"]}`}
                 >
-                  Срок службы выше аналогов за счёт производства
-                  по международным стандартам и немецким технологиям. 
-                  Эргономичный дизайн облегчает работу сварщика и уменьшает
-                  усталость рук. Все ручные горелки R-Weld тщательно
-                  тестируются, что сводит риск брака к минимуму. Износостойкость
-                  и долговечность запасных частей обеспечивают экономию бюджета
-                  предприятия и оптимизацию складских запасов.
+                  {description['advantages'].text}
                 </span>
               </label>
 
@@ -71,13 +64,11 @@ const HandTorchesMain = () => {
                   checked={visibleTextBlock === "usage"}
                   onChange={onUsageButtonClickHandler}
                 />
-                <span className={styles.button__label}>Применение</span>
+                <span className={styles.button__label}>{description['usage'].label}</span>
                 <span
                   className={`${styles.button__description} ${styles["button__description--usage"]}`}
                 >
-                  Наши горелки используются во всех сферах промышленности:
-                  от автомобилестроения и производства металлоконструкций,
-                  до судостроения и инновационных технологий.
+                  {description['usage'].text}
                 </span>
               </label>
             </div>
