@@ -40,13 +40,5 @@ export const MIG_MB_LIQUID = {
         gas: "500 A",
         pv: "100%",
         wire: "1.0 - 1.6 мм",
-      },
-      {
-        name: "RF GRIP 45",
-        image: "",
-        co2: "450 A",
-        gas: "400 A",
-        pv: "60%",
-        wire: "1.0 - 2.4 мм",
       },],
   }
