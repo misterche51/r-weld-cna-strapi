@@ -32,9 +32,6 @@ export const MIG_MB_AIR = {
         gas: "240 A",
         pv: "60%",
         wire: "0.8 - 1.2
-          
-          мм",
       },
-     
 ],
 }
