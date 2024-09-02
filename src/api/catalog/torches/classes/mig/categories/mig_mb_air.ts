@@ -7,7 +7,7 @@ export const MIG_MB_AIR = {
       co2: "180 A",
       gas: "150 A",
       pv: "60%",
-      wire: "фыафафафафафа",
+      wire: "проба",
  }
 ,
  {
