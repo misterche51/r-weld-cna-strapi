@@ -114,6 +114,8 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.mir-svarki.ru",
         city: "кемерово",
       },
+    ],
+  },
       {
         name: "ООО «СибПромМетиз»",
         phone: "(3842) 57–10–07, 57–17–67, 57–23–63",
@@ -410,17 +412,16 @@ export const DEALERS_DB: TRegionItem[] = [
       },
     ],
   },
-
 {
-    region: "Москва/Московская область",
+    region: "Новосибирская область",
     list: [
       {
-        name: "ООО «Промтехсварка»",
-        phone: "(926) 725-80-35",
-        address: "г. Москва, Валдайский пр-д, д. 8",
-        email: "svartex@bk.ru",
-        site: "www.abinzel.ru",
-        city: "москва",
+        name: "ООО «ТОРУС»",
+        phone: "(383) 312‒12‒12",
+        address: "г. Новосибирск, Пристанский переулок, 5/2",
+        email: "torus54@mail.ru",
+        site: "www.torus.spb.ru",
+        city: "новосибирск",
       },
     ],
   },
