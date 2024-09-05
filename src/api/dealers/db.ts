@@ -348,6 +348,7 @@ export const DEALERS_DB: TRegionItem[] = [
       },
     ],
   },
+ },
 ];
 
 export const DEALERS_TAGS = DEALERS_DB.reduce((acc, { list }) => {
