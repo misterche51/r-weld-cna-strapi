@@ -26,6 +26,8 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.artisan31.ru",
         city: "белгород",
       },
+    ],
+  },
       {
         name: "ООО МК «Белогорье»",
         phone: "(4722) 58-37-90, 42-50-25",
@@ -46,6 +48,8 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.alfa-ars.ru",
         city: "воронеж",
       },
+    ],
+  },
       {
         name: "ООО «Фоксвелд Черноземье»",
         phone: "(473) 257-38-58",
@@ -67,6 +71,8 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.welda.ru",
         city: "иркутск",
       },
+    ],
+  },
       {
         name: "ООО «СИБИНСТРУМЕНТ»",
         phone: "(3952) 55–70-04",
