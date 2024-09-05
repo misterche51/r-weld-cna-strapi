@@ -26,8 +26,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.artisan31.ru",
         city: "белгород",
       },
-    ],
-  },
       {
         name: "ООО МК «Белогорье»",
         phone: "(4722) 58-37-90, 42-50-25",
@@ -48,8 +46,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.alfa-ars.ru",
         city: "воронеж",
       },
-    ],
-  },
       {
         name: "ООО «Фоксвелд Черноземье»",
         phone: "(473) 257-38-58",
@@ -71,8 +67,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.welda.ru",
         city: "иркутск",
       },
-    ],
-  },
       {
         name: "ООО «СИБИНСТРУМЕНТ»",
         phone: "(3952) 55–70-04",
@@ -120,8 +114,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.mir-svarki.ru",
         city: "кемерово",
       },
-    ],
-  },
       {
         name: "ООО «СибПромМетиз»",
         phone: "(3842) 57–10–07, 57–17–67, 57–23–63",
@@ -182,11 +174,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.svarnoy.ru",
         city: "санкт-петербург",
       },
-    ],
-  },
-{
-    region: "Ленинградская область",
-    list: [
       {
         name: "ООО «СКАЙ-РЕСУРС»",
         phone: "(812) 900-35-85",
@@ -195,11 +182,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.sky-resource.ru",
         city: "санкт-петербург",
       },
-    ],
-  },
-{
-    region: "Ленинградская область",
-    list: [
       {
         name: "ООО «РСТП»",
         phone: "(812) 313-27-56",
@@ -208,11 +190,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.rstp.ru",
         city: "санкт-петербург",
       },
-    ],
-  },
-{
-    region: "Ленинградская область",
-    list: [
       {
         name: "ООО «ДельтаСвар»",
         phone: "(812) 309-25-65, 924-35-71",
@@ -221,11 +198,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.DeltaSVAR.ru",
         city: "санкт-петербург",
       },
-    ],
-  },
-{
-    region: "Ленинградская область",
-    list: [
       {
         name: "ООО «СВАРБИ-СПБ»",
         phone: "(812) 748-20-22",
@@ -260,11 +232,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.vistek-weld.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «РСТП»",
         phone: "(495) 788-77-56, 646-01-59",
@@ -273,11 +240,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.rstp.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «Промтехсварка»",
         phone: "(926) 725-80-35",
@@ -286,11 +248,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.abinzel.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «ВТП»",
         phone: "(495) 646-71-50, 648-44-65, 645-16-82",
@@ -299,11 +256,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.vtp.su",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «ЗЕТМАСТЕР»",
         phone: "(499) 168-06-42, 168-24-42",
@@ -312,11 +264,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.z-master.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «Автоматизация Резка Сварка»",
         phone: "(495) 514-56-46, (499) 557-03-09",
@@ -325,11 +272,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.weldexpert.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «ГРАТТЕХ»",
         phone: "(499) 961-58-08",
@@ -338,11 +280,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.grattech.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «СВАРБИ»",
         phone: "(495) 518-94-64",
@@ -351,11 +288,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.svarbi.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «Элмид-техно»",
         phone: "(495) 744-13-06",
@@ -364,11 +296,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.elmid.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ГК "АЛЬФА АРС"»",
         phone: "(495) 229-52-85, (499) 235-37-20",
@@ -377,11 +304,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.alfa-ars.ru",
         city: "москва",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ГК "АЛЬФА АРС"»",
         phone: "(496) 465-01-41, 465-01-42",
@@ -390,11 +312,6 @@ export const DEALERS_DB: TRegionItem[] = [
         site: "www.alfa-ars.ru",
         city: "раменское",
       },
-    ],
-  },
-{
-    region: "Москва/Московская область",
-    list: [
       {
         name: "ООО «ВДС»",
         phone: "(495) 981-92-15",
