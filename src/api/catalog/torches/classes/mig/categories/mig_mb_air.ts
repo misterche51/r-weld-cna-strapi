@@ -18,20 +18,20 @@ export const MIG_MB_AIR = {
         wire: "0.8 - 1.2 мм",
       },
       {
-        name: "MB EVO 24",
-        image: "",
-        co2: "250 A",
-        gas: "220 A",
-        pv: "60%",
-        wire: "0.8 - 1.2 мм",
-      },
-      {
         name: "MB EVO 26",
         image: "",
         co2: "270 A",
         gas: "240 A",
         pv: "60%",
         wire: "0.8 - 1.2 мм"
+      },
+      {
+        name: "MB EVO 36",
+        image: "",
+        co2: "360 A",
+        gas: "320 A",
+        pv: "60%",
+        wire: "1.0 - 1.6 мм",
       },
 ],
 }
