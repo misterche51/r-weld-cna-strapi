@@ -613,7 +613,7 @@ export const DEALERS_DB: TRegionItem[] = [
         city: "чебоксары",
       },
     {
-        name: "ООО «СВАРЭКС»"",
+        name: "ООО «СВАРЭКС»",
         phone: "(8352) 45-82-83, 640-690",
         address: "г. Чебоксары, ул. Коммунальная Слобода, дом № 27",
         email: "sale@prosvar.ru",
