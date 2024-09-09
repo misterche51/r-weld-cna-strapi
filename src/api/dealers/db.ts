@@ -297,7 +297,7 @@ export const DEALERS_DB: TRegionItem[] = [
         city: "москва",
       },
       {
-        name: "ГК "АЛЬФА АРС"»",
+        name: "ГК «АЛЬФА АРС»",
         phone: "(495) 229-52-85, (499) 235-37-20",
         address: "г. Москва, 4-й Кожевнический пер., д. 2/12",
         email: "info@metizi.ru",
@@ -305,7 +305,7 @@ export const DEALERS_DB: TRegionItem[] = [
         city: "москва",
       },
       {
-        name: "ГК "АЛЬФА АРС"»",
+        name: "ГК «АЛЬФА АРС»",
         phone: "(496) 465-01-41, 465-01-42",
         address: "г. Раменское, ул. Михалевича, д.132",
         email: "info@metizi.ru",
@@ -433,7 +433,7 @@ export const DEALERS_DB: TRegionItem[] = [
     region: "Республика Татарстан",
     list: [
       {
-        name: "ООО НПП "РУ-ИНЖИНИРИНГ"",
+        name: "ООО НПП «РУ-ИНЖИНИРИНГ»",
         phone: "(8552) 39-98-02",
         address: "г. Набережные Челны г, Мензелинский тракт, дом № 14, офис 313",
         email: "mail@ru-drive.com",
@@ -511,7 +511,7 @@ export const DEALERS_DB: TRegionItem[] = [
         city: "екатеринбург",
       },
 {
-        name: "ООО «ЛЭС "Альма"»",
+        name: 'ООО «ЛЭС "Альма"»',
         phone: "(343) 361-66-56",
         address: "г. Каменск-Уральский, ул. Мусоргского, д.9",
         email: "alma.snab@mail.ru",
@@ -522,7 +522,7 @@ export const DEALERS_DB: TRegionItem[] = [
         name: "ООО «Сварка 66»",
         phone: "(343) 226-08-36",
         address: "г. Екатеринбург, проезд Промышленный, дом № 11, оф.1",
-        email: ""zakaz@svarka66.ru",
+        email: "zakaz@svarka66.ru",
         site: "www.svarka66.ru",
         city: "екатеринбург",
       },
@@ -550,7 +550,7 @@ export const DEALERS_DB: TRegionItem[] = [
         address: "г. Тула, Скуратовский п, Шахтерская ул, дом № 5 А",
         email: "info@intersvar.ru",
         site: "www.intersvar.ru",
-        city: "Тула",
+        city: "тула",
       },
     ],
   },
@@ -563,7 +563,7 @@ export const DEALERS_DB: TRegionItem[] = [
         address: "г. Тюмень, ул. Московский тракт, д. 163 Б",
         email: "emax@emaxweld.com",
         site: "www.emaxweld.com",
-        city: "Тюмень",
+        city: "тюмень",
       },
     ],
   },
@@ -584,7 +584,7 @@ export const DEALERS_DB: TRegionItem[] = [
     region: "Челябинская область",
     list: [
       {
-        name: "ООО НПК "СОЕДИНЕНИЕ"",
+        name: "ООО НПК «СОЕДИНЕНИЕ»",
         phone: "(351) 216-06-28",
         address: "г. Челябинск, ул. Молодогвардейцев, дом № 47а, оф.10",
         email: "info@soedinenie.pro",
@@ -592,7 +592,7 @@ export const DEALERS_DB: TRegionItem[] = [
         city: "челябинск",
       },
     {
-        name: "ООО Научно-производственное предприятие "Сварка-74"",
+        name: "ООО Научно-производственное предприятие «Сварка-74»"",
         phone: "(804)333-18-18",
         address: "г. Челябинск, Рылеева ул., дом № 11",
         email: "info@svarka74.ru",
@@ -605,7 +605,7 @@ export const DEALERS_DB: TRegionItem[] = [
     region: "Чувашская республика / Чувашия",
     list: [
       {
-        name: "ООО НПП "ПРОМТЕХНОСВАР-Ч"",
+        name: "ООО НПП «ПРОМТЕХНОСВАР-Ч»",
         phone: "(8352) 49-30-70, 49-30-71, 70-00-74",
         address: "г. Чебоксары, Машиностроителей пр-д, дом № 1 "У", помещение 3",
         email: "pts-ch@mail.ru",
@@ -613,7 +613,7 @@ export const DEALERS_DB: TRegionItem[] = [
         city: "чебоксары",
       },
     {
-        name: "ООО "СВАРЭКС"",
+        name: "ООО «СВАРЭКС»"",
         phone: "(8352) 45-82-83, 640-690",
         address: "г. Чебоксары, ул. Коммунальная Слобода, дом № 27",
         email: "sale@prosvar.ru",
