@@ -3,8 +3,8 @@ export const TIG_R_WELD_AIR = {
     list: [{
         name: "RWTIG 9",
         image: "",
-        co2: "110 A",
-        gas: "80 A",
+        dc: "",
+        ac: "",
         pv: "35%",
         wire: "0.5 - 1.6 мм",
       },],
