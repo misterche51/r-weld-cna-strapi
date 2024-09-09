@@ -34,14 +34,6 @@ export const MIG_RF_AIR = {
         wire: "1.0 - 1.6 мм",
       },
       {
-        name: "RF GRIP 36 LC",
-        image: "",
-        co2: "315 A",
-        gas: "250 A",
-        pv: "60%",
-        wire: "0.8 - 1.6 мм",
-      },
-      {
         name: "RF GRIP 45",
         image: "",
         co2: "450 A",
