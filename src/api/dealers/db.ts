@@ -185,7 +185,7 @@ export const DEALERS_DB: TRegionItem[] = [
       {
         name: "ООО «РСТП»",
         phone: "(812) 313-27-56",
-        address: "г. Санкт-Петербург, Лиговский проспект, д. 246 литера "М"",
+        address: "г. Санкт-Петербург, Лиговский проспект, д. 246 литера 'М'",
         email: "spb.expert@rstp.ru",
         site: "www.rstp.ru",
         city: "санкт-петербург",
