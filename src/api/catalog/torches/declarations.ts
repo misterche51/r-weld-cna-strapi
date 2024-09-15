@@ -8,7 +8,7 @@ export type TTorchesItem = {
   dc?: string,
   ac?: string;
   electrode?: string;
-  flex?: string
+  flex?: string;
 };
 
 export type TTorchesType =
