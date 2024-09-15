@@ -17,6 +17,8 @@ export const BREADCRUMBS_DICTIONARY: Record<string, string> = {
   hand_torches: "Ручные горелки",
   equipment_and_other: "Оборудование и прочее",
   mig_rf_air: "Ручные горелки RF GRIP",
+  "tig_r-weld_air": "Ручные горелки R-WELD",
+  "tig_r-weld__liquid": "Ручные горелки R-WELD",
   mig_mb_air: "Ручные горелки MB EVO",
   "mig_r-weld_air": "Ручные горелки R-WELD",
   mig_mb_liquid: "Ручные горелки MB EVO",

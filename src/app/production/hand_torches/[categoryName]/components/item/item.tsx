@@ -2,18 +2,25 @@ import styles from "./item.module.css";
 import { TTorchesItem } from "@/api/catalog/torches/declarations";
 import Image from "next/image";
 
-const LABELS_DICT = {
+
+type TTorchesItemParams = Omit<TTorchesItem, 'name'|'image'>
+const LABELS_DICT:TTorchesItemParams  = {
   co2: "CO2",
   gas: "Газ.смесь М21",
-  pv: "ПВ",
+  pv: "ПВ", 
+  dc: "DC",
+  ac: "AC",
   wire: "Проволока",
-};
+  electrode: 'Электрод',
+  flex: 'Возм. гибкой головки',
+} as const;
+
 
 const Row = ({
   label,
   value,
 }: {
-  label: "co2" | "gas" | "pv" | "wire";
+  label: keyof typeof LABELS_DICT,
   value: string;
 }) => (
   <div className={styles.row}>
@@ -23,9 +30,11 @@ const Row = ({
   </div>
 );
 
-const Item = ({ name, image, co2, gas, wire, pv }: TTorchesItem) => {
-  const rows = ["co2", "gas", "pv", "wire"] as const;
-  const params = [co2, gas, pv, wire];
+const Item = ({ name, image, ...params }: TTorchesItem) => {
+  const rows: Array<keyof TTorchesItemParams> = [];
+  for (let key in params as TTorchesItemParams) {
+    rows.push(key as keyof TTorchesItemParams)
+  }
   const img = image === "" ? "mb_evo_15.png" : image;
   return (
     <div className={styles.wrapper}>
@@ -43,10 +52,12 @@ const Item = ({ name, image, co2, gas, wire, pv }: TTorchesItem) => {
       <div className={styles.info}>
         <p className={styles.info__title}>Нагрузка:</p>
         {rows.map((label, i) => (
-          <Row key={i} label={label} value={params[i]} />
+         typeof params[label] === 'string' ?  
+          <Row key={i} label={label} value={params[label]!} /> 
+          : null
         ))}
       </div>
     </div>
   );
 };
-export default Item;
+export default Item;  

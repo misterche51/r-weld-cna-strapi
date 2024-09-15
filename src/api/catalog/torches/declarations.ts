@@ -4,7 +4,11 @@ export type TTorchesItem = {
   co2: string;
   gas: string;
   pv: string;
-  wire: string;
+  wire?: string;
+  dc?: string,
+  ac?: string;
+  electrode?: string;
+  flex?: string
 };
 
 export type TTorchesType =
