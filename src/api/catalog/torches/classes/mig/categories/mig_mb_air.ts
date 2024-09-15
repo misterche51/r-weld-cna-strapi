@@ -1,4 +1,5 @@
-export const MIG_MB_AIR = {
+import { TTorchesCategoryData } from "../../../declarations"
+export const MIG_MB_AIR:TTorchesCategoryData = {
   label: "Ручные горелки MB EVO",
   list: [
  {

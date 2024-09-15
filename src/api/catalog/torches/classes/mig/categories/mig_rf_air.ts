@@ -1,4 +1,5 @@
-export const MIG_RF_AIR = {
+import { TTorchesCategoryData } from "../../../declarations"
+export const MIG_RF_AIR:TTorchesCategoryData = {
   label: "Ручные горелки RF GRIP",
   list: [
     {

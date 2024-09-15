@@ -1,4 +1,5 @@
-export const MIG_R_WELD_AIR = {
+import { TTorchesCategoryData } from "../../../declarations"
+export const MIG_R_WELD_AIR:TTorchesCategoryData = {
     label: "",
     list: [ {
         name: "RF GRIP 15",

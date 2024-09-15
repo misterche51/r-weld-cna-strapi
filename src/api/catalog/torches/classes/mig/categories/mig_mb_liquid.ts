@@ -1,4 +1,5 @@
-export const MIG_MB_LIQUID = {
+import { TTorchesCategoryData } from "../../../declarations"
+export const MIG_MB_LIQUID:TTorchesCategoryData = {
     label: "",
     list: [
       {

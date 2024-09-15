@@ -3,7 +3,7 @@ import { TTorchesClass } from "../../declarations";
 import { TIG_R_WELD_AIR } from "./categories/tig_r-weld_air";
 import { TIG_R_WELD_LIQUID } from "./categories/tig_r-weld_liquid";
 
-export const TORCHES_TIG_DB:TTorchesClass = {
+export const TORCHES_TIG_DB : TTorchesClass = {
     label: "Сварочные горелки TIG",
     image: "tig",
     categories: {

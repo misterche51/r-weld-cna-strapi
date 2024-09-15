@@ -1,9 +1,9 @@
 export type TTorchesItem = {
   name: string;
   image: string;
-  co2: string;
-  gas: string;
-  pv: string;
+  co2?: string;
+  gas?: string;
+  pv?: string;
   wire?: string;
   dc?: string,
   ac?: string;
@@ -22,7 +22,7 @@ export type TTorchesType =
   | "tig_r-weld_air"
   | "tig_r-weld_liquid";
 
-type TTorchesCategoryData =  { label: string; list: TTorchesItem[] }
+export type TTorchesCategoryData =  { label: string; list: TTorchesItem[] }
 
 export type TTorchesGroupItem = {
   label: string,

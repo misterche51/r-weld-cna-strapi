@@ -1,4 +1,5 @@
-export const TIG_R_WELD_LIQUID = {
+import { TTorchesCategoryData } from "../../../declarations"
+export const TIG_R_WELD_LIQUID:TTorchesCategoryData = {
     label: "",
     list: [
 {

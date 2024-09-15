@@ -1,4 +1,5 @@
-export const TIG_R_WELD_AIR = {
+import { TTorchesCategoryData } from "../../../declarations"
+export const TIG_R_WELD_AIR:TTorchesCategoryData = {
     label: "",
     list: [{
         name: "RWTIG 9",
