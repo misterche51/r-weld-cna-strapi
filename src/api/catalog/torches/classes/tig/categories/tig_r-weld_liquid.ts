@@ -21,6 +21,15 @@ export const TIG_R_WELD_LIQUID:TTorchesCategoryData = {
         flex: "нет"
       },
 {
+        name: "RWTIG 20",
+        image: "",
+        co2: "240 A",
+        gas: "170 A",
+        pv: "100%",
+        electrode: "0.5 - 3.2 мм",
+        flex: "да"
+      },
+{
         name: "RWTIG 450 W",
         image: "",
         co2: "420 A / 400 A",
