@@ -4,11 +4,7 @@ import { DEALERS_DB } from "./dealers";
 import { DOWNLOADS_DB } from "./documentation";
 import CATALOG_DB from "./catalog/db";
 
-import { TCatalogCategoriesDB } from "./declarations";
-
-
-
-import { TInfoDB, TDataBase, TTorchesCatalog,  TNavigationMenuDB } from "./declarations";
+import { TInfoDB, TDataBase, TTorchesCatalog,  TNavigationMenuDB, TCatalogCategoriesDB } from "./declarations";
 
 
 export const INFO_DB:TInfoDB =  {
