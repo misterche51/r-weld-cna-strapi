@@ -1,12 +1,17 @@
-// type TTorchesCategoryData = { label: string; list: TTorchesItem[] }
-
+type TEquipmetCategoryData = {
+  label: string,
+  description:  string,
+  target:  string, 
+  category_image:  string,
+  list: any[],
+  tags: string[]
+}
 export type TEquipmentDB = {
   label: string,
   type: string,
   target: string,
-//   data: Record<
-//     TTorchesType,
-//     TTorchesCategoryData
-//   >
-    data: any;
+  data: Record<
+    string,
+    TEquipmetCategoryData
+  >
 };

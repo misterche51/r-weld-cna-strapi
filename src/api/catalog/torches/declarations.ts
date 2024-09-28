@@ -27,7 +27,8 @@ export type TTorchesCategoryData =  { label: string; list: TTorchesItem[] }
 export type TTorchesGroupItem = {
   label: string,
   target: string,
-  data: TTorchesCategoryData
+  data: TTorchesCategoryData,
+  tags: string[]
 }   
 
 

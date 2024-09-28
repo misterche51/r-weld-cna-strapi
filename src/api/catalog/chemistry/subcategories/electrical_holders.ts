@@ -29,8 +29,6 @@ export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
         alt: "Запчасти и расходники",
       },
     },
-  }
-   
-   
-
-  }
+  },
+  tags: ['держатели', 'электродержатели', 'DE2200', 'DE', 'DE2300', 'DE2400', 'DE2500'].map(tag => tag.toLowerCase().replace(' ', '+'))
+}

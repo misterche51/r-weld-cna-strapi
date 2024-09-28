@@ -26,3 +26,5 @@ export const TUNGSTEN_ELECTRODES_CATALOG_DATA: ITungstenElectrodesDB = {
       }
     },
   }
+
+  TUNGSTEN_ELECTRODES_CATALOG_DATA.tags = ['Вольфрамовые электроды', 'Вольфрамовые','электроды', ...TUNGSTEN_ELECTRODES_CATALOG_DATA.data.image.description.replace('.', '').split(' ')].map(tag => tag.toLowerCase().replace(' ', '+'))

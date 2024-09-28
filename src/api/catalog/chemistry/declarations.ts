@@ -32,6 +32,7 @@ export type TImageData = {
 export interface IChemistryCategoryDB {
   routing: TRountingInfo;
   header: TChemistrySectionHeader;
+  tags?: string[];
 }
 
 

@@ -26,7 +26,6 @@ export const QUICK_COUPLINGS_CATALOG_DATA: IQuickCouplingsDB = {
           alt: "Сводная таблица с быстросъемными соединениями, часть 2",
         },
       }
-    }
-    
-    ,
+    },
+    tags: ['Быстросъемные+соединения', 'Быстросъемный', 'быстросъемные', 'соединения'].map(tag => tag.toLowerCase().replace(' ', '+'))
   }

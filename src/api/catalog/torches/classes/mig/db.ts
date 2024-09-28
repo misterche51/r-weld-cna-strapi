@@ -14,29 +14,36 @@ export const TORCHES_MIG_DB:TTorchesClass = {
         {
           label: "RF",
           target: "mig_rf_air",
-          data: MIG_RF_AIR
+          data: MIG_RF_AIR,
+          tags: MIG_RF_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
         },
         {
           label: "MB",
           target: "mig_mb_air",
-          data: MIG_MB_AIR
+          data: MIG_MB_AIR,
+          tags: MIG_MB_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+
         },
         {
           label: "R-WELD",
           target: "mig_r-weld_air",
-          data: MIG_R_WELD_AIR
+          data: MIG_R_WELD_AIR,
+          tags: MIG_R_WELD_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+
         },
       ],
       "Жидкостное охлаждение": [
         {
           label: "MB",
           target: "mig_mb_liquid",
-          data: MIG_MB_LIQUID
+          data: MIG_MB_LIQUID,
+          tags: MIG_MB_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
         },
         {
           label: "R-WELD",
           target: "mig_r-weld_liquid",
-          data: MIG_R_WELD_LIQUID
+          data: MIG_R_WELD_LIQUID,
+          tags: MIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
         },
       ],
     },

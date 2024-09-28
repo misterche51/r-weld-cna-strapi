@@ -5,5 +5,6 @@ export type TRobotizationsDB = {
   data: { 
     label: string;
     content: string;
-  }
+  },
+  tags: string[]
 };

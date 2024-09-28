@@ -5,10 +5,11 @@ type TWeldChemistryItem = {
   name: string;
   image: TImageData;
   info?: string;
+  
 };
 
 export interface IWeldChemistryDB extends IChemistryCategoryDB {
-  data: TWeldChemistryItem[]
+  data: TWeldChemistryItem[];
 }
 
 
@@ -81,8 +82,11 @@ export const WELD_CHEMISTRY_CATALOG_DATA: IWeldChemistryDB = {
           alt: "",
         },
         info: "Специальное охлаждающее средство ABICOR BINZEL®, морозоустойчивость до -45°С для всех жидкостно охлаждаемых установок сварки и резки. 5 литров",
-       
-      },
       },
     ],
   };
+    
+WELD_CHEMISTRY_CATALOG_DATA.tags = WELD_CHEMISTRY_CATALOG_DATA.data.reduce(
+  (acc, curr) => { 
+    return [...acc, ...curr.name.split(' '), curr.name]
+  }, [''] ).map(tag => tag.toLowerCase().replace(' ', '+'))

@@ -26,5 +26,6 @@ export const BREADCRUMBS_DICTIONARY: Record<string, string> = {
   welding_sources:"Сварочные источники",
   smoke_exhaust_systems: "Дымовытяжные установки",
   other: "Прочее",
+  search: "Результаты поиска",
 };
 
