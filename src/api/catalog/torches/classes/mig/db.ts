@@ -8,7 +8,7 @@ import { MIG_RF_AIR } from "./categories/mig_rf_air";
 
 export const TORCHES_MIG_DB:TTorchesClass = {
     label: "Сварочные горелки MIG",
-    image: "mig",
+    image: "mig.jpg",
     categories: {
       "Воздушное охлаждение": [
         {

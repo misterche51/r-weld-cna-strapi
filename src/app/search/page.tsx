@@ -9,7 +9,9 @@ import { PageWrapper } from "../layout/pageWrapper";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import CATALOG_DB from "@/api/catalog/db";
+import { DOWNLOADS_DB } from "@/api/documentation";
 import { Suspense } from 'react'
+import { DocumentationList } from "../documentation/page";
 const SearchContent = () => {
     const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
     const splittedSearchParams = searchParams.split(' ');
@@ -47,30 +49,37 @@ const SearchContent = () => {
                     return [...acc, ...curr]
                   } ,[])
                 ];
-                console.log({torchesCategories})
+               
                 for (let torchesDB of torchesCategories) {
-                  console.log(torchesDB.tags, torchesDB.tags.includes(searchParams), searchParams)
                   if (torchesDB.tags.includes(searchParams)) {
                     catalogSearchResult.push({label: torchesDB.label, url:torchesDB.absoluteTarget });
                   }		
                 }
-								
 							}
 					 }
 				}
     }
 
-    const hasNoResults = catalogSearchResult.length === 0
-    console.log({catalogSearchResult})
+    const documentsSearchResult: number[]  = DOWNLOADS_DB.reduce((acc, curr) => {
+      if (curr.tags?.includes(searchParams)) {
+        return [...acc, curr.id]
+      } else {
+        return acc
+      }
+    }, [] as number[])
+
+
+  const hasNoResults = [...catalogSearchResult, ...documentsSearchResult].length === 0
+  
   return (
     <div className={styles.wrapper}>
       {hasNoResults ?
       <div className={styles.no_content}>
-        <Heading rank={1} text={`По запросу "${searchParams}" ничего не найдено`} withUnderline={false}/>
+        <Heading rank={1} text="По данному запросу ничего не найдено" withUnderline={false}/>
       </div>
       : 
         <section className={styles.results}>
-          {catalogSearchResult.length && 
+          {catalogSearchResult.length > 0 && 
           <>
             <Heading rank={2} text="В каталоге: " withUnderline={false}/>
             <ul className={styles.list}>
@@ -79,26 +88,25 @@ const SearchContent = () => {
                 </div>
                 )}
             </ul>
-          </>
-          
+          </>}
+           {documentsSearchResult.length > 0 && 
+            <>
+              <Heading rank={2} text="В документах: " withUnderline={false}/>
+              <DocumentationList list = {DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
+            </>
           }
         </section>}
     </div>) 
-//     <div className={styles.content}>
-//       <ul className={`${styles.list} ${isListExpanded ? styles["list--opened"] : ''}`}>
-//         {DB.downloads.map(({label ,id, path}) => 
-//           <li key={id} className={styles.item}>
-//             <div className={styles.image}></div>
-//             <p className={styles.label}>{label}</p>
-//             <Link className={styles.link} href={`${path}`} rel="noopener noreferrer" target="_blank">Скачать</Link>
-//           </li>
-//       )}
-//     </ul>
-//     <button className={styles.showMoreBtn} onClick={onShowMoreBtnClickHandler}>{isListExpanded ? 'Свернуть' : 'Показать еще'  }</button>
-//   </div>
+
   
 }
 
 export default function DocumentationPage() {
-  return <Suspense><PageWrapper title='Результаты поиска' withUnderline content={<SearchContent/>} /></Suspense>
+  const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
+  return <Suspense>
+    <PageWrapper 
+      title={`Результаты поиска по запросу "${searchParams}"`} 
+      withUnderline 
+      content={<SearchContent/>} />
+    </Suspense>
 } 

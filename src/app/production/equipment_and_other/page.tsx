@@ -16,7 +16,7 @@ const EquipmentMain = () => {
       {catalogData.map(({ label, target, category_image }, i) => (
         <li key={i} className={styles.item}>
           <Link href={`./equipment_and_other/${[target]}`}>
-            <CatalogItem label={label} image={category_image} />
+            <CatalogItem label={label} image={category_image??"stub.png"} />
           </Link>
         </li>
       ))}

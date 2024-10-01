@@ -5,7 +5,7 @@ import { TIG_R_WELD_LIQUID } from "./categories/tig_r-weld_liquid";
 
 export const TORCHES_TIG_DB : TTorchesClass = {
     label: "Сварочные горелки TIG",
-    image: "tig",
+    image: "tig.jpg",
     categories: {
       "Воздушное охлаждение": [
         {
@@ -13,7 +13,7 @@ export const TORCHES_TIG_DB : TTorchesClass = {
           target: "tig_r-weld_air",
           absoluteTarget: "/production/hand_torches/tig_r-weld_air",
           data: TIG_R_WELD_AIR,
-          tags: TIG_R_WELD_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, ['tig', 'воздушный', "воздушное", 'воздушное охлаждение']).map(tag => tag.toLowerCase().replace(' ', '+'))
+          tags: TIG_R_WELD_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, ['tig', 'rwtig','воздушный', "воздушное", 'воздушное охлаждение']).map(tag => tag.toLowerCase().replace(' ', '+'))
 
         },
     ],
@@ -23,7 +23,7 @@ export const TORCHES_TIG_DB : TTorchesClass = {
           target: "tig_r-weld_liquid",
           absoluteTarget: "/production/hand_torches/tig_r-weld_liquid",
           data: TIG_R_WELD_LIQUID,
-          tags: TIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, ['tig', 'жидкостной', 'жидкостный']).map(tag => tag.toLowerCase().replace(' ', '+'))
+          tags: TIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, ['tig', 'rwtig','жидкостной', 'жидкостный']).map(tag => tag.toLowerCase().replace(' ', '+'))
 
         },
       ],

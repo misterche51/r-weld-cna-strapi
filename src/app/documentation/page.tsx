@@ -5,19 +5,22 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { PageWrapper } from "../layout/pageWrapper";
 import { useState } from "react";
+import { TDownloadsDB } from "@/api/documentation/declarations";
 
-
-const DocumentationList = () => {
+type TDocumentationListProps = {
+  list?: TDownloadsDB
+}
+export const DocumentationList = ({list}:TDocumentationListProps) => {
   const [isListExpanded, setIsListExpanded] = useState(false);
   const onShowMoreBtnClickHandler = () => {
     setIsListExpanded(val => !val)
   }
-
+  const renderedList = list ?? DB.downloads
 
   return (
     <div className={styles.content}>
       <ul className={`${styles.list} ${isListExpanded ? styles["list--opened"] : ''}`}>
-        {DB.downloads.map(({label ,id, path}) => 
+        {renderedList.map(({label ,id, path}) => 
           <li key={id} className={styles.item}>
             <div className={styles.image}></div>
             <p className={styles.label}>{label}</p>
@@ -25,7 +28,7 @@ const DocumentationList = () => {
           </li>
       )}
     </ul>
-    <button className={styles.showMoreBtn} onClick={onShowMoreBtnClickHandler}>{isListExpanded ? 'Свернуть' : 'Показать еще'  }</button>
+    {(!list && DB.downloads.length > 10) && <button className={styles.showMoreBtn} onClick={onShowMoreBtnClickHandler}>{isListExpanded ? 'Свернуть' : 'Показать еще'  }</button> }
   </div>)
 }
 

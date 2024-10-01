@@ -3,7 +3,7 @@ export const TIG_R_WELD_AIR:TTorchesCategoryData = {
     label: "",
     list: [{
         name: "RWTIG 9",
-        image: "",
+        image: "RWTIG_9.png",
         dc: "110 A",
         ac: "80 A",
         pv: "35%",
@@ -12,7 +12,7 @@ export const TIG_R_WELD_AIR:TTorchesCategoryData = {
       },
 {
         name: "RWTIG 17",
-        image: "",
+        image: "RWTIG_17.png",
         co2: "140 A",
         gas: "100 A",
         pv: "35%",
@@ -21,7 +21,7 @@ export const TIG_R_WELD_AIR:TTorchesCategoryData = {
       },
 {
         name: "RWTIG 26",
-        image: "",
+        image: "RWTIG_26.png",
         co2: "180 A",
         gas: "130 A",
         pv: "35%",
@@ -30,7 +30,7 @@ export const TIG_R_WELD_AIR:TTorchesCategoryData = {
       },
 {
         name: "RWTIG 200",
-        image: "",
+        image: "RWTIG_200.png",
         co2: "200 A",
         gas: "140 A",
         pv: "35%",

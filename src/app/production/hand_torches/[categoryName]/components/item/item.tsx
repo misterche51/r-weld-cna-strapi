@@ -35,17 +35,16 @@ const Item = ({ name, image, ...params }: TTorchesItem) => {
   for (let key in params as TTorchesItemParams) {
     rows.push(key as keyof TTorchesItemParams)
   }
-  const img = image === "" ? "mb_evo_15.png" : image;
   return (
     <div className={styles.wrapper}>
       <p className={styles.label}>{name}</p>
       <div className={styles.image}>
         <Image
           className={styles.image__pic}
-          src={`/torches/${img}`}
+          src={image === '' ? "/stub.png" : `/torches/${image}`}
           alt={name}
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "contain" }}
           priority
         />
       </div>

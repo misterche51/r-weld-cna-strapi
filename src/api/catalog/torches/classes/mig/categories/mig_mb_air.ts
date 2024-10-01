@@ -4,7 +4,7 @@ export const MIG_MB_AIR:TTorchesCategoryData = {
   list: [
  {
         name: "MB EVO 15",
-        image: "",
+        image: "MB_EVO_15.png",
         co2: "180 A",
         gas: "150 A",
         pv: "60%",
@@ -12,7 +12,7 @@ export const MIG_MB_AIR:TTorchesCategoryData = {
       },
       {
         name: "MB EVO 25",
-        image: "",
+        image: "MB_EVO_25.png",
         co2: "230 A",
         gas: "200 A",
         pv: "60%",
@@ -20,7 +20,7 @@ export const MIG_MB_AIR:TTorchesCategoryData = {
       },
       {
         name: "MB EVO 26",
-        image: "",
+        image: "MB_EVO_26.png",
         co2: "270 A",
         gas: "240 A",
         pv: "60%",
@@ -28,7 +28,7 @@ export const MIG_MB_AIR:TTorchesCategoryData = {
       },
       {
         name: "MB EVO 36",
-        image: "",
+        image: "MB_EVO_36.png",
         co2: "360 A",
         gas: "320 A",
         pv: "60%",
