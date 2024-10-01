@@ -3,7 +3,8 @@ import { TEquipmentDB } from "./declarations"
 export const EQUIPMENT_DB: TEquipmentDB = {
   label: "Оборудование и прочее",
   type: "others",
-  target: "production/equipment_and_other",
+  target: 'production/not-found',
+  // target: "production/equipment_and_other",
   data: {
     welding_sources: {
       label: "Сварочные источники",

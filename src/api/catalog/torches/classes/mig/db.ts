@@ -29,12 +29,13 @@ export const TORCHES_MIG_DB:TTorchesClass = {
         },
         {
           label: "R-WELD",
-          target: "mig_r-weld_air",
+          target:"not-found",
+          // target: "mig_r-weld_air",
           absoluteTarget: "/production/hand_torches/mig_r-weld_air",
           data: MIG_R_WELD_AIR,
-          //@ts-expect-error
-          tags: MIG_R_WELD_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
-
+          
+          // tags: MIG_R_WELD_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+          tags: ['']
         },
       ],
       "Жидкостное охлаждение": [
@@ -48,11 +49,12 @@ export const TORCHES_MIG_DB:TTorchesClass = {
         },
         {
           label: "R-WELD",
-          target: "mig_r-weld_liquid",
+          target:"not-found",
+          // target: "mig_r-weld_liquid",
           absoluteTarget: "/production/hand_torches/mig_r-weld_liquid",
           data: MIG_R_WELD_LIQUID,
-          //@ts-expect-error
-          tags: MIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+          // tags: MIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+          tags: ['']
         },
       ],
     },
