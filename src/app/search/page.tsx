@@ -1,20 +1,19 @@
 "use client";
 
-import DB from "@/api/db";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Heading from "@/app/shared/heading/heading";
 
 import { PageWrapper } from "../layout/pageWrapper";
-import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import CATALOG_DB from "@/api/catalog/db";
 import { DOWNLOADS_DB } from "@/api/documentation";
 import { Suspense } from 'react'
-import { DocumentationList } from "../documentation/page";
+import { DocumentationList } from "../documentation/components/documentationList";
+
 const SearchContent = () => {
     const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
-    const splittedSearchParams = searchParams.split(' ');
+
     const catalogSearchResult: {label: string, url: string}[] = []
     const catalogCategories = Object.values(CATALOG_DB);
 
@@ -23,7 +22,6 @@ const SearchContent = () => {
 					// @ts-expect-error
           if (categoryDB.tags.includes(searchParams)) {
 						catalogSearchResult.push({label: categoryDB.label, url: categoryDB.target})
-						// continue;
 					}
         }
 
@@ -92,7 +90,7 @@ const SearchContent = () => {
            {documentsSearchResult.length > 0 && 
             <>
               <Heading rank={2} text="В документах: " withUnderline={false}/>
-              <DocumentationList list = {DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
+              <DocumentationList list={DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
             </>
           }
         </section>}
