@@ -9,7 +9,7 @@ export const QUICK_COUPLINGS_CATALOG_DATA: IQuickCouplingsDB = {
       label: "Быстросъемные соединения",
       target: "quick_couplings",
       absoluteTarget: "/production/chemistry/quick_couplings",
-      image: "quick_couplings_cover.jpg",
+      image: "quick_couplings_cover.png",
     },
     header: {
       label: "Быстросъемные соединения",

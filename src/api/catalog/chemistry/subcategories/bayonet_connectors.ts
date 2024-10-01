@@ -38,7 +38,7 @@ export const BAYONET_CONNECTORS_CATALOG_DATA:IBayonetConnectorsDB = {
     label: "Байонетные разъемы", 
     target: "bayonet_connectors", 
     absoluteTarget: "/production/chemistry/bayonet_connectors",
-    image: "bayonet_connectors.jpg" 
+    image: "bayonet_connectors.png" 
   },  
   header: {
       label: "Байонетные разъемы",

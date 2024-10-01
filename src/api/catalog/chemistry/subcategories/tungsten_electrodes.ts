@@ -13,7 +13,7 @@ export const TUNGSTEN_ELECTRODES_CATALOG_DATA: ITungstenElectrodesDB = {
       label: "Вольфрамовые электроды",
       target: "tungsten_electrodes",
       absoluteTarget: "/production/chemistry/tungsten_electrodes",
-      image: "tungsten_electrodes.jpg",
+      image: "tungsten_electrodes.png",
     },
     header: {
       label: "Вольфрамовые электроды",

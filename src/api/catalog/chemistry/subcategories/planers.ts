@@ -9,7 +9,7 @@ export const PLANERS_CATALOG_DATA : IPlanersDB = {
       label: "Строгачи",
        target: "planers", 
        absoluteTarget: "/production/chemistry/planers",
-       image: "planers.jpg" },
+       image: "planers.png" },
     header: {
       label: "Строгачи",
       description:

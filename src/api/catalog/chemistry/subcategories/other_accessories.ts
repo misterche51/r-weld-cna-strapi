@@ -5,7 +5,7 @@ export const OTHER_ACCESSORIES_CATALOG_DATA: IChemistryCategoryDB = {
       label: "Прочие аксессуары", 
       target: "other_accessories",
       absoluteTarget: "/production/chemistry/other_accessories",
-      image: "other_accessories.webp" },
+      image: "other_accessories.png" },
     header: {
       label: "Прочие акссессуары",
       description:

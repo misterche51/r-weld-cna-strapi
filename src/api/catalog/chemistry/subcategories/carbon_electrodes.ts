@@ -11,7 +11,7 @@ export const CARBON_ELECTRODES_CATALOG_DATA:ICarbonElectrodesDB = {
       label: "Угольные электроды", 
       target: "carbon_electrodes", 
       absoluteTarget: "/production/chemistry/carbon_electrodes",
-      image: "carbon_electrodes.jpg" 
+      image: "carbon_electrodes.png" 
     },
     header: {
       label: "Угольные электроды",
