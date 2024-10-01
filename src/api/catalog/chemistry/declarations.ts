@@ -9,6 +9,7 @@ import { IElectricalHoldersDB } from "./subcategories/electrical_holders";
 export type TRountingInfo = {
   label: string;
   target: string;
+  absoluteTarget: string;
   image?: string;
 }
 

@@ -1,7 +1,11 @@
 import { IChemistryCategoryDB } from "../declarations";
 
 export const OTHER_ACCESSORIES_CATALOG_DATA: IChemistryCategoryDB = {
-    routing: { label: "Прочие аксессуары", target: "other_accessories", image: "" },
+    routing: { 
+      label: "Прочие аксессуары", 
+      target: "other_accessories",
+      absoluteTarget: "/production/chemistry/other_accessories",
+      image: "other_accessories.webp" },
     header: {
       label: "Прочие акссессуары",
       description:

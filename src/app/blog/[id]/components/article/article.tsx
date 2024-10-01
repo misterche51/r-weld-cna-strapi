@@ -37,7 +37,6 @@ export default function Article({
         </div>
         <div className={styles.text_box}>
           <p className={styles.article_title}>{articleTitle}</p>
-
           <p className={styles.description}>{fullDescription}</p>
         </div>
       </div>

@@ -14,20 +14,25 @@ export const TORCHES_MIG_DB:TTorchesClass = {
         {
           label: "RF",
           target: "mig_rf_air",
+          absoluteTarget: "/production/hand_torches/mig_rf_air",
           data: MIG_RF_AIR,
+          //@ts-expect-error
           tags: MIG_RF_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
         },
         {
           label: "MB",
           target: "mig_mb_air",
+          absoluteTarget: "/production/hand_torches/mig_mb_air",
           data: MIG_MB_AIR,
+          //@ts-expect-error
           tags: MIG_MB_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
-
         },
         {
           label: "R-WELD",
           target: "mig_r-weld_air",
+          absoluteTarget: "/production/hand_torches/mig_r-weld_air",
           data: MIG_R_WELD_AIR,
+          //@ts-expect-error
           tags: MIG_R_WELD_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
 
         },
@@ -36,13 +41,17 @@ export const TORCHES_MIG_DB:TTorchesClass = {
         {
           label: "MB",
           target: "mig_mb_liquid",
+          absoluteTarget: "/production/hand_torches/mig_mb_liquid",
           data: MIG_MB_LIQUID,
+          //@ts-expect-error
           tags: MIG_MB_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
         },
         {
           label: "R-WELD",
           target: "mig_r-weld_liquid",
+          absoluteTarget: "/production/hand_torches/mig_r-weld_liquid",
           data: MIG_R_WELD_LIQUID,
+          //@ts-expect-error
           tags: MIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
         },
       ],

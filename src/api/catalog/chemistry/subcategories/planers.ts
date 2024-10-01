@@ -5,7 +5,11 @@ export interface IPlanersDB extends IChemistryCategoryDB {
 }
 
 export const PLANERS_CATALOG_DATA : IPlanersDB = {
-    routing: { label: "Строгачи", target: "planers", image: "" },
+    routing: { 
+      label: "Строгачи",
+       target: "planers", 
+       absoluteTarget: "/production/chemistry/planers",
+       image: "planers.jpg" },
     header: {
       label: "Строгачи",
       description:

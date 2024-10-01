@@ -12,7 +12,8 @@ export const TUNGSTEN_ELECTRODES_CATALOG_DATA: ITungstenElectrodesDB = {
     routing: {
       label: "Вольфрамовые электроды",
       target: "tungsten_electrodes",
-      image: "",
+      absoluteTarget: "/production/chemistry/tungsten_electrodes",
+      image: "tungsten_electrodes.jpg",
     },
     header: {
       label: "Вольфрамовые электроды",

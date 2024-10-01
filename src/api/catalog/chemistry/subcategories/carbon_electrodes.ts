@@ -10,7 +10,8 @@ export const CARBON_ELECTRODES_CATALOG_DATA:ICarbonElectrodesDB = {
     routing:   { 
       label: "Угольные электроды", 
       target: "carbon_electrodes", 
-      image: "" 
+      absoluteTarget: "/production/chemistry/carbon_electrodes",
+      image: "carbon_electrodes.jpg" 
     },
     header: {
       label: "Угольные электроды",

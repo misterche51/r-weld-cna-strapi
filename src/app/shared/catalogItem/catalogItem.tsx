@@ -21,7 +21,7 @@ export default function CatalogItem({
       {image && (
         <Image
           className={styles.image}
-          src={`/${image}.jpg`}
+          src={`/${image}`}
           alt="label"
           fill
           style={{ objectFit: "cover" }}

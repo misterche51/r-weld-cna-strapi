@@ -2,6 +2,7 @@ type TEquipmetCategoryData = {
   label: string,
   description:  string,
   target:  string, 
+  absoluteTarget: string,
   category_image:  string,
   list: any[],
   tags: string[]

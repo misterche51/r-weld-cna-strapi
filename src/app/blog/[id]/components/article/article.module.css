@@ -41,6 +41,7 @@
 .description {
   margin-bottom: 20px;
   font-size: var(--fsz-xs);
+  white-space: pre-wrap;
 }
 
 @media (max-width: 1060px) {

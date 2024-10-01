@@ -8,7 +8,8 @@ export const EQUIPMENT_DB: TEquipmentDB = {
     welding_sources: {
       label: "Сварочные источники",
       description: "",
-      target: "welding_sources", 
+      target: "welding_sources",
+      absoluteTarget: "", 
       category_image: "",
       list: [ {
           name: "Спрей пистолетный BINZEL",
@@ -24,6 +25,7 @@ export const EQUIPMENT_DB: TEquipmentDB = {
       label: "Дымовытяжные установки",
       description: "",
       target: "smoke_exhaust_systems",
+      absoluteTarget: "", 
       category_image: "",
       list: [ {
           name: "Спрей пистолетный BINZEL",
@@ -39,7 +41,8 @@ export const EQUIPMENT_DB: TEquipmentDB = {
     other: {
       label: "Прочее", 
       description: "",
-      target: "other", 
+      target: "other",
+      absoluteTarget: "",  
       category_image: "",
       list: [ {
           name: "Спрей пистолетный BINZEL",

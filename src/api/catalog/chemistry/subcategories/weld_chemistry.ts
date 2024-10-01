@@ -17,7 +17,8 @@ export const WELD_CHEMISTRY_CATALOG_DATA: IWeldChemistryDB = {
     routing: {
       label: "Сварочная химия", 
       target: "weld_chemistry", 
-      image: "" 
+      absoluteTarget: "/production/chemistry/weld_chemistry",
+      image: "weld_chemistry.png" 
     },
     header: {
       label: "Сварочная химия",
