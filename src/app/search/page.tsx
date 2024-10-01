@@ -70,6 +70,7 @@ const SearchContent = () => {
   const hasNoResults = [...catalogSearchResult, ...documentsSearchResult].length === 0
   
   return (
+    <Suspense>
     <div className={styles.wrapper}>
       {hasNoResults ?
       <div className={styles.no_content}>
@@ -94,17 +95,19 @@ const SearchContent = () => {
             </>
           }
         </section>}
-    </div>) 
-
-  
+    </div>
+    </Suspense>) 
 }
 
-export default function DocumentationPage() {
+const Documentation = ()  => {
   const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
-  return <Suspense>
-    <PageWrapper 
+  return <PageWrapper 
       title={`Результаты поиска по запросу "${searchParams}"`} 
       withUnderline 
-      content={<SearchContent/>} />
-    </Suspense>
+      content={<SearchContent/>} 
+      />
 } 
+
+export default function DocumentationPage(){
+  return <Suspense><Documentation/></Suspense>
+}
