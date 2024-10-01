@@ -9,7 +9,7 @@ import { PageWrapper } from "../layout/pageWrapper";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import CATALOG_DB from "@/api/catalog/db";
-
+import { Suspense } from 'react'
 const SearchContent = () => {
     const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
     const splittedSearchParams = searchParams.split(' ');
@@ -100,5 +100,5 @@ const SearchContent = () => {
 }
 
 export default function DocumentationPage() {
-  return <PageWrapper title='Результаты поиска' withUnderline content={<SearchContent/>} />
+  return <Suspense><PageWrapper title='Результаты поиска' withUnderline content={<SearchContent/>} /></Suspense>
 } 
