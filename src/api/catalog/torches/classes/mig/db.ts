@@ -53,6 +53,7 @@ export const TORCHES_MIG_DB:TTorchesClass = {
           // target: "mig_r-weld_liquid",
           absoluteTarget: "/production/hand_torches/mig_r-weld_liquid",
           data: MIG_R_WELD_LIQUID,
+     
           // tags: MIG_R_WELD_LIQUID.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
           tags: ['']
         },
