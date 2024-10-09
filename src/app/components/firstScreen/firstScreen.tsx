@@ -20,7 +20,17 @@ export default function FirstScreen({ children }: PropsWithChildren) {
         priority
       />
       <div className={styles.content}>
-        <h1 className={styles.title}>{DATA.title}</h1>
+        {/* <h1 className={styles.title}>{DATA.title}</h1> */}
+        <div className={styles.big_logo}>
+          <Image
+            src={`/white_big_logo.svg`}
+            alt="R-WELD"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+        </div>
+        
         <p className={styles.description}>{DATA.description}</p>
       </div>
     </div>

@@ -9,6 +9,7 @@ import Menu from "./components/menu/menu";
 import MenuButton from "./components/menu/components/menuButton/menuButton";
 import Button from "@/app/shared/button/button";
 import DB from "@/api/db";
+import { useRouter } from 'next/navigation';
 
 const Logo = () => (
   <Link href={"/"}>
@@ -30,6 +31,8 @@ export default function Header({ children }: PropsWithChildren) {
   const onMenuButtonClickHandler = () => {
     setIsOpened((val) => !val);
   };
+  const router = useRouter()
+  const onSubmitHandler = (value: string) => router.push(`/search?${value}`)
 
   return (
     <header className={styles.wrapper}>
@@ -45,7 +48,7 @@ export default function Header({ children }: PropsWithChildren) {
               <Menu />
             </div>
             <div className={styles.search}>
-              <SearchBar placeholder="Найти..." />
+              <SearchBar placeholder="Найти..."  onSearchStart={onSubmitHandler}/>
             </div>
             <div className={styles.menu_btn}>
               <MenuButton

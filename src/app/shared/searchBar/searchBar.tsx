@@ -2,13 +2,11 @@
 
 import styles from "./searchBar.module.css";
 import { ReactNode, useState } from "react";
-import { useRouter } from 'next/navigation';
 
 type TSearchBarProps = {
   placeholder: string;
   icon?: ReactNode;
   onSearchStart?: (val: string) => void;
-  // onChange: VoidFunction;
 };
 export default function SearchBar({
   placeholder,
@@ -16,12 +14,10 @@ export default function SearchBar({
   onSearchStart,
 }: TSearchBarProps) {
   const [value, setValue] = useState("");
-  const router = useRouter()
   // @ts-expect-error
   const onSubmitHandler = (e) => {
     e.preventDefault();
     onSearchStart && onSearchStart(value);
-    router.push(`/search?${value}`)
   };
   return (
     <form className={styles.wrapper} onSubmit={onSubmitHandler}>
