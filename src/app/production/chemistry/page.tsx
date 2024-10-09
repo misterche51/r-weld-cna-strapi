@@ -14,7 +14,7 @@ const ChemistryMain = () => {
     {categoies.map(({ routing }, i) => (
       <li key={i} className={styles.item}>
         <Link href={`/production/chemistry/${routing.target}`}>
-          <CatalogItem label={routing.label} image={routing.image} />
+          <CatalogItem label={routing.label} image={routing.image} imageStyle={[2,5].includes(i)?'cover':'contain'}/>
         </Link>
       </li>
     ))}

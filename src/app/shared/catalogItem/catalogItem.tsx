@@ -5,13 +5,16 @@ type TCatalogItemProps = {
   label?: string;
   image?: string;
   withDrop?: boolean;
+    imageStyle?: 'cover'|'contain';
 };
 
 export default function CatalogItem({
   label,
   image,
   withDrop = false,
+  imageStyle = 'cover'
 }: TCatalogItemProps) {
+  
   return (
     <div
       className={`${styles.wrapper} ${
@@ -24,7 +27,7 @@ export default function CatalogItem({
           src={`/${image}`}
           alt="label"
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: imageStyle }}
           priority
         />
       )}
