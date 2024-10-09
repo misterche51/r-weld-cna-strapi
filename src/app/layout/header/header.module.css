@@ -50,7 +50,8 @@
   position: absolute;
   content: "";
   background-image: url("../../../../public/ic-phone.svg");
-  left: -6px;
+  background-size: contain;
+  left: -20px;
   top: 6px;
 }
 
@@ -73,6 +74,14 @@
   }
   .phone {
     margin-bottom: 30px;
+  }
+
+  .phone:before {
+    width: 30px;
+    height: 30px;
+    left: -8px;
+    top: 9px;
+    background-size: contain;
   }
   .request_btn {
     display: none;
