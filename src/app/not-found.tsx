@@ -1,5 +1,5 @@
 // "use client";
-import { PropsWithChildren } from "react";
+import DB from "@/api/db";
 import Link from "next/link";
 import styles from "./not-found.module.css";
 import Button from "./shared/button/button";
@@ -15,8 +15,8 @@ export default function PageNotFound() {
         <p className={styles.text}>
           Наши сотрудники проконсультируют вас по любому вопросу.
         </p>
-        <a href="tel:+79001001010" className={styles.phone}>
-          {"8 (900)-100-10-10"}
+        <a href={DB.info.phone.href} className={styles.phone}>
+          {DB.info.phone.label}
         </a>
         <div className={styles.button}>
           <Link href="/">

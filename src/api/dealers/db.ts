@@ -10,7 +10,7 @@ export const DEALERS_DB: TRegionItem[] = [
         address:
           "г. Астрахань, ул. Адмирала Нахимова, дом 60, корпус ЛИТЕР СТР 25",
         email: "info@astraweld.ru",
-        site: "www.artisan31.ru",
+        site: "www.astraweld.ru",
         city: "астрахань",
       },
     ],

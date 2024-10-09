@@ -9,8 +9,8 @@ import { TInfoDB, TDataBase, TTorchesCatalog,  TNavigationMenuDB, TCatalogCatego
 
 export const INFO_DB:TInfoDB =  {
   phone: {
-    href: 'tel:88009001010',
-    label: '8 800 900-10-10'
+    href: 'tel:84912293493',
+    label: '8 (4912) 8293-493'
   },
   email: {
     href: 'mailto:info@r-weld.ru',
