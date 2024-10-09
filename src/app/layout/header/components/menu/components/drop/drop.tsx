@@ -15,6 +15,10 @@ export default function Drop({ label, menu, target }: TMenuItem) {
         {/* @ts-expect-error */}
         <Link href={`${menu?.list[0]?.path ?? ''}`} rel="noopener noreferrer" target="_blank">{menu?.list[0]?.label}</Link>
       </li>
+      <li className={`${styles.item} ${styles['item--downloadable']}`}>
+        {/* @ts-expect-error */}
+        <Link href={`${menu?.list[1]?.path ?? ''}`} rel="noopener noreferrer" target="_blank">{menu?.list[1]?.label}</Link>
+      </li>
       <li className={`${styles.item}`}>
         <Link href='/documentation'>Документация</Link>
       </li>

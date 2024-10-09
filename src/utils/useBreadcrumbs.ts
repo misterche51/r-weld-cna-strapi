@@ -1,6 +1,7 @@
 import { TBreadcrumbItem } from "@/app/shared";
 import { usePathname } from "next/navigation";
 import { BREADCRUMBS_DICTIONARY } from "@/api/catalog/categories";
+import DB from "@/api/db";
 const getTranslatedBreadcrumbLabel = (label: string) =>
   BREADCRUMBS_DICTIONARY[label] ?? label;
 type TUseBreadcrumbsProps = boolean;
@@ -25,15 +26,23 @@ const useBreadcrumbs = (isFromMainPage: TUseBreadcrumbsProps = false) => {
   for (let i = 2; i < pathes.length; i++) {
     prevTarget += `/${pathes[i]}`;
     const label = pathes[i];
+   
     crumbs.push({
       label: getTranslatedBreadcrumbLabel(label),
       target: prevTarget,
     });
   }
+
+  if (rootBreadcrumb.target === 'blog' && crumbs[crumbs.length - 1]) {
+    // @ts-expect-error
+    crumbs[crumbs.length - 1].label = DB.posts[+crumbs[crumbs.length - 1].label].articleTitle
+  }
+    
   const breadcrumbs: TBreadcrumbItem[] = [{
     label: getTranslatedBreadcrumbLabel("home"),
     target: "/",
   }, rootBreadcrumb, ...crumbs];
+
   return breadcrumbs;
 };
 
