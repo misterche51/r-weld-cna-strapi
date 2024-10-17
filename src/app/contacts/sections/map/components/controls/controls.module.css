@@ -48,7 +48,7 @@
   background-color: var(--decorative-color-blue);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 936px) {
   .list {
     flex-direction: column;
     width: 100%;

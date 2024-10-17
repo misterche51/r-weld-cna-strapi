@@ -18,6 +18,7 @@
   overflow: hidden;
   display: none;
   border: 2px solid;
+  width: calc(100% - 520px);
   border-color: var(--decorative-color-blue);
   border-bottom-right-radius: var(--border-radius-default);
 }
@@ -28,6 +29,9 @@
 @media (max-width: 1060px) {
   .info {
     width: 532px;
+  }
+  .map {
+    width: calc(100% - 532px);
   }
 }
 
@@ -42,12 +46,13 @@
   }
   .map {
     height: 480px;
+    width: 100%;
     border-top-right-radius: initial;
     border-bottom-left-radius: var(--border-radius-default);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 936px) {
   .controls {
     width: 171px;
     flex-grow: 0;

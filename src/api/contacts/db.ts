@@ -89,6 +89,22 @@ export const CONTACTS_DB: TContactsItem[] = [
     ],
     email: "office-krsk@r-weld.ru",
   },
+  {
+    id: 5,
+    location: {
+      center: [39.718813, 47.222109],
+      zoom: 12,
+    },
+    city: "Ростов-на-Дону",
+    address: "Торговый представитель Александр Митько",
+    phones: [
+      {
+        label: "+7 (930) 880 34-80",
+        href: "+79308803480",
+      },
+    ],
+    email: "mitko@r-weld.ru ",
+  },
 ];
 
 const CONTACTS_TAGS = CONTACTS_DB.map(({ city }) => city.toLowerCase());
