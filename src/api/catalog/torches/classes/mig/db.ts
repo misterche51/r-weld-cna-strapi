@@ -25,7 +25,7 @@ export const TORCHES_MIG_DB:TTorchesClass = {
           absoluteTarget: "/production/hand_torches/mig_mb_air",
           data: MIG_MB_AIR,
           //@ts-expect-error
-          tags: MIG_MB_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+          tags: [...MIG_MB_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))]
         },
         {
           label: "R-WELD",
