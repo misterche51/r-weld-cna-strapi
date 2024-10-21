@@ -52,5 +52,5 @@ export const CARBON_ELECTRODES_CATALOG_DATA:ICarbonElectrodesDB = {
 
   CARBON_ELECTRODES_CATALOG_DATA.tags = [
     ...CARBON_ELECTRODES_CATALOG_DATA.tags!, 
-    ...CARBON_ELECTRODES_CATALOG_DATA.header.description!.split(' '), 
+    ...CARBON_ELECTRODES_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' '), 
    ]

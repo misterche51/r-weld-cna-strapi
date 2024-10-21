@@ -56,4 +56,4 @@ export const PLANERS_CATALOG_DATA : IPlanersDB = {
     ].map(tag => tag.toLowerCase().replace(' ', '+'))
   }
 
-  PLANERS_CATALOG_DATA.tags = [...PLANERS_CATALOG_DATA.tags!, ...PLANERS_CATALOG_DATA.header.description!.split(' ')]
+  PLANERS_CATALOG_DATA.tags = [...PLANERS_CATALOG_DATA.tags!, ...PLANERS_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]

@@ -28,4 +28,4 @@ export const TUNGSTEN_ELECTRODES_CATALOG_DATA: ITungstenElectrodesDB = {
     },
   }
 
-  TUNGSTEN_ELECTRODES_CATALOG_DATA.tags = ['Вольфрамовые электроды', 'электрод', 'вольфрам', 'Вольфрамовые','электроды', ...TUNGSTEN_ELECTRODES_CATALOG_DATA.data.image.description.replace('.', '').split(' ')].map(tag => tag.toLowerCase().replace(' ', '+'))
+  TUNGSTEN_ELECTRODES_CATALOG_DATA.tags = ['Вольфрамовые электроды', 'электрод', 'вольфрам', 'Вольфрамовые','электроды', ...TUNGSTEN_ELECTRODES_CATALOG_DATA.data.image.description.replace('.', '').replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')].map(tag => tag.toLowerCase().replace(' ', '+'))
