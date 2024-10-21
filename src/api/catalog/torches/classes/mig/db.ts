@@ -17,7 +17,7 @@ export const TORCHES_MIG_DB:TTorchesClass = {
           absoluteTarget: "/production/hand_torches/mig_rf_air",
           data: MIG_RF_AIR,
           //@ts-expect-error
-          tags: MIG_RF_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+'))
+          tags: [...MIG_RF_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+')), 'grip+15', 'grip', 'rf+grip']
         },
         {
           label: "MB",
