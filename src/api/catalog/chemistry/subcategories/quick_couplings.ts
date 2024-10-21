@@ -30,3 +30,5 @@ export const QUICK_COUPLINGS_CATALOG_DATA: IQuickCouplingsDB = {
     },
     tags: ['Быстросъемные+соединения', 'Быстросъемный', 'быстросъемные', 'соединения'].map(tag => tag.toLowerCase().replace(' ', '+'))
   }
+
+  QUICK_COUPLINGS_CATALOG_DATA.tags = [...QUICK_COUPLINGS_CATALOG_DATA.tags!, ...QUICK_COUPLINGS_CATALOG_DATA.header.description!.split(' ') ]

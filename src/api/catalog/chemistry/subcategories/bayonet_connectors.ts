@@ -123,3 +123,5 @@ export const BAYONET_CONNECTORS_CATALOG_DATA:IBayonetConnectorsDB = {
   },
   tags: ['байонетные разъемы', 'байонетные', 'разъемы', 'штекера', 'штекеры', 'Панельные гнезда', 'панельные', 'гнезда', 'гнёзда', 'кабельные','кабельные штекеры', 'кабельные штекера','abi', 'cf', 'im', 'cm', 'разъем', 'ABI-CF', 'ABI-IM', 'ABI-CM'].map(tag => tag.toLowerCase().replace(' ', '+'))
 }
+
+BAYONET_CONNECTORS_CATALOG_DATA.tags = [...BAYONET_CONNECTORS_CATALOG_DATA.tags!, ...BAYONET_CONNECTORS_CATALOG_DATA.header.description!.split(' ') ]

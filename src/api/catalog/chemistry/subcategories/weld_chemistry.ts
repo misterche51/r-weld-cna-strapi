@@ -89,5 +89,5 @@ export const WELD_CHEMISTRY_CATALOG_DATA: IWeldChemistryDB = {
     
 WELD_CHEMISTRY_CATALOG_DATA.tags = WELD_CHEMISTRY_CATALOG_DATA.data.reduce(
   (acc, curr) => { 
-    return [...acc, ...curr.name.split(' '), curr.name]
+    return [...acc, ...curr.name.split(' '), curr.name, ...curr.info!.split(' ')]
   }, ['300', 'средство'] ).map(tag => tag.toLowerCase().replace(' ', '+'))

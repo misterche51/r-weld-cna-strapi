@@ -54,5 +54,6 @@ export const PLANERS_CATALOG_DATA : IPlanersDB = {
       'К16Т', 'К 16 Т', 'K16 T', 'K 16T',
       'К20', 'К 20', 'K20', 'K 20',
     ].map(tag => tag.toLowerCase().replace(' ', '+'))
-    
   }
+
+  PLANERS_CATALOG_DATA.tags = [...PLANERS_CATALOG_DATA.tags!, ...PLANERS_CATALOG_DATA.header.description!.split(' ')]
