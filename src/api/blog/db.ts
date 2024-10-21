@@ -12,6 +12,7 @@ export const BLOG_DB: TPostItem[] = [
     image: "blog_0.jpg",
     date: "15 июня 2024",
     id: 0,
+    tags: []
   },
   {
     previewTitle: "Выставка Beijing Essen Welding & Cutting 2024",
@@ -24,5 +25,6 @@ export const BLOG_DB: TPostItem[] = [
     image: "blog_1.jpg",
     date: "30 сентября 2024",
     id: 1,
+    tags: []
   },
 ];

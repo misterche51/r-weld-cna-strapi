@@ -6,4 +6,5 @@ export type TPostItem = {
   fullDescription?: string;
   date: string;
   image: string;
+  tags: string[];
 };
