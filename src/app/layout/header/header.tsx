@@ -32,7 +32,7 @@ export default function Header({ children }: PropsWithChildren) {
     setIsOpened((val) => !val);
   };
   const router = useRouter()
-  const onSubmitHandler = (value: string) => router.push(`/search?${value}`);
+  const onSubmitHandler = (value: string) => value.trim().length !== 0 ? router.push(`/search?${value}`): null;
 
   return (
     <header className={styles.wrapper}>

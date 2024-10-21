@@ -79,22 +79,23 @@ const SearchContent = () => {
       : 
         <section className={styles.results}>
           {catalogSearchResult.length > 0 && 
-          <>
-            <Heading rank={2} text="В каталоге: " withUnderline={false}/>
+          <div className={styles.results__block}>
+            <Heading rank={2} text="В каталоге" withUnderline={false}/>
             <ul className={styles.list}>
               {catalogSearchResult.map(({label, url}) => url && <div key={url} className={styles.item}>
                   <Link href={url}>{label}</Link>
                 </div>
                 )}
             </ul>
-          </>}
+          </div>}
            {documentsSearchResult.length > 0 && 
-            <>
-              <Heading rank={2} text="В документах: " withUnderline={false}/>
+            <div className={styles.results__block}>
+              <Heading rank={2} text="В документах" withUnderline={false}/>
               <DocumentationList list={DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
-            </>
+            </div>
           }
-        </section>}
+        </section>
+        }
     </div>
     </Suspense>) 
 }
@@ -102,7 +103,7 @@ const SearchContent = () => {
 const Documentation = ()  => {
   const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
   return <PageWrapper 
-      title={`Результаты поиска по запросу "${searchParams}"`} 
+      title={`Результаты поиска по запросу "${searchParams.replace('+', ' ')}"`} 
       withUnderline 
       content={<SearchContent/>} 
       />
