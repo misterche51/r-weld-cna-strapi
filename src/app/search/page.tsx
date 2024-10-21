@@ -8,7 +8,9 @@ import { PageWrapper } from "../layout/pageWrapper";
 import { useSearchParams } from "next/navigation";
 import CATALOG_DB from "@/api/catalog/db";
 import { DOWNLOADS_DB } from "@/api/documentation";
+import DB from "@/api/db";
 import { Suspense } from 'react'
+import { Region } from "../contacts/sections";
 import { DocumentationList } from "../documentation/components/documentationList";
 
 const SearchContent = () => {
@@ -58,7 +60,7 @@ const SearchContent = () => {
 				}
     }
 
-    const documentsSearchResult: number[]  = DOWNLOADS_DB.reduce((acc, curr) => {
+    const documentsSearchResult: number[] = DOWNLOADS_DB.reduce((acc, curr) => {
       if (curr.tags?.includes(searchParams)) {
         return [...acc, curr.id]
       } else {
@@ -67,7 +69,13 @@ const SearchContent = () => {
     }, [] as number[])
 
 
-  const hasNoResults = [...catalogSearchResult, ...documentsSearchResult].length === 0
+    const dealersSearchResult = DB.dealers.filter(({ list }) => {
+      return list.filter(({ city, name }) => {
+        return (city.startsWith(searchParams)) ||
+        (name.toLowerCase().replace('«', ' ').replace('»', ' ').split(' ').includes(searchParams))
+      }).length > 0});
+    
+  const hasNoResults = [...catalogSearchResult, ...documentsSearchResult, ...dealersSearchResult].length === 0
   
   return (
     <Suspense>
@@ -93,6 +101,18 @@ const SearchContent = () => {
               <Heading rank={2} text="В документах" withUnderline={false}/>
               <DocumentationList list={DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
             </div>
+          }
+          {dealersSearchResult.length > 0 && 
+           <div className={styles.results__block}>
+              <Heading rank={2} text="Среди дилеров" withUnderline={false}/>
+              <ul className={styles.list}>
+                {dealersSearchResult.map(({ region, list }) => (
+                  <li className={`${styles.list__item}`} key={region}>
+                      <Region region={region} list={list} />
+                  </li>
+                ))}
+              </ul>
+           </div>
           }
         </section>
         }

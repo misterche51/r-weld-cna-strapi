@@ -7,7 +7,7 @@ import Location from "./components/location";
 import SearchBar from "@/app/shared/searchBar/searchBar";
 import { TRegionItem } from "@/api/dealers/declarations";
 
-const Region = ({ region, list }: TRegionItem) => {
+export const Region = ({ region, list }: TRegionItem) => {
   return (
     <div className={styles.region}>
       <p className={styles.region__name}>{region}</p>
@@ -31,9 +31,10 @@ export default function Dealers() {
   const renderedDealers = useMemo(
     () =>
       DB.dealers.filter(({ list }) => {
-        return (
-          list.filter(({ city }) => city.startsWith(searchedCity)).length > 0
-        );
+        return list.filter(({ city, name }) => {
+          return (city.startsWith(searchedCity)) ||
+          (name.toLowerCase().replace('«', ' ').replace('»', ' ').split(' ').includes(searchedCity))
+        }).length > 0;
       }),
     [searchedCity]
   );
