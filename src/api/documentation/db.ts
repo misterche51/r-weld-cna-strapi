@@ -8,7 +8,7 @@ export const DOWNLOADS_DB:TDownloadsDB = [
     },
     {   id:1,
         label: 'Прайс-лист',
-        path:' ',
+        path:' https://disk.yandex.ru/i/6GB_LEC3VsZedQ',
         tags: ['прайс-лист','каталог']
     },
     {   id: 2,
