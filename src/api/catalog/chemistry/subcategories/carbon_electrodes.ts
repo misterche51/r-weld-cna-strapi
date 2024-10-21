@@ -47,7 +47,7 @@ export const CARBON_ELECTRODES_CATALOG_DATA:ICarbonElectrodesDB = {
         },
       },
     },
-    tags: ['угольные электроды', 'угольные', 'электроды', 'ABIARC', 'AL', 'AC', 'DC', 'плоские', 'соединямемые'].map(tag => tag.toLowerCase().replace(' ', '+'))
+    tags: ['угольные электроды', 'угольные', 'электроды', 'ABIARC', 'AL', 'AC', 'DC', 'плоские', 'соединямемые', 'уголь'].map(tag => tag.toLowerCase().replace(' ', '+'))
   }
 
   CARBON_ELECTRODES_CATALOG_DATA.tags = [
