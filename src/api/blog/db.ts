@@ -12,7 +12,7 @@ export const BLOG_DB: TPostItem[] = [
     image: "blog_0.jpg",
     date: "15 июня 2024",
     id: 0,
-    tags: []
+    tags: ['r-weld', 'оборудование', 'компания']
   },
   {
     previewTitle: "Выставка Beijing Essen Welding & Cutting 2024",
