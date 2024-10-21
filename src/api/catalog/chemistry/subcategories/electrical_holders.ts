@@ -34,7 +34,7 @@ export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
       },
     },
   },
-  tags: ['держатели', 'электродержатели', 'DE2200', 'DE', 'DE2300', 'DE2400', 'DE2500'].map(tag => tag.toLowerCase().replace(' ', '+'))
+  tags: ['держатель', 'электродержатель', 'электрододержатель', 'держак','держатели', 'электродержатели', 'электрододержатели', 'держаки', 'DE2200', 'DE', 'DE2300', 'DE2400', 'DE2500', 'DE+2200',  'DE+2300', 'DE+2400', 'DE+2500', 'DE2200',  'DE 2300', 'DE 2400', 'DE 2500'].map(tag => tag.toLowerCase().replace(' ', '+'))
 }
 
 ELECTRICAL_HOLDERS_CATALOG_DATA.tags = [...ELECTRICAL_HOLDERS_CATALOG_DATA.tags!, ...ELECTRICAL_HOLDERS_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]
