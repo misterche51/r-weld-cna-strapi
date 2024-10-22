@@ -53,7 +53,8 @@ export const PLANERS_CATALOG_DATA : IPlanersDB = {
       'К16', 'К 16', 'K16', 'K 16',
       'К16Т', 'К 16 Т', 'K16 T', 'K 16T',
       'К20', 'К 20', 'K20', 'K 20',
-    ].map(tag => tag.toLowerCase().replace(' ', '+')['строгач','строгачи','строжка'])
+      ,'строгач','строгачи','строжка',
+    ].map(tag => tag.toLowerCase().replace(' ', '+'))
   }
 
   PLANERS_CATALOG_DATA.tags = [...PLANERS_CATALOG_DATA.tags!, ...PLANERS_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]
