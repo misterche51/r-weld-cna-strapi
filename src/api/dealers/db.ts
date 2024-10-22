@@ -130,7 +130,7 @@ export const DEALERS_DB: TRegionItem[] = [
       {
         name: "ООО «Фирма ТВС»",
         phone: "(8332) 66–04–06",
-        address: "г. Краснодар, ул. Уральская, дом 89",
+        address: "г. Киров, ул. Преображенская, 82/1",
         email: "info@firmatvs.ru",
         site: "www.firmatvs.ru",
         city: "киров",
@@ -143,7 +143,7 @@ export const DEALERS_DB: TRegionItem[] = [
       {
         name: "ООО «Евротехника»",
         phone: "(928) 246-17–26, 59–26–00",
-        address:"г. Астрахань, ул. Адмирала Нахимова, дом 60, корпус ЛИТЕР СТР 25",
+        address:"г. Краснодар, ул. Новороссийская, 234",
         email: "krasnodar@evrotechnika.com",
         site: "www.serpantinas.com",
         city: "краснодар",
