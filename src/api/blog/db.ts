@@ -28,3 +28,5 @@ export const BLOG_DB: TPostItem[] = [
     tags: []
   },
 ];
+
+BLOG_DB.forEach(el => el.tags = [...el.tags, ...el.shortDescription.split(' ')])

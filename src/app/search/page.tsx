@@ -19,7 +19,7 @@ const SearchContent = () => {
     const catalogSearchResult: {label: string, url: string}[] = []
     const catalogCategories = Object.values(CATALOG_DB);
 
-    for (let categoryDB of catalogCategories) {
+    for (let categoryDB of catalogCategories) { 
         if (categoryDB.hasOwnProperty('tags')) {
 					// @ts-expect-error
           if (categoryDB.tags.includes(searchParams)) {
@@ -52,7 +52,7 @@ const SearchContent = () => {
                
                 for (let torchesDB of torchesCategories) {
                   if (torchesDB.tags.includes(searchParams)) {
-                    catalogSearchResult.push({label: torchesDB.label, url:torchesDB.absoluteTarget });
+                    catalogSearchResult.push({label: torchesDB.searchResultLabel, url:torchesDB.absoluteTarget });
                   }		
                 }
 							}
@@ -74,8 +74,13 @@ const SearchContent = () => {
         return (city.startsWith(searchParams)) ||
         (name.toLowerCase().replace('«', ' ').replace('»', ' ').split(' ').includes(searchParams))
       }).length > 0});
-    
-  const hasNoResults = [...catalogSearchResult, ...documentsSearchResult, ...dealersSearchResult].length === 0
+
+    const blogSearchResult = DB.posts.filter(post => post.tags.includes(searchParams));
+    const hasCatalogSearchResult = catalogSearchResult.length > 0;
+    const hasDocumentsSearchResult = documentsSearchResult.length > 0;
+    const hasDealersSearchResult = dealersSearchResult.length > 0;
+    const hasBlogSearchResult = blogSearchResult.length > 0;
+  const hasNoResults = !hasBlogSearchResult && !hasCatalogSearchResult && !hasDealersSearchResult && !hasDocumentsSearchResult;
   
   return (
     <Suspense>
@@ -86,23 +91,23 @@ const SearchContent = () => {
       </div>
       : 
         <section className={styles.results}>
-          {catalogSearchResult.length > 0 && 
+          {hasCatalogSearchResult && 
           <div className={styles.results__block}>
             <Heading rank={2} text="В каталоге" withUnderline={false}/>
             <ul className={styles.list}>
-              {catalogSearchResult.map(({label, url}) => url && <div key={url} className={styles.item}>
+              {catalogSearchResult.map(({label, url}) => url && <li key={url} className={styles.item}>
                   <Link href={url}>{label}</Link>
-                </div>
+                </li>
                 )}
             </ul>
           </div>}
-           {documentsSearchResult.length > 0 && 
+           {hasDocumentsSearchResult && 
             <div className={styles.results__block}>
               <Heading rank={2} text="В документах" withUnderline={false}/>
               <DocumentationList list={DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
             </div>
           }
-          {dealersSearchResult.length > 0 && 
+          {hasDealersSearchResult && 
            <div className={styles.results__block}>
               <Heading rank={2} text="Среди дилеров" withUnderline={false}/>
               <ul className={styles.list}>
@@ -113,6 +118,17 @@ const SearchContent = () => {
                 ))}
               </ul>
            </div>
+          }
+          {hasBlogSearchResult && 
+          <div className={styles.results__block}>
+            <Heading rank={2} text="В блоге" withUnderline={false}/>
+            <ul className={styles.list}>
+              {blogSearchResult.map(({articleTitle, id}) => <li key={id} className={styles.item}>
+                  <Link href={`/blog/${id}`}>{articleTitle}</Link>
+                </li>
+                )}
+            </ul>
+          </div>
           }
         </section>
         }
