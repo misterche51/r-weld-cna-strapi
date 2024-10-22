@@ -17,7 +17,7 @@ export const TORCHES_MIG_DB:TTorchesClass = {
           absoluteTarget: "/production/hand_torches/mig_rf_air",
           data: MIG_RF_AIR,
           //@ts-expect-error
-          tags: [...MIG_RF_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+')), 'grip+15', 'grip', 'rf+grip', 'rf+25', 'рф+25', 'rf+26', 'рф+26', 'rf+36', 'рф+36', 'rf+45', 'рф+45', 'горелка+rf', 'горелка+рф', 'rf15', 'рф15', 'rf25', 'рф25', 'rf26', 'рф26', 'rf36', 'рф36', 'rf45', 'рф45', 'горелка']
+          tags: [...MIG_RF_AIR.list.reduce((acc, curr) => {return [...acc, ...curr.name.split(' '), curr.name]}, []).map(tag => tag.toLowerCase().replace(' ', '+')), 'grip+15', 'grip', 'rf+grip', 'rf+25', 'рф+25', 'rf+26', 'рф+26', 'rf+36', 'рф+36', 'rf+45', 'рф+45', 'горелка+rf', 'горелка+рф', 'rf15', 'рф15', 'rf25', 'рф25', 'rf26', 'рф26', 'rf36', 'рф36', 'rf45', 'рф45', 'горелка+воздушная', 'горелка', 'воздушная', 'воздушное+охлаждение',  'горелка+воздушное+охлаждение']
         },
         {
           label: "MB",
