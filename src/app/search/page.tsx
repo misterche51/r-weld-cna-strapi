@@ -84,62 +84,62 @@ const SearchContent = () => {
   
   return (
     <Suspense>
-    <div className={styles.wrapper}>
-      {hasNoResults ?
-      <div className={styles.no_content}>
-        <Heading rank={1} text="По данному запросу ничего не найдено" withUnderline={false}/>
-      </div>
-      : 
-        <section className={styles.results}>
-          {hasCatalogSearchResult && 
-          <div className={styles.results__block}>
-            <Heading rank={2} text="В каталоге" withUnderline={false}/>
-            <ul className={styles.list}>
-              {catalogSearchResult.map(({label, url}) => url && <li key={url} className={styles.item}>
-                  <Link href={url}>{label}</Link>
-                </li>
-                )}
-            </ul>
-          </div>}
-           {hasDocumentsSearchResult && 
+      <div className={styles.wrapper}>
+        {hasNoResults ?
+        <div className={styles.no_content}>
+          <Heading rank={1} text="По данному запросу ничего не найдено" withUnderline={false}/>
+        </div>
+        : 
+          <section className={styles.results}>
+            {hasCatalogSearchResult && 
             <div className={styles.results__block}>
-              <Heading rank={2} text="В документах" withUnderline={false}/>
-              <DocumentationList list={DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
-            </div>
-          }
-          {hasDealersSearchResult && 
-           <div className={styles.results__block}>
-              <Heading rank={2} text="Среди дилеров" withUnderline={false}/>
+              <Heading rank={2} text="В каталоге" withUnderline={false}/>
               <ul className={styles.list}>
-                {dealersSearchResult.map(({ region, list }) => (
-                  <li className={`${styles.list__item}`} key={region}>
-                      <Region region={region} list={list} />
+                {catalogSearchResult.map(({label, url}) => url && <li key={url} className={styles.item}>
+                    <Link href={url}>{label}</Link>
                   </li>
-                ))}
+                  )}
               </ul>
-           </div>
+            </div>}
+            {hasDocumentsSearchResult && 
+              <div className={styles.results__block}>
+                <Heading rank={2} text="В документах" withUnderline={false}/>
+                <DocumentationList list={DOWNLOADS_DB.filter(({id}) => documentsSearchResult.includes(id))} />
+              </div>
+            }
+            {hasDealersSearchResult && 
+            <div className={styles.results__block}>
+                <Heading rank={2} text="Среди дилеров" withUnderline={false}/>
+                <ul className={styles.list}>
+                  {dealersSearchResult.map(({ region, list }) => (
+                    <li className={`${styles.list__item}`} key={region}>
+                        <Region region={region} list={list} />
+                    </li>
+                  ))}
+                </ul>
+            </div>
+            }
+            {hasBlogSearchResult && 
+            <div className={styles.results__block}>
+              <Heading rank={2} text="В блоге" withUnderline={false}/>
+              <ul className={styles.list}>
+                {blogSearchResult.map(({articleTitle, id}) => <li key={id} className={styles.item}>
+                    <Link href={`/blog/${id}`}>{articleTitle}</Link>
+                  </li>
+                  )}
+              </ul>
+            </div>
+            }
+          </section>
           }
-          {hasBlogSearchResult && 
-          <div className={styles.results__block}>
-            <Heading rank={2} text="В блоге" withUnderline={false}/>
-            <ul className={styles.list}>
-              {blogSearchResult.map(({articleTitle, id}) => <li key={id} className={styles.item}>
-                  <Link href={`/blog/${id}`}>{articleTitle}</Link>
-                </li>
-                )}
-            </ul>
-          </div>
-          }
-        </section>
-        }
-    </div>
+      </div>
     </Suspense>) 
 }
 
 const Documentation = ()  => {
   const searchParams = decodeURIComponent(useSearchParams().toString().toLowerCase().slice(0,-1));  
   return <PageWrapper 
-      title={`Результаты поиска по запросу "${searchParams.replace('+', ' ')}"`} 
+      title={`Результаты поиска по запросу "${searchParams.replaceAll('+', ' ')}"`} 
       withUnderline 
       content={<SearchContent/>} 
       />
