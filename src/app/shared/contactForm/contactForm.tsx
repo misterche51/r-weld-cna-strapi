@@ -25,10 +25,25 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
   }
 
   return (
-    <form className={`${styles[`wrapper--${variant}`]} ${styles.wrapper}`} id='contact-form' onSubmit={(e) => {
+    <form 
+      className={`${styles[`wrapper--${variant}`]} ${styles.wrapper}`} 
+      id='contact-form' 
+      onSubmit={async (e) => {
+        const form = document.querySelector('#contact-form') as HTMLFormElement
         e.preventDefault();
-        setIsOverlayActive(true)
-      }}>
+          const response = await fetch("mail.php", {
+          method: "POST",
+          body: new FormData(form),
+        });
+        if (response.ok) {
+          console.log("good")
+        } else {
+          console.log('rarara')
+        }
+      }
+    
+        
+      }>
       <div className={styles.inner}>
         <p className={`${styles[`cta--${variant}`]} ${styles.cta}`}>
           Оставьте номер телефона, мы ответим на все ваши вопросы и оформим
@@ -38,6 +53,8 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
           <input
             ref={inputRef}
             type="phone"
+            name='user_phone'
+            id='phone'
             className={`${styles[`input--${variant}`]} ${styles.input}`}
             placeholder="Введите номер телефона"
             onChange={onInputChangeHandler}
