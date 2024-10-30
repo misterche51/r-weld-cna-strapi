@@ -77,7 +77,7 @@ export const DOWNLOADS_DB:TDownloadsDB = [
     },
  {   
         id:4,
-        label: 'Паспорт безопасности ABIBLUE',
+        label: 'RF 36 LC запасные части',
         path:'https://disk.yandex.ru/d/HnnuhG9OtgnrOw',
         tags: ["RF 36", "RF","РФ 36", "36", "RF 36 LC", "RF 36LC","РФ 36 LC", "36 LC", "36LC", "запасные части", "развертка", "схема", "расходка", "список", "список запасных частей", "ремонт"]
     },
