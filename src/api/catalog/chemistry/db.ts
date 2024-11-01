@@ -6,6 +6,7 @@ import { QUICK_COUPLINGS_CATALOG_DATA } from "./subcategories/quick_couplings";
 import { TUNGSTEN_ELECTRODES_CATALOG_DATA } from "./subcategories/tungsten_electrodes";
 import { BAYONET_CONNECTORS_CATALOG_DATA } from "./subcategories/bayonet_connectors";
 import { OTHER_ACCESSORIES_CATALOG_DATA } from "./subcategories/other_accessories";
+import { ELECTRIC_HOLDERS_ATB_CATALOG_DATA } from "./subcategories/electric_holders_atb";
 import { TChemistryDB } from "./declarations";
 
 export const CHEMISTRY_DB: TChemistryDB = {
@@ -15,6 +16,7 @@ export const CHEMISTRY_DB: TChemistryDB = {
   data: {
     weld_chemistry: WELD_CHEMISTRY_CATALOG_DATA,
     electrical_holders: ELECTRICAL_HOLDERS_CATALOG_DATA,
+    electric_holders_atb: ELECTRIC_HOLDERS_ATB_CATALOG_DATA,
     carbon_electrodes: CARBON_ELECTRODES_CATALOG_DATA,
     planers: PLANERS_CATALOG_DATA,
     quick_couplings: QUICK_COUPLINGS_CATALOG_DATA,

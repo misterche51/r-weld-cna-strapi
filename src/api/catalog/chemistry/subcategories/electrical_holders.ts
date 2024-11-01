@@ -8,7 +8,7 @@ export interface IElectricalHoldersDB extends IChemistryCategoryDB {
 
 export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
   routing:  { 
-    label: "Электрододержатели", 
+    label: "Электрододержатели DE", 
     target: "electrical_holders", 
     absoluteTarget: "/production/chemistry/electrical_holders",
     image: "electrical_holders.png" },
