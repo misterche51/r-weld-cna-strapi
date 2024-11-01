@@ -89,7 +89,7 @@
 @media (max-width: 960px) {
   .list {
     justify-content: space-between;
-    height: 895px;
+    min-height: 895px;
   }
 
   .list--opened {
@@ -133,7 +133,7 @@
 
 @media (max-width: 380px) {
   .list {
-    height: 1010px;
+    min-height: 1010px;
   }
 
   .list--opened {
