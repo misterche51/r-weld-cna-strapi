@@ -1,16 +1,14 @@
-"use client";
 
-import PostMini from "../components/postPreview/postPreview";
-import { useRouter } from "next/router";
-import Layout from "../../layout/layout";
+
+import styles from "./page.module.css";
 import Container from "@/app/layout/container/container";
 import DB from "@/api/db";
 import ContactForm from "@/app/shared/contactForm/contactForm";
 import GalleryPosts from "./components/gallery/gallery";
 import Article from "./components/article/article";
-import styles from "./page.module.css";
-import useBreadcrumbs from "@/utils/useBreadcrumbs";
-import Breadcrumbs from "@/app/shared/breadcrumbs/breadcrumbs";
+import { PageWrapper } from "@/app/layout/pageWrapper";
+import PageNotFound from "@/app/not-found";
+import { TPostItem } from "@/api/blog/declarations";
 
 type TPostPageProps = {
   params: {
@@ -18,9 +16,14 @@ type TPostPageProps = {
   };
 };
 
-export default function PostPage(props: TPostPageProps) {
-  const breadcrumbs = useBreadcrumbs();
-  const { id } = props.params;
+// Компонент страницы поста
+export default async function PostPage({ params }: TPostPageProps) {
+  const postId = Number(params.id);
+  const post = DB.posts[postId] || null;
+
+  // Если пост не существует, возвращаем страницу 404
+  if (!post) return <PageNotFound />;
+  
   const {
     previewTitle,
     articleTitle,
@@ -28,12 +31,14 @@ export default function PostPage(props: TPostPageProps) {
     date,
     shortDescription,
     fullDescription,
-  } = DB.posts[+id];
+    id
+  } = post;
+
   return (
-    <Layout>
+    <PageWrapper 
+      content={ 
       <Container>
         <div className={styles.wrapper}>
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
           <Article
             title={previewTitle}
             articleTitle={articleTitle}
@@ -43,9 +48,19 @@ export default function PostPage(props: TPostPageProps) {
             image={image}
           />
           <ContactForm />
-          <GalleryPosts id={id} />
+          <GalleryPosts id={id.toString()} />
         </div>
       </Container>
-    </Layout>
+      }
+      withContactForm={false}
+    />
   );
 }
+
+export async function  generateStaticParams(){
+  const paths = DB.posts.map(post => ({
+    id: post.id.toString(),
+  }));
+
+  return paths;
+};

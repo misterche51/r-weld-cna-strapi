@@ -1,3 +1,4 @@
+'use client'
 import { TBreadcrumbItem } from "@/app/shared";
 import { usePathname } from "next/navigation";
 import { BREADCRUMBS_DICTIONARY } from "@/api/catalog/categories";

@@ -1,4 +1,4 @@
-// "use client";
+
 
 import styles from "./styles.module.css";
 import { TTorchesType } from "@/api/catalog/torches/declarations";
@@ -15,6 +15,7 @@ const Page = ({
     categoryName: TTorchesType;
   };
 }) => {
+  
   const [group,,cooling] = params.categoryName.split('_') as ['tig'|'mig', string, 'air'|'liquid'];
   const isAirCooling = cooling === 'air';
  
@@ -31,4 +32,29 @@ const Page = ({
   return (
     <PageWrapper title={label} content={content} />);
 };
+
+
+export async function generateStaticParams() {
+  // @ts-expect-error
+  const params = [];
+  // Проходимся по всем классам отводов
+  for (const group of Object.keys(DB.catalog.torches.data.classes)) {
+    // @ts-expect-error
+    const categories = DB.catalog.torches.data.classes[group].categories
+    if (categories) {
+      if (categories['Воздушное охлаждение']) {
+          // @ts-expect-error
+        categories['Воздушное охлаждение'].forEach(item => params.push({ categoryName: `${item.target}` }));
+      }
+      if (categories['Жидкостное охлаждение']) {
+          // @ts-expect-error
+        categories['Жидкостное охлаждение'].forEach(item => params.push({ categoryName: `${item.target}` }));
+      }
+    }
+  }
+  // Возвращаем объект с путями и настройками fallback
+    // @ts-expect-error
+  return params
+}
+
 export default Page;

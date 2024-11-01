@@ -12,12 +12,13 @@ import { ReactNode } from "react";
 
 
 type TPageWrapperProps = {
-    title: string,
+    title?: string,
     withUnderline?: boolean,
     description?: string,
     content?: ReactNode
+    withContactForm?:boolean 
 }
-export const PageWrapper = ({title, withUnderline, description, content}:TPageWrapperProps) => {
+export const PageWrapper = ({title, withUnderline, description, content, withContactForm = true}:TPageWrapperProps) => {
 
   const breadcrumbs = useBreadcrumbs();
 
@@ -27,12 +28,12 @@ export const PageWrapper = ({title, withUnderline, description, content}:TPageWr
         <Container>
           <div className={styles.inner}>
             <Breadcrumbs breadcrumbs={breadcrumbs} />
-            <Heading rank={2} text={title} withUnderline={withUnderline ?? !!description} />
+            {title && <Heading rank={2} text={title} withUnderline={withUnderline ?? !!description} />}
             {description && <Description description={description} />}
             {content}
-            <div className={styles.form}>
+            {withContactForm && <div className={styles.form}>
               <ContactForm />
-            </div>
+            </div>}
           </div>
         </Container>
       </div>
