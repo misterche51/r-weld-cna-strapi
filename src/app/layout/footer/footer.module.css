@@ -138,6 +138,7 @@
 @media (max-width: 700px) {
   .wrapper {
     padding: 20px 0;
+    min-width: 320px;
   }
 
   .inner {
@@ -177,6 +178,10 @@
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    padding: 10px;
+    min-width: 320px;
+  }
   .company_info {
     flex-direction: column;
     align-items: center;

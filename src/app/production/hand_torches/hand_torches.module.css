@@ -151,10 +151,23 @@
     justify-content: space-between;
     list-style: none;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 10px;
     transition: margin-top 0.3s ease-in;
     padding-top: 30px;
     border-top: 2px solid var(--decorative-color-blue);
+  }
+  
+  .button__input:checked + .button__label + .button__description {
+    /* display: block; */
+    transform: translateY(60px);
+    opacity: 1;
+  }
+
+  .list--advantages {
+    margin-top: 140px;
+  }
+  .list--usage {
+    margin-top: 100px;
   }
 
   .item {
@@ -250,3 +263,31 @@
     transition: initial;
   }
 }
+@media (max-width: 590px) {
+  .button__input:checked + .button__label + .button__description--advantages {
+    padding-bottom: 170px;
+  }
+  .button__input:checked + .button__label + .button__description--usage {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 510px) {
+  .button__input:checked + .button__label + .button__description--advantages {
+    padding-bottom: 210px;
+  }
+  .button__input:checked + .button__label + .button__description--usage {
+    padding-bottom: 110px;
+  }
+}
+
+
+@media (max-width: 410px) {
+  .button__input:checked + .button__label + .button__description--advantages {
+    padding-bottom: 260px;
+  }
+  .button__input:checked + .button__label + .button__description--usage {
+    padding-bottom: 130px;
+  }
+}
+
