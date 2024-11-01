@@ -19,7 +19,7 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  height: 972px;
+  min-height: 972px;
   overflow: hidden;
 }
 
