@@ -10,7 +10,7 @@ export const BREADCRUMBS_DICTIONARY: Record<string, string> = {
   planers: "Строгачи",
   weld_chemistry: "Сварочная химия",
   carbon_electrodes: "Угольные электроды",
-  electrical_holders: "Электродержатели DE2200 / DE2300 / DE2400 / DE2500",
+  electrical_holders: "Электрододержатели DE2200 / DE2300 / DE2400 / DE2500",
   tungsten_electrodes: "Вольфрамовые электроды",
   bayonet_connectors: "Байонетные разъемы",
   other_accessories: "Прочие аксессуары",

@@ -8,12 +8,12 @@ export interface IElectricalHoldersDB extends IChemistryCategoryDB {
 
 export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
   routing:  { 
-    label: "Электродержатели", 
+    label: "Электрододержатели", 
     target: "electrical_holders", 
     absoluteTarget: "/production/chemistry/electrical_holders",
     image: "electrical_holders.png" },
   header: {
-    label: "Электродержатели DE2200 / DE2300 / DE2400 / DE2500",
+    label: "Электрододержатели DE2200 / DE2300 / DE2400 / DE2500",
     description:
       "Обеспечьте максимальную производительность и комфорт при ручной сварке штучным электродом с электрододержателями R-Weld. Наши электрододержатели оснащены овальной теплоизолирующей рукояткой и высококачественными изоляционными материалами, обеспечивающими комфорт и безопасность сварщика. Надёжная фиксация электрода в четырёх положениях и широкий диапазон совместимости с электродами и сварочными кабелями делают электрододержатели R-Weld идеальным инструментом для различных сварочных задач. Приобретая электрододержатели R-Weld, вы инвестируете в эффективность и безопасность.",
   },
@@ -34,7 +34,7 @@ export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
       },
     },
   },
-  tags: ['держатель', 'электродержатель', 'электрододержатель', 'держак','держатели', 'электродержатели', 'электрододержатели', 'держаки', 'DE2200', 'DE', 'DE2300', 'DE2400', 'DE2500', 'DE+2200',  'DE+2300', 'DE+2400', 'DE+2500', 'DE2200',  'DE 2300', 'DE 2400', 'DE 2500'].map(tag => tag.toLowerCase().replace(' ', '+'))
+  tags: ['держатель', 'электродержатель', 'электрододержатель', 'держак','держатели', 'Электрододержатели', 'электрододержатели', 'держаки', 'DE2200', 'DE', 'DE2300', 'DE2400', 'DE2500', 'DE+2200',  'DE+2300', 'DE+2400', 'DE+2500', 'DE2200',  'DE 2300', 'DE 2400', 'DE 2500'].map(tag => tag.toLowerCase().replace(' ', '+'))
 }
 
 ELECTRICAL_HOLDERS_CATALOG_DATA.tags = [...ELECTRICAL_HOLDERS_CATALOG_DATA.tags!, ...ELECTRICAL_HOLDERS_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]
