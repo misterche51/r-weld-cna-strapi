@@ -1,17 +1,17 @@
 import { IChemistryCategoryDB, TChemistrySectionContent} from "../declarations"
 
 
-export interface IElectricalATBHoldersDB extends IChemistryCategoryDB {
+export interface IElectrodeATBHoldersDB extends IChemistryCategoryDB {
   data: TChemistrySectionContent;
 }
 
 
-export const ELECTRIC_HOLDERS_ATB_CATALOG_DATA: IElectricalATBHoldersDB = {
+export const ELECTRODE_HOLDERS_ATB_CATALOG_DATA: IElectrodeATBHoldersDB = {
   routing:  { 
     label: "Электрододержатели ATB", 
-    target: "electric_holders_atb", 
-    absoluteTarget: "/production/chemistry/electric_holders_atb",
-    image: "electric_holders_atb_.png" 
+    target: "electrode_holders_atb", 
+    absoluteTarget: "/production/chemistry/electrode_holders_atb",
+    image: "electrode_holders_atb_.png" 
   },
   header: {
     label: "Электрододержатели ATB300 / ATB400 / ATB500 / ATB600",
@@ -33,4 +33,4 @@ export const ELECTRIC_HOLDERS_ATB_CATALOG_DATA: IElectricalATBHoldersDB = {
   tags: ['держатель', 'электродержатель', 'электрододержатель', 'держак','держатели', 'Электрододержатели', 'электрододержатели', 'держаки', 'ATB300', 'atb', 'ATB400', 'ATB500', 'ATB600', 'ATB+300',  'ATB+400', 'ATB+500', 'ATB+600'].map(tag => tag.toLowerCase().replace(' ', '+'))
 }
 
-ELECTRIC_HOLDERS_ATB_CATALOG_DATA.tags = [...ELECTRIC_HOLDERS_ATB_CATALOG_DATA.tags!, ...ELECTRIC_HOLDERS_ATB_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]
+ELECTRODE_HOLDERS_ATB_CATALOG_DATA.tags = [...ELECTRODE_HOLDERS_ATB_CATALOG_DATA.tags!, ...ELECTRODE_HOLDERS_ATB_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]

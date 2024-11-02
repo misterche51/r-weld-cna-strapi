@@ -4,8 +4,8 @@ import { IWeldChemistryDB } from "./subcategories/weld_chemistry";
 import { IQuickCouplingsDB } from "./subcategories/quick_couplings";
 import { IPlanersDB } from "./subcategories/planers";
 import { ICarbonElectrodesDB } from "./subcategories/carbon_electrodes";
-import { IElectricalHoldersDB } from "./subcategories/electrical_holders";
-import { IElectricalATBHoldersDB } from "./subcategories/electric_holders_atb";
+import { IElectrodeDEHoldersDB } from "./subcategories/electrode_holders_de";
+import { IElectrodeATBHoldersDB } from "./subcategories/electrode_holders_atb";
 
 export type TRountingInfo = {
   label: string;
@@ -43,8 +43,8 @@ export interface IChemistryCategoryDB {
 
 export type TChemistryCatalog = {
   weld_chemistry: IWeldChemistryDB;
-  electrical_holders: IElectricalHoldersDB;
-  electric_holders_atb: IElectricalATBHoldersDB;
+  electrode_holders_de: IElectrodeDEHoldersDB;
+  electrode_holders_atb: IElectrodeATBHoldersDB;
   carbon_electrodes: ICarbonElectrodesDB;
   planers: IPlanersDB;
   quick_couplings: IQuickCouplingsDB;

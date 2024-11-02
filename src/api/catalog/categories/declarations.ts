@@ -1,5 +1,3 @@
-import { TBreadcrumbItem } from "@/app/shared";
-
 type TCatalogCategoriesItem = {
   label: string;
   type?: string;

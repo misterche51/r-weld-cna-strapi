@@ -1,17 +1,17 @@
 import { IChemistryCategoryDB, TChemistrySectionContent} from "../declarations"
 
 
-export interface IElectricalHoldersDB extends IChemistryCategoryDB {
+export interface IElectrodeDEHoldersDB extends IChemistryCategoryDB {
   data: TChemistrySectionContent;
 }
 
 
-export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
+export const ELECTRODE_HOLDERS_DE_CATALOG_DATA: IElectrodeDEHoldersDB = {
   routing:  { 
     label: "Электрододержатели DE", 
-    target: "electrical_holders", 
-    absoluteTarget: "/production/chemistry/electrical_holders",
-    image: "electrical_holders.png" },
+    target: "electrode_holders_de", 
+    absoluteTarget: "/production/chemistry/electrode_holders_de",
+    image: "electrode_holders_de.png" },
   header: {
     label: "Электрододержатели DE2200 / DE2300 / DE2400 / DE2500",
     description:
@@ -37,4 +37,4 @@ export const ELECTRICAL_HOLDERS_CATALOG_DATA: IElectricalHoldersDB = {
   tags: ['держатель', 'электродержатель', 'электрододержатель', 'держак','держатели', 'Электрододержатели', 'электрододержатели', 'держаки', 'DE2200', 'DE', 'DE2300', 'DE2400', 'DE2500', 'DE+2200',  'DE+2300', 'DE+2400', 'DE+2500', 'DE2200',  'DE 2300', 'DE 2400', 'DE 2500'].map(tag => tag.toLowerCase().replace(' ', '+'))
 }
 
-ELECTRICAL_HOLDERS_CATALOG_DATA.tags = [...ELECTRICAL_HOLDERS_CATALOG_DATA.tags!, ...ELECTRICAL_HOLDERS_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]
+ELECTRODE_HOLDERS_DE_CATALOG_DATA.tags = [...ELECTRODE_HOLDERS_DE_CATALOG_DATA.tags!, ...ELECTRODE_HOLDERS_DE_CATALOG_DATA.header.description!.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000]/g,' ').split(' ')]

@@ -117,7 +117,7 @@
 ```
 ---
 
-[Электрододержатели](/src/api/catalog/chemistry/subcategories/electrical_holders.ts): 
+[Электрододержатели](/src/api/catalog/chemistry/subcategories/electrode_holders_de.ts): 
 
 *Здесь нет как такового каталога, поэтому файл состоит из заголовка, описания и объекта с изображениями **images**, каждое из которых имеет обязательные поля **src** и **alt**, а также может иметь поле **title***
 ```

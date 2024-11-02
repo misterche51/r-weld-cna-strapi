@@ -8,7 +8,7 @@ import { PageWrapper } from "../../../layout/pageWrapper";
 
 const Page = () => {
   const { header, data } =
-    DB.catalog.chemistry.data.electrical_holders;
+    DB.catalog.chemistry.data.electrode_holders_de;
 
   const {images} = data;
   const {label, description} = header;
@@ -28,7 +28,7 @@ const Page = () => {
               >
                 <Image
                   className={styles.image__pic}
-                  src={`/electrical_holders/${src}`}
+                  src={`/electrode_holders_de/${src}`}
                   alt={alt}
                   width={1276}
                   height={300}

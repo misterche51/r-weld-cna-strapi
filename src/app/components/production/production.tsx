@@ -1,5 +1,4 @@
 // "use client";
-import { PropsWithChildren } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./production.module.css";
