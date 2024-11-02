@@ -24,4 +24,6 @@
   line-height: 1.3;
   position: relative;
   z-index: 1;
+  white-space: wrap;
+  padding: 0 10px;
 }

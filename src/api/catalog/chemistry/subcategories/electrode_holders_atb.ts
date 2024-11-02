@@ -16,7 +16,7 @@ export const ELECTRODE_HOLDERS_ATB_CATALOG_DATA: IElectrodeATBHoldersDB = {
     label: "Электрододержатели ATB", 
     target: "electrode_holders_atb", 
     absoluteTarget: "/production/chemistry/electrode_holders_atb",
-    image: "electrode_holders_atb_.png" 
+    image: "electrode_holders_atb.png" 
   },
   header: {
     label: "Электрододержатели ATB300 / ATB400 / ATB500 / ATB600",

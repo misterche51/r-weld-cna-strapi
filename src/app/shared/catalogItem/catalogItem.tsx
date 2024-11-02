@@ -5,7 +5,7 @@ type TCatalogItemProps = {
   label?: string;
   image?: string;
   withDrop?: boolean;
-    imageStyle?: 'cover'|'contain';
+  imageStyle?: 'cover'|'contain';
 };
 
 export default function CatalogItem({
