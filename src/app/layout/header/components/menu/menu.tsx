@@ -4,6 +4,7 @@ import Button from "@/app/shared/button/button";
 import Drop from "./components/drop/drop";
 
 import DB from "@/api/db";
+import ContactForm from "@/app/shared/contactForm/contactForm";
 
 export default function Menu() {
   return (
@@ -24,7 +25,8 @@ export default function Menu() {
         })}
       </ul>
       <div className={styles.request_btn}>
-        <Button text="Оставить заявку" />
+        <ContactForm />
+        {/* <Button text="Оставить заявку" /> */}
       </div>
     </div>
   );

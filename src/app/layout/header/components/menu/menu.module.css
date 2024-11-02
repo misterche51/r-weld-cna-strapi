@@ -81,6 +81,7 @@
     display: block;
     margin-top: 24px;
     padding: 0 20px;
+    width: calc(100% - 24px);
   }
   .phone_wrapper {
     height: 90px;
