@@ -1,2 +1,2 @@
 export * from "./dealers";
-// export * from "./map";
+export * from "./map";
