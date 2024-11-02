@@ -11,14 +11,18 @@ const Page = () => {
     DB.catalog.chemistry.data.electrode_holders_atb;
 
   const {images} = data;
-  const {label, description} = header;
+  const {label, description, list} = header;
   
   const sectionNames = Object.keys(images);
   
   const content = <>
-      {sectionNames.map((name) => {
+      {sectionNames.map((name, i) => {
         const { title, alt, src } = images[name];
         return (
+          <>
+          {i === 0 && <ul className={styles.list}>
+            {list.map((string:string , i:number) => <li key={i} className={styles.list__item}>{string}</li>)}
+          </ul>}
           <ImageWrapper
             key={alt}
             title={title}
@@ -41,6 +45,7 @@ const Page = () => {
               </div>
             }
           />
+          </>
         );
       })}
   </>
