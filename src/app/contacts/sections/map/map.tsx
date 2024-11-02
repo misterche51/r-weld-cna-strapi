@@ -16,7 +16,6 @@ import {
   YMapZoomControl,
   YMapMarker,
 } from "ymap3-components";
-// import * as YMaps from "@yandex/ymaps3-types";
 import { API_KEY, CUSTOMIZATION } from "./helpers";
 
 export default function Map() {
