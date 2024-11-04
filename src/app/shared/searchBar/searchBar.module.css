@@ -30,7 +30,7 @@
 
   height: 50px;
   font-size: var(--fsz-xs);
-  color: var(--color-text-dark)
+  color: var(--color-text-dark);
 }
 
 .input--with_icon {
