@@ -1,7 +1,7 @@
 import styles from './popup.module.css'
 type TPopupProps = {
     isVisible: boolean;
-    onCloseButtonClickHandler: (e) => void,
+    onCloseButtonClickHandler: (e: any) => void,
     state: 'success'| 'error'| null,
 }
 const Popup = ({isVisible, onCloseButtonClickHandler, state}:TPopupProps) => {
