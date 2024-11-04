@@ -11,18 +11,19 @@ const Page = () => {
   const {label, description} = header;
   const { image }= data
 
-  const content = <div className={styles.content}>
-  <div className={styles.content__image}>
-    <Image
-      src={`/tungsten_electrodes/${image.src}`}
-      alt={image.alt}
-      fill
-      style={{ objectFit: "contain" }}
-      priority
-    />
+  const content = 
+  <div className={styles.content}>
+    <div className={styles.content__image}>
+      <Image
+        src={`/tungsten_electrodes/${image.src}`}
+        alt={image.alt}
+        fill
+        style={{ objectFit: "contain" }}
+        priority
+      />
+    </div>
+    <div className={styles.content__text}>{image.description}</div>
   </div>
-  <div className={styles.content__text}>{image.description}</div>
-</div>
 
   return (
     <PageWrapper title={label} description={description} content={content} />);

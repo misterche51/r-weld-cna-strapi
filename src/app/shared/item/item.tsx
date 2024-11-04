@@ -26,7 +26,7 @@ export const Item = ({ name, image, info }: TItemProps) => {
           src={typeof image === 'string' ? image : image.src}
           alt={typeof image === 'string' ? name : image.alt}
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "contain" }}
           priority
         />
       </div>

@@ -35,7 +35,7 @@ export default function Header({ children }: PropsWithChildren) {
   const onSubmitHandler = (value: string) => value.trim().length !== 0 ? router.push(`/search?${value}`): null;
 
   return (
-    <header className={styles.wrapper}>
+    <header className={styles.wrapper} id="header">
       <Container>
         <div className={styles.inner}>
           <div className={styles.logo}>
@@ -62,7 +62,6 @@ export default function Header({ children }: PropsWithChildren) {
               {phone.label}
             </a>
             <div className={styles.request_btn}>
-              {/* ts-expect-error */}
               <Button text="Оставить заявку" role='link'/>
             </div>
           </div>

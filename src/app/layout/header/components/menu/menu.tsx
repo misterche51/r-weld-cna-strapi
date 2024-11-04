@@ -26,7 +26,6 @@ export default function Menu() {
       </ul>
       <div className={styles.request_btn}>
         <ContactForm />
-        {/* <Button text="Оставить заявку" /> */}
       </div>
     </div>
   );

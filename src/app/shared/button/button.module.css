@@ -51,7 +51,9 @@
   border-radius: var(--border-radius-default);
 }
 
-
+.comp--dark:disabled:before {
+  background: var(--background-color-dark-extra);
+}
 .comp--dark::before {
   background: var(--gradient-dark);
 }
@@ -67,6 +69,8 @@
   background: var(--background-main-home-page);
   color: var(--color-text-extra-dark);
 }
+
+
 
 .comp:not(:disabled):hover::before {
   opacity: 0;

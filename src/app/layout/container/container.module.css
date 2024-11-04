@@ -10,25 +10,7 @@
   left: 0;
   top: 0;
 }
-.scroll_btn {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--border-radius-default);
-  border: 2px solid var(--decorative-color-extra-dark);
-  background-color: var(--background-main-home-page);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url('../../../../public/arrow-top--dark.svg');
-  position: fixed;
-  right: 50px;
-  top: 80vh;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-}
 
-.scroll_btn:hover {
-  transform: scale(1.02)
-}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1300px) {

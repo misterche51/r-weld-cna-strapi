@@ -10,6 +10,7 @@ export default function Container({ children }: PropsWithChildren) {
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: 'smooth'})}}></button>
+        behavior: 'smooth'
+        })}}></button>
   </div>;
 }

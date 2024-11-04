@@ -15,7 +15,7 @@ export default function Button({ variant = "dark", text, role='button', disabled
     <button className={`${styles.comp} ${buttonClassNameByTheme}`} disabled={disabled} type={type}>
       {label}
     </button> : 
-    <Link href="#contact-form" className={`${styles.comp} ${buttonClassNameByTheme}`}>
+    <Link href="#contacts-form" className={`${styles.comp} ${buttonClassNameByTheme}`}>
       {label}
     </Link>
   );

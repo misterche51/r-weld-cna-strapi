@@ -10,7 +10,7 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
   const buttonTheme = variant === "dark" ? "light" : "dark";
   const inputRef = useMask({ mask: '+7 (___) ___-__-__', replacement: { _: /\d/ } })
   const [isSendButtonClickable, setIsSendButtonClickable] = useState(false);
-  const [isOverlayActive, setIsOverlayActive] = useState(false)
+  const [popupState, setPopupState] = useState<null|'success'|'error'>(null)
 
   const onInputChangeHandler = (e:ChangeEvent<HTMLInputElement>):void => {
     if (e.target.value.length === 5 && e.target.value!== '9') {
@@ -27,23 +27,23 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
   return (
     <form 
       className={`${styles[`wrapper--${variant}`]} ${styles.wrapper}`} 
-      id='contact-form' 
-      onSubmit={async (e) => {
-        const form = document.querySelector('#contact-form') as HTMLFormElement
-        e.preventDefault();
-          const response = await fetch("mail.php", {
-          method: "POST",
-          body: new FormData(form),
-        });
-        if (response.ok) {
-          console.log("good")
-        } else {
-          console.log('rarara')
-        }
-      }
-    
-        
-      }>
+      id='contacts-form'
+      onSubmit={
+        async (e) => {
+          const form = document.querySelector('#contacts-form') as HTMLFormElement;
+          e.preventDefault();
+            const response = await fetch("mail.php", {
+              method: "POST",
+              body: new FormData(form),
+            });
+            if (response.ok) {
+              setPopupState('success')
+              return 
+            } else {
+              setPopupState('error')
+              return
+            }
+      }}>
       <div className={styles.inner}>
         <p className={`${styles[`cta--${variant}`]} ${styles.cta}`}>
           Оставьте номер телефона, мы ответим на все ваши вопросы и оформим
@@ -64,7 +64,10 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
           </div>
         </div>
       </div>
-      <Popup isVisible={isOverlayActive} onCloseButtonClickHandler={() => setIsOverlayActive(false)} />
+      <Popup 
+        isVisible={Boolean(popupState)} 
+        onCloseButtonClickHandler={() => setPopupState(null)} 
+        state={popupState}/>
     </form>
   );
 }
