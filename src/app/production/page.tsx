@@ -10,6 +10,12 @@ import useBreadcrumbs from "@/utils/useBreadcrumbs";
 import Breadcrumbs from "../shared/breadcrumbs/breadcrumbs";
 
 export default function ProductionPage() {
+  if (window.location.pathname.endsWith('/')) {
+    console.log('here')
+    // Удаляем последний слэш и перенаправляем пользователя
+    const newPath = window.location.pathname.slice(0, -1);
+    window.location.replace(newPath);
+}
   const breadcrumbs = useBreadcrumbs();
   return (
     <Layout>
