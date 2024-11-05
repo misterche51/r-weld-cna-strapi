@@ -8,14 +8,17 @@ import Heading from "../shared/heading/heading";
 import { List } from "../components";
 import useBreadcrumbs from "@/utils/useBreadcrumbs";
 import Breadcrumbs from "../shared/breadcrumbs/breadcrumbs";
+import { useEffect } from "react";
 
 export default function ProductionPage() {
-  if (window.location.pathname.endsWith('/')) {
-    console.log('here')
-    // Удаляем последний слэш и перенаправляем пользователя
-    const newPath = window.location.pathname.slice(0, -1);
-    window.location.replace(newPath);
-}
+  useEffect(() => {
+    if (window.location.pathname.endsWith('/')) {
+      // Удаляем последний слэш и перенаправляем пользователя
+      const newPath = window.location.pathname.slice(0, -1);
+      window.location.replace(newPath);
+  }
+  }, [])
+ 
   const breadcrumbs = useBreadcrumbs();
   return (
     <Layout>
