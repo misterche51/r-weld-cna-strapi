@@ -1,6 +1,6 @@
 // import myImageLoader from "../../../../../myImageLoader";
 import styles from "./postPreview.module.css";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 
 export type TPostDataProps = {
   title: string;

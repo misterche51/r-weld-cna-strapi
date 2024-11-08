@@ -1,6 +1,6 @@
 // import myImageLoader from "../../../../../myImageLoader";
 import styles from "./article.module.css";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import Heading from "@/app/shared/heading/heading";
 
 export type TPostDataProps = {

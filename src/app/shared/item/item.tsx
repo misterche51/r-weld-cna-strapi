@@ -1,5 +1,5 @@
 import styles from "./item.module.css";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import { TImageData } from "@/api/catalog/chemistry/declarations";
 
 

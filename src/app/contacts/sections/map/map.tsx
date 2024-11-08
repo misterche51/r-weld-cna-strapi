@@ -5,7 +5,7 @@ import { useCallback, useState } from "react";
 import Script from "next/script";
 import DB from "@/api/db";
 import styles from "./map.module.css";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import {
   YMap,
   YMapComponentsProvider,

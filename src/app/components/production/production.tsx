@@ -1,18 +1,21 @@
-// "use client";
-import Image from "next/image";
+"use client";
+import Image from 'next-export-optimize-images/image' ;
 import Link from "next/link";
 import styles from "./production.module.css";
 import Container from "@/app/layout/container/container";
 import SectionTitle from "../sectionTitle/sectionTitle";
 
 import DB from "@/api/db";
+import { usePathname} from "next/navigation";
 
 export const List = () => {
+  const pathname = usePathname();
+  const wrongUrl = pathname.endsWith('production/');
   return (
     <ul className={styles.list}>
       {DB.catalog_categories.map(({ label, type, target }, i) => (
         <li key={i} className={styles.item}>
-          <Link href={`${target}`}>
+          <Link href={wrongUrl ?`${target.split('/')[1]}` :`${target}`}>
             <>
               <Image
                 className={styles.image}

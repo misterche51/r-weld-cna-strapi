@@ -8,7 +8,7 @@ import ContactForm from "@/app/shared/contactForm/contactForm";
 import Breadcrumbs from "@/app/shared/breadcrumbs/breadcrumbs";
 import Layout from "@/app/layout/layout";
 import Container from "@/app/layout/container/container";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import Heading from "@/app/shared/heading/heading";
 import DB from "@/api/db";
 

@@ -35,8 +35,10 @@ const useBreadcrumbs = (isFromMainPage: TUseBreadcrumbsProps = false) => {
   }
 
   if (rootBreadcrumb.target === 'blog' && crumbs[crumbs.length - 1]) {
-    // @ts-expect-error
-    crumbs[crumbs.length - 1].label = DB.posts[+crumbs[crumbs.length - 1].label].articleTitle
+    if (!path.endsWith('/')) {
+      // @ts-expect-error
+      crumbs[crumbs.length - 1].label = DB.posts[+crumbs[crumbs.length - 1].label].articleTitle
+    }
   }
     
   const breadcrumbs: TBreadcrumbItem[] = [{

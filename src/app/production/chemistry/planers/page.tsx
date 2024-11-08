@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import styles from "./styles.module.css";
 import DB from "@/api/db";
 import ImageWrapper from "../components/imageWrapper/imageWrapper";

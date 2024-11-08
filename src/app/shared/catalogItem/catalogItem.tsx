@@ -1,5 +1,5 @@
 import styles from "./catalogItem.module.css";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 
 type TCatalogItemProps = {
   label?: string;

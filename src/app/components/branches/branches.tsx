@@ -1,6 +1,6 @@
 // "use client";
 import { PropsWithChildren } from "react";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import styles from "./branches.module.css";
 import Container from "@/app/layout/container/container";
 import SectionTitle from "../sectionTitle/sectionTitle";

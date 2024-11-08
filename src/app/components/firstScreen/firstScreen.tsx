@@ -1,6 +1,6 @@
 // "use client";
 import { PropsWithChildren } from "react";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import styles from "./firstScreen.module.css";
 
 const DATA = {

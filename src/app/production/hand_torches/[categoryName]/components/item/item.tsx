@@ -1,6 +1,6 @@
 import styles from "./item.module.css";
 import { TTorchesItem } from "@/api/catalog/torches/declarations";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 
 
 type TTorchesItemParams = Omit<TTorchesItem, 'name'|'image'>

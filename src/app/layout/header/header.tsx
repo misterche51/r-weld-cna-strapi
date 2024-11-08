@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image' ;
 import Link from "next/link";
 import styles from "./header.module.css";
 import { PropsWithChildren, useState } from "react";
