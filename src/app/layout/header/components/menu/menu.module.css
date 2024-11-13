@@ -33,7 +33,7 @@
 .item a {
   display: block;
 }
-.request_btn,
+.form_wrapper,
 .phone_wrapper {
   display: none;
 }
@@ -77,7 +77,7 @@
   .item + .item {
     margin-left: 0;
   }
-  .request_btn {
+  .form_wrapper {
     display: block;
     margin-top: 24px;
     padding: 0 20px;

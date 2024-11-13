@@ -6,7 +6,7 @@ import Drop from "./components/drop/drop";
 import DB from "@/api/db";
 import ContactForm from "@/app/shared/contactForm/contactForm";
 
-export default function Menu() {
+export default function Menu({isOpened}: {isOpened:boolean}) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.phone_wrapper}>
@@ -24,9 +24,9 @@ export default function Menu() {
           );
         })}
       </ul>
-      <div className={styles.request_btn}>
+      {isOpened && <div className={styles.form_wrapper}>
         <ContactForm />
-      </div>
+      </div>}
     </div>
   );
 }

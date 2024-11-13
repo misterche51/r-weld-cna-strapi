@@ -3,7 +3,7 @@
   background-color: var(--background-color-extra-light-blue);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1111;
 }
 
 .inner {

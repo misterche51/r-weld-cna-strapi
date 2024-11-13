@@ -45,7 +45,7 @@ export default function Header({ children }: PropsWithChildren) {
             <div
               className={`${styles.menu} ${isOpened && styles["menu--opened"]}`}
             >
-              <Menu />
+              <Menu isOpened={isOpened}/>
             </div>
             <div className={styles.search}>
               <SearchBar placeholder="Найти..."  onSearchStart={onSubmitHandler}/>
