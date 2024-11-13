@@ -22,9 +22,11 @@ export const DocumentationList:FC<TDocumentationListProps> = ({list}) => {
       <ul className={`${styles.list} ${isListExpanded ? styles["list--opened"] : ''}`}>
         {list.map(({label ,id, path}) => 
           <li key={id} className={styles.item}>
-            <div className={styles.image}></div>
-            <p className={styles.label}>{label}</p>
-            <Link className={styles.link} href={`${path}`} rel="noopener noreferrer" target="_blank">Скачать</Link>
+            <Link href={`${path}`} rel="noopener noreferrer" target="_blank">
+              <div className={styles.image}></div>
+              <p className={styles.label}>{label}</p>
+              <Link className={styles.link} href={`${path}`} rel="noopener noreferrer" target="_blank">Скачать</Link>
+            </Link>
           </li>
       )}
     </ul>
