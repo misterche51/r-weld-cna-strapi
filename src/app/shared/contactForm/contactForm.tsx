@@ -32,7 +32,7 @@ export default function ContactForm({ variant = "dark" }: TContactFormProps) {
         async (e) => {
           const form = document.querySelector('#contacts-form') as HTMLFormElement;
           e.preventDefault();
-            const response = await fetch("mail.php", {
+            const response = await fetch("/mail.php", {
               method: "POST",
               body: new FormData(form),
             });
