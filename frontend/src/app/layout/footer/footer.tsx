@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./footer.module.css";
 import { PropsWithChildren } from "react";
 import Container from "../container/container";
+import DB from "@/api/db";
 
 const SITE_MAP_DATA = [
   {
@@ -19,18 +20,11 @@ const SITE_MAP_DATA = [
     target: "blog",
   },
   {
-    label: "Филиалы и склады",
-  },
-  {
-    label: "Дилеры",
-  },
-  {
     label: "Контакты",
     target: "contacts",
   },
 ];
 
-const CONTACTS_DATA = ["8 800 900-10-10", "info@r-weld.ru"];
 
 const Logo = () => (
   <div className={styles.logo}>
@@ -47,11 +41,6 @@ const Logo = () => (
   </div>
 );
 
-const Description = () => (
-  <p className={styles.description}>
-    Российский производитель и поставщик горелок для MIG и TIG сварки
-  </p>
-);
 
 const SiteMap = () => (
   <div className={styles.site_map}>
@@ -70,9 +59,9 @@ const Contacts = () => (
   <div className={styles.contacts}>
     <p className={styles.contacts__heading}>Контакты</p>
     <ul className={styles.contacts__list}>
-      {CONTACTS_DATA.map((label, i) => (
-        <li className={styles.contacts__item} key={i}>
-          {label}
+      {[DB.info.phone, DB.info.email].map(({href, label}) => (
+        <li className={styles.contacts__item} key={href}>
+           <Link href={href}>{label}</Link>
         </li>
       ))}
     </ul>
@@ -81,8 +70,7 @@ const Contacts = () => (
 
 const Address = () => (
   <p className={styles.address}>
-    ООО «Р-ВЕЛД» 390525 Рязанская обл., Рязанский муниципальный район,
-    с. Поляны, ул. Новая, строение 15
+    {DB.info.address}
   </p>
 );
 
@@ -94,7 +82,9 @@ export default function Footer({ children }: PropsWithChildren) {
           <div className={styles.info_box}>
             <div className={styles.company_info}>
               <Logo />
-              <Description />
+              <p className={styles.description}>
+                {DB.info.description}
+              </p>
             </div>
             <div className={styles["address_wrapper--desk"]}>
               <Address />
@@ -102,7 +92,7 @@ export default function Footer({ children }: PropsWithChildren) {
           </div>
           <div className={styles.links_box}>
             <SiteMap />
-            <Contacts />
+            <Contacts/>
           </div>
           <div className={styles["address_wrapper--mob"]}>
             <Address />

@@ -5,11 +5,11 @@ import { BREADCRUMBS_DICTIONARY } from "@/api/catalog/categories";
 const getTranslatedBreadcrumbLabel = (label: string) =>
   BREADCRUMBS_DICTIONARY[label] ?? label;
 type TUseBreadcrumbsProps = boolean;
-const useBreadcrumbs = (fromMainPage: TUseBreadcrumbsProps = false) => {
+const useBreadcrumbs = (isFromMainPage: TUseBreadcrumbsProps = false) => {
   const path = usePathname();
   const pathes = path.split("/");
   const crumbs: TBreadcrumbItem[] = [];
-  if (fromMainPage) {
+  if (isFromMainPage) {
     return [
       {
         label: getTranslatedBreadcrumbLabel("home"),
@@ -31,7 +31,10 @@ const useBreadcrumbs = (fromMainPage: TUseBreadcrumbsProps = false) => {
       target: prevTarget,
     });
   }
-  const breadcrumbs: TBreadcrumbItem[] = [rootBreadcrumb, ...crumbs];
+  const breadcrumbs: TBreadcrumbItem[] = [{
+    label: getTranslatedBreadcrumbLabel("home"),
+    target: "/",
+  }, rootBreadcrumb, ...crumbs];
   return breadcrumbs;
 };
 

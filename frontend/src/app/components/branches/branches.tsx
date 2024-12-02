@@ -4,15 +4,9 @@ import Image from "next/image";
 import styles from "./branches.module.css";
 import Container from "@/app/layout/container/container";
 import SectionTitle from "../sectionTitle/sectionTitle";
-import ContactForm from "../../shared/contactForm/contactForm";
+import DB from "@/api/db";
 
-const BRANCHES_DATA = [
-  "Рязань",
-  "Москва",
-  "Санкт-Петербург",
-  "Екатеринбург",
-  "Красноярск",
-];
+
 
 export default function Branches({ children }: PropsWithChildren) {
   return (
@@ -35,8 +29,8 @@ export default function Branches({ children }: PropsWithChildren) {
             готовы предложить различные методы расчёта и варианты доставки.
           </p>
           <ul className={styles.list}>
-            {BRANCHES_DATA.map((city, idx) => (
-              <li key={idx} className={styles.item}>
+            {DB.contacts.map(({city, id}) => (
+              <li key={id} className={styles.item}>
                 {city}
               </li>
             ))}

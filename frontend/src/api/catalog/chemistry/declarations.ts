@@ -41,19 +41,19 @@ type TBayonetConnectorsContent = {
   };
 };
 
-type TTungstenElectrodesContent = {
+export type TTungstenElectrodesContent = {
   image: TImageData & { description: string };
 };
 
 type TTagsList = { tags: string[] };
-type TWeildChemistyItem = {
+export type TWeldChemistryItem = {
   name: string;
   image: TImageData;
   info?: string;
 } & TTagsList;
 
 type TWeldChemistrySectionData = TChemistrySectionHeader & {
-  list: TWeildChemistyItem[];
+  list: TWeldChemistryItem[];
 };
 export type TChemistryDB = {
   weld_chemistry: TWeldChemistrySectionData;
